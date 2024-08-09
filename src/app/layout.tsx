@@ -3,7 +3,8 @@ import { Inter } from 'next/font/google';
 import { ThemeProvider } from '@/context/themeContext';
 
 import './globals.css';
-import 'prismjs/themes/prism-okaidia.css';
+// import 'prismjs/themes/prism-tomorrow.css';
+import 'prismjs/themes/prism-twilight.css';
 
 const inter = Inter({ subsets: ['latin'] });
 
