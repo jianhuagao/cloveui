@@ -1,0 +1,4 @@
+# Ignore files
+*.min.*
+/.next/
+pnpm-lock.yaml
