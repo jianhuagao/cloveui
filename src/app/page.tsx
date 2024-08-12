@@ -6,10 +6,11 @@ export default function Home() {
     <main className="relative">
       <div className="main-background"></div>
       <LayoutContent>
-        <div className="prose mx-auto flex max-w-7xl flex-col items-center gap-4 px-4 py-20 dark:prose-invert">
+        <div className="prose mx-auto flex max-w-7xl flex-col px-4 py-20 dark:prose-invert">
+          <h1 className="text-7xl">CloveUI</h1>
           <h1>
             Free open source <span className="cursor-pointer transition-all hover:text-[#38bdf8]">TailwindCSS</span> component
-            library{' '}
+            library
           </h1>
           <Link href="/docs" className="text-xl no-underline opacity-60">
             Get started
