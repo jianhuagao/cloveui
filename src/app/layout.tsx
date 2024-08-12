@@ -5,6 +5,7 @@ import { ThemeProvider } from '@/context/themeContext';
 import '@/styles/globals.scss';
 // import 'prismjs/themes/prism-tomorrow.css';
 import 'prismjs/themes/prism-twilight.css';
+import BackgroundComponent from '@/components/backgroundComponent';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -21,6 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <BackgroundComponent />
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
