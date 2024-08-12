@@ -1,13 +1,15 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 
 const BackgroundComponent: React.FC = () => {
   const pathname = usePathname();
+  const backgroundRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const backgroundElement = document.querySelector('.main-background');
+    const backgroundElement = backgroundRef.current;
+
     if (backgroundElement) {
       if (pathname === '/') {
         backgroundElement.classList.add('homepage');
@@ -19,7 +21,7 @@ const BackgroundComponent: React.FC = () => {
     }
   }, [pathname]);
 
-  return <div className="main-background"></div>;
+  return <div ref={backgroundRef} className="main-background"></div>;
 };
 
 export default BackgroundComponent;
