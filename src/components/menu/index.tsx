@@ -42,13 +42,13 @@ export default memo(async function Menu() {
   const componentsByCategory = await getComponents();
   return (
     <div className="flex grow flex-col gap-1 overflow-auto p-4">
-      {componentsByCategory.map(s => {
-        const itemsTitle = <div className={clsx('px-3 pt-2 first:pt-0', miniText)}>{s.title}</div>;
-        const items = s.children?.map(c => {
-          return <MenuItem type={s.title} title={c.title} key={c.slug} />;
+      {componentsByCategory.map(type => {
+        const itemsTitle = <div className={clsx('px-3 pt-2 first:pt-0', miniText)}>{type.title}</div>;
+        const items = type.children?.map(c => {
+          return <MenuItem slug={c.slug} title={c.title} key={c.slug} />;
         });
         return (
-          <React.Fragment key={s.slug}>
+          <React.Fragment key={type.slug}>
             {itemsTitle}
             {items}
           </React.Fragment>

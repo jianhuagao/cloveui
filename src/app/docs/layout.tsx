@@ -20,7 +20,7 @@ export default function DocLayout({
 }>) {
   return (
     <div className="flex min-h-screen bg-[#f4f4f5] dark:bg-[#09090b]">
-      <div className="sticky top-0 flex h-screen w-64 flex-shrink-0 flex-col">
+      <div className="sticky top-0 hidden h-screen w-64 flex-shrink-0 flex-col md:flex">
         <div className="flex flex-shrink-0 items-center justify-between p-4">
           <Link href="/">
             <div className={clsx('flex items-center p-3', hoverClass)}>CloveUI</div>
@@ -37,7 +37,7 @@ export default function DocLayout({
           </div>
         </div>
       </div>
-      <div className="prose m-2 ml-0 min-w-0 max-w-none grow rounded-lg p-6 dark:prose-invert lg:bg-white lg:p-10 lg:shadow-sm lg:ring-1 lg:ring-zinc-950/5 dark:lg:bg-zinc-900 dark:lg:ring-white/10">
+      <div className="prose m-2 min-w-0 max-w-none grow rounded-lg bg-white p-10 shadow-sm ring-1 ring-zinc-950/5 dark:prose-invert lg:ml-0 dark:lg:bg-zinc-900 dark:lg:ring-white/10">
         {children}
       </div>
     </div>

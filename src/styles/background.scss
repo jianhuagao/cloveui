@@ -1,0 +1,65 @@
+
+
+:root {
+  --background1-start: #ff9a9e;
+  --background1-end: #fad0c4;
+  --background2-start: #a1c4fd;
+  --background2-end: #c2e9fb;
+}
+
+.dark {
+  --background1-start: #4d9ae7;
+  --background1-end: #1c4677;
+  --background2-start: #8308c5;
+  --background2-end: #301c3b;
+}
+
+.main-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+
+/* first */
+.main-background::before {
+  content: "";
+  position: absolute;
+  top: 10%;
+  left: 33%;
+  width: 30%;
+  height: 40%;
+  background: radial-gradient(circle at center, var(--background1-start), var(--background1-end), transparent 70%);
+  transform: translate(-50%, -50%);
+  filter: blur(120px);
+  mix-blend-mode: screen;
+  animation: move1 20s infinite alternate ease-in-out;
+}
+
+/* second */
+.main-background::after {
+  content: "";
+  position: absolute;
+  top: 15%;
+  left: 60%;
+  width: 40%;
+  height: 40%;
+  background: radial-gradient(circle at center, var(--background2-start), var(--background2-end), transparent 70%);
+  transform: translate(-50%, -50%);
+  filter: blur(150px);
+  mix-blend-mode: screen;
+  animation: move2 25s infinite alternate ease-in-out;
+}
+
+/* 定义动画效果 */
+@keyframes move1 {
+  0% { transform: translate(-50%, -50%) translateX(0) translateY(0); }
+  100% { transform: translate(-50%, -50%) translateX(50px) translateY(20px); } /* 增大移动范围 */
+}
+
+@keyframes move2 {
+  0% { transform: translate(-50%, -50%) translateX(0) translateY(0); }
+  100% { transform: translate(-50%, -50%) translateX(-50px) translateY(20px); } /* 增大移动范围 */
+}

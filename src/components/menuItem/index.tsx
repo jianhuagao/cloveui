@@ -11,12 +11,12 @@ const activeClass = 'bg-white dark:bg-[#18181b]'; // 高亮样式
 
 interface MenuItemProps {
   title: string;
-  type: string;
+  slug: string;
 }
 
-const MenuItem: React.FC<MenuItemProps> = ({ title, type }) => {
+const MenuItem: React.FC<MenuItemProps> = ({ title, slug }) => {
   const pathname = usePathname();
-  const url = `/docs/comp/${type}/${title}`;
+  const url = `/docs/comp/${slug}`;
   const isActive = pathname === url;
 
   return (

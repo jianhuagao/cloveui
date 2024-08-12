@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "background.scss";
 
 @layer base {
 ::-webkit-scrollbar {
@@ -28,3 +29,4 @@
     text-wrap: balance;
   }
 }
+
