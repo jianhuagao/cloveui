@@ -16,7 +16,7 @@ const findFirstSlug = (menuItems: MenuItemProps[]) => {
 
 export default memo(function GetStarted() {
   const routerContext = useContext(RouterContext);
-  const [docUrl, setDocUrl] = useState<string | null>(null);
+  const [docUrl, setDocUrl] = useState<string>('/docs');
 
   useEffect(() => {
     const menuItems = routerContext?.menuItems;
@@ -30,7 +30,7 @@ export default memo(function GetStarted() {
   }, [routerContext]);
 
   return (
-    <Link href={docUrl || '/docs'} className="text-xl no-underline opacity-60 transition-all hover:underline">
+    <Link href={docUrl} className="text-xl no-underline opacity-60 transition-all hover:underline">
       Get started
     </Link>
   );

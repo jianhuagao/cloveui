@@ -87,8 +87,10 @@ export default memo(function ComponentPrev({ componentData, componentContainer }
   return (
     <div key={componentData.id} id={componentData.id}>
       <div className="flex flex-wrap items-end">
-        <Link className="no-underline" href={`${pathname}#${componentData.id}`}>
-          <h3>{componentData.title}</h3>
+        <Link className="relative no-underline" href={`${pathname}#${componentData.id}`}>
+          <h3 className="before:absolute before:-left-4 before:text-[#a5b4fc] hover:before:content-['#']">
+            {componentData.title}
+          </h3>
         </Link>
         <div className="not-prose mb-3 ml-auto flex items-center gap-2 pr-2">
           {showCode && (
