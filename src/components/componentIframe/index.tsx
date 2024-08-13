@@ -23,7 +23,7 @@ export default function ComponentsIframe({
       className="mt-3 rounded-md"
     >
       <iframe
-        className={`w-full rounded-md bg-[#f8f8f9] dark:bg-[#242427] ${previewHeight}`}
+        className={`w-full rounded-md bg-[#f8f8f9] transition-[background-color] dark:bg-[#242427] ${previewHeight}`}
         loading="lazy"
         srcDoc={componentHtml}
         title={`${componentTitle} Component`}

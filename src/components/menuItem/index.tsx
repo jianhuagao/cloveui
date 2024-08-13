@@ -6,7 +6,7 @@ import Link from 'next/link';
 import clsx from 'clsx';
 import React from 'react';
 
-const hoverClass = 'hover:bg-white hover:dark:bg-[#18181b] rounded-lg cursor-pointer select-none';
+const hoverClass = 'hover:bg-white hover:dark:bg-[#18181b] rounded-lg cursor-pointer select-none transition-[background-color]';
 const activeClass = 'bg-white dark:bg-[#18181b]'; // 高亮样式
 
 interface MenuItemProps {

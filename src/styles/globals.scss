@@ -20,7 +20,7 @@
 }
 
   body {
-    @apply text-black bg-white dark:text-white dark:bg-[#09090b]
+    @apply text-black bg-white dark:text-white dark:bg-[#09090b] transition-[background-color];
   }
 }
 
