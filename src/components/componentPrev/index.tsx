@@ -58,7 +58,10 @@ export default memo(function ComponentPrev({ componentData, componentContainer }
   const { compName } = useParams();
   const refIframe = useRef(null);
   const { previewInner, previewHeight } = componentContainer;
+
+  const wrapper = componentData.wrapper || previewHeight;
   const trueComponentContainer = componentData.container || previewInner;
+
   const [previewData, setPreviewData] = useState<FetchHtmlReturn | null>(null);
 
   const [showCode, setShowCode] = useState(false);
@@ -139,7 +142,7 @@ export default memo(function ComponentPrev({ componentData, componentContainer }
           componentHtml={previewData?.transformedHtml || ''}
           componentTitle={componentData.title}
           refIframe={refIframe}
-          previewHeight={previewHeight}
+          previewHeight={wrapper}
         />
         <ComponentCodePrev codeType={codeType} componentCode={previewCode} show={showCode} />
       </ResizeBlock>

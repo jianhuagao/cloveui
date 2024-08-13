@@ -15,8 +15,6 @@ export default function ComponentsIframe({
   previewHeight = 'h-[400px] lg:h-[600px]',
   refIframe
 }: ComponentIframeProps) {
-  const iframeTheme = 'bg-[#f8f8f9] dark:bg-[#242427]';
-
   return (
     <div
       {...(!show && {
@@ -25,7 +23,7 @@ export default function ComponentsIframe({
       className="mt-3 rounded-md"
     >
       <iframe
-        className={`w-full rounded-md ${iframeTheme} ${previewHeight}`}
+        className={`w-full rounded-md bg-[#f8f8f9] dark:bg-[#242427] ${previewHeight}`}
         loading="lazy"
         srcDoc={componentHtml}
         title={`${componentTitle} Component`}
