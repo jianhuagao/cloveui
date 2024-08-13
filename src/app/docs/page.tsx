@@ -1,10 +1,12 @@
 import { memo } from 'react';
 
-export default memo(function Docs() {
+const Docs = () => {
   return (
     <div>
       <h2>Docs</h2>
       <p>👈</p>
     </div>
   );
-});
+};
+
+export default memo(Docs);

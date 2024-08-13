@@ -1,3 +1,4 @@
+import GetStarted from '@/components/getStarted';
 import LayoutContent from '@/components/layoutContent';
 import Link from 'next/link';
 
@@ -11,9 +12,7 @@ export default function Home() {
             Free open source <span className="cursor-pointer transition-all hover:text-[#38bdf8]">TailwindCSS</span> component
             library
           </h1>
-          <Link href="/docs" className="text-xl no-underline opacity-60">
-            Get started
-          </Link>
+          <GetStarted />
         </div>
       </LayoutContent>
     </main>
