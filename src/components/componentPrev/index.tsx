@@ -9,6 +9,7 @@ import ResizeBlock from '../resizeBlock';
 import ComponentsIframe from '../componentIframe';
 import ComponentCodePrev from '../componentCodePrev';
 import clsx from 'clsx';
+import CreatedBy from '../createdBy';
 
 interface ComponentPrevProps {
   componentData: ComponentData;
@@ -131,7 +132,7 @@ export default memo(function ComponentPrev({ componentData, componentContainer }
           />
         </div>
       </div>
-
+      {componentData.creator && <CreatedBy creatorGithub={componentData.creator} />}
       <ResizeBlock>
         <ComponentsIframe
           show={!showCode}

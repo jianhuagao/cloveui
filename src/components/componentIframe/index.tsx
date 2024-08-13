@@ -22,7 +22,7 @@ export default function ComponentsIframe({
       {...(!show && {
         hidden: true
       })}
-      className="rounded-md"
+      className="mt-3 rounded-md"
     >
       <iframe
         className={`w-full rounded-md ${iframeTheme} ${previewHeight}`}
