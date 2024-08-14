@@ -22,7 +22,7 @@ export default function ComponentsIframe({
       })}
       className="relative mt-3 rounded-md"
     >
-      <div className="pointer-events-none absolute inset-[35%] hidden rounded-full bg-white/20 blur-2xl dark:block"></div>
+      <div className="pointer-events-none absolute inset-[35%] hidden rounded-full bg-white/15 blur-2xl dark:block"></div>
       <iframe
         className={`w-full rounded-md bg-[#f8f8f9] transition-[background-color] dark:bg-[#242427] ${wrapper}`}
         loading="lazy"
