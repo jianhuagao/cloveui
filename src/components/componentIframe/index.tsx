@@ -4,7 +4,7 @@ interface ComponentIframeProps {
   show: boolean;
   componentHtml: string;
   componentTitle: string;
-  previewHeight?: string;
+  wrapper?: string;
   refIframe: LegacyRef<HTMLIFrameElement>;
 }
 
@@ -12,7 +12,7 @@ export default function ComponentsIframe({
   show,
   componentHtml,
   componentTitle,
-  previewHeight = 'h-[400px] lg:h-[600px]',
+  wrapper = 'h-[400px] lg:h-[600px]',
   refIframe
 }: ComponentIframeProps) {
   return (
@@ -20,10 +20,11 @@ export default function ComponentsIframe({
       {...(!show && {
         hidden: true
       })}
-      className="mt-3 rounded-md"
+      className="relative mt-3 rounded-md"
     >
+      <div className="pointer-events-none absolute inset-[35%] hidden rounded-full bg-white/20 blur-2xl dark:block"></div>
       <iframe
-        className={`w-full rounded-md bg-[#f8f8f9] transition-[background-color] dark:bg-[#242427] ${previewHeight}`}
+        className={`w-full rounded-md bg-[#f8f8f9] transition-[background-color] dark:bg-[#242427] ${wrapper}`}
         loading="lazy"
         srcDoc={componentHtml}
         title={`${componentTitle} Component`}

@@ -57,10 +57,9 @@ export default memo(function ComponentPrev({ componentData, componentContainer }
   const pathname = usePathname();
   const { compName } = useParams();
   const refIframe = useRef(null);
-  const { previewInner, previewHeight } = componentContainer;
+  const { wrapper: componentContainerWrapper } = componentContainer;
 
-  const wrapper = componentData.wrapper || previewHeight;
-  const trueComponentContainer = componentData.container || previewInner;
+  const wrapper = componentData.wrapper || componentContainerWrapper;
 
   const [previewData, setPreviewData] = useState<FetchHtmlReturn | null>(null);
 
@@ -74,11 +73,11 @@ export default memo(function ComponentPrev({ componentData, componentContainer }
 
   useEffect(() => {
     if (componentData.id) {
-      fetchHtml({ componentId: componentData.id, componentName: compName as string, trueComponentContainer }).then(res => {
+      fetchHtml({ componentId: componentData.id, componentName: compName as string }).then(res => {
         setPreviewData(res);
       });
     }
-  }, [componentData.id, compName, trueComponentContainer]);
+  }, [componentData.id, compName]);
 
   useEffect(() => {
     codeType === 'html' && setPreviewCode(previewData?.textResponse || '');
@@ -142,7 +141,7 @@ export default memo(function ComponentPrev({ componentData, componentContainer }
           componentHtml={previewData?.transformedHtml || ''}
           componentTitle={componentData.title}
           refIframe={refIframe}
-          previewHeight={wrapper}
+          wrapper={wrapper}
         />
         <ComponentCodePrev codeType={codeType} componentCode={previewCode} show={showCode} />
       </ResizeBlock>

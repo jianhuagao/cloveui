@@ -7,8 +7,7 @@ import MdxRemoteRender from '@/components/mdxRemoteRender';
 import CollectionList from '@/components/collectionList';
 
 export interface ComponentContainer {
-  previewInner: string;
-  previewHeight: string;
+  wrapper: string;
 }
 
 export interface ComponentData {
@@ -16,7 +15,6 @@ export interface ComponentData {
   title: string;
   slug: string;
   category: string;
-  container: string;
   wrapper: string;
   creator: string;
   interactive: boolean;
@@ -36,7 +34,6 @@ interface CollectionData extends Record<string, unknown> {
   components: object;
   slug: string;
   category: string;
-  container: string;
   wrapper: string;
   creator: string;
   interactive: boolean;
@@ -76,8 +73,7 @@ export default memo(async function Page({ params }: { params: PageParams }) {
 
   const componentsData: ComponentsData = {
     componentContainer: {
-      previewInner: (collectionData.container as string) || '',
-      previewHeight: (collectionData.wrapper as string) || ''
+      wrapper: (collectionData.wrapper as string) || ''
     },
     componentsData: Object.entries(collectionData.components as object).map(([componentId, componentItem]) => {
       return {
@@ -85,7 +81,6 @@ export default memo(async function Page({ params }: { params: PageParams }) {
         title: componentItem.title,
         slug: collectionData.slug,
         category: collectionData.category,
-        container: componentItem.container || '',
         wrapper: componentItem.wrapper || '',
         creator: componentItem.creator || '',
         interactive: !!componentItem.interactive
