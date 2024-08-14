@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import { ThemeProvider } from '@/context/themeContext';
 import { join } from 'path';
 import { promises as fs } from 'fs';
 
@@ -9,6 +8,8 @@ import '@/styles/globals.scss';
 import 'prismjs/themes/prism-twilight.css';
 import BackgroundComponent from '@/components/backgroundComponent';
 import { RouterProvider } from '@/context/routerContext';
+import { ThemeProvider } from '@/context/themeContext';
+import { BackgroundProvider } from '@/context/backgroundContext';
 import { MenuItemProps } from '@/components/menu';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -27,10 +28,12 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <BackgroundComponent />
-        <ThemeProvider>
-          <RouterProvider menuItems={componentsByCategory}>{children}</RouterProvider>
-        </ThemeProvider>
+        <BackgroundProvider>
+          <BackgroundComponent />
+          <ThemeProvider>
+            <RouterProvider menuItems={componentsByCategory}>{children}</RouterProvider>
+          </ThemeProvider>
+        </BackgroundProvider>
       </body>
     </html>
   );

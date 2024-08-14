@@ -5,6 +5,11 @@
   --background1-end: #fad0c4;
   --background2-start: #a1c4fd;
   --background2-end: #c2e9fb;
+
+  --before-top: 10%;
+  --before-left: 10%;
+  --after-top: 10%;
+  --after-left: 90%;
 }
 
 .dark {
@@ -29,8 +34,8 @@
   position: absolute;
   width: 30%;
   height: 40%;
-  top: 10%;
-  left: 10%;
+  top: var(--before-top);
+  left: var(--before-left);
   background: radial-gradient(circle at center, var(--background1-start), var(--background1-end), transparent 70%);
   transform: translate(-50%, -50%);
   filter: blur(120px);
@@ -42,34 +47,11 @@
   position: absolute;
   width: 40%;
   height: 40%;
-  top: 10%;
-  left: 90%;
+  top: var(--after-top);
+  left: var(--after-left);
   background: radial-gradient(circle at center, var(--background2-start), var(--background2-end), transparent 70%);
   transform: translate(-50%, -50%);
   filter: blur(150px);
-}
-
-
-.main-background.homepage::before {
-  top: 10%;
-  left: 33%;
-  animation: move1 20s infinite alternate ease-in-out;
-}
-
-.main-background.homepage::after {
-  top: 15%;
-  left: 60%;
-  animation: move2 25s infinite alternate ease-in-out;
-}
-
-.main-background.otherpage::before {
-  top: 90%;
-  left: 0;
-}
-
-.main-background.otherpage::after {
-  top: 5%;
-  left: 95%;
 }
 
 /* 动画效果 */
@@ -77,15 +59,4 @@
 .main-background::after {
   // transition: all 0.5s ease;
   transition: top 0.5s ease, left 0.5s ease;
-}
-
-/* 定义动画效果 */
-@keyframes move1 {
-  0% { transform: translate(-50%, -50%) translateX(0) translateY(0); }
-  100% { transform: translate(-50%, -50%) translateX(50px) translateY(20px); } /* 增大移动范围 */
-}
-
-@keyframes move2 {
-  0% { transform: translate(-50%, -50%) translateX(0) translateY(0); }
-  100% { transform: translate(-50%, -50%) translateX(-50px) translateY(20px); } /* 增大移动范围 */
 }
