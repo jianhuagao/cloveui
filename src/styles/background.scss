@@ -60,3 +60,9 @@
   // transition: all 0.5s ease;
   transition: top 0.5s ease, left 0.5s ease;
 }
+
+.main-background::before,
+.main-background::after {
+  transform: translate3d(0, 0, 0);
+  will-change: transform,top, left;
+}
