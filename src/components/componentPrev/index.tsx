@@ -74,7 +74,6 @@ export default memo(function ComponentPrev({ componentData }: ComponentPrevProps
 
   useEffect(() => {
     if (componentData.id && ctx?.theme) {
-      console.log(componentData.id, ctx?.theme);
       fetchHtml({
         componentId: componentData.id,
         componentName: componentData.componentsName,
