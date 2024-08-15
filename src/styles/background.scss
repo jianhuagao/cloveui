@@ -27,42 +27,32 @@
   pointer-events: none;
 }
 
+// translate3d for safari gpu
+.main-background::before,
+.main-background::after {
+  content: "";
+  position: absolute;
+  transform: translate(-50%, -50%) translate3d(0, 0, 0);
+  will-change: transform,top, left;
+  transition: top 0.5s ease, left 0.5s ease;
+}
 
 /* first */
 .main-background::before {
-  content: "";
-  position: absolute;
   width: 30%;
   height: 40%;
   top: var(--before-top);
   left: var(--before-left);
   background: radial-gradient(circle at center, var(--background1-start), var(--background1-end), transparent 70%);
-  transform: translate(-50%, -50%);
   filter: blur(120px);
 }
 
 /* second */
 .main-background::after {
-  content: "";
-  position: absolute;
   width: 40%;
   height: 40%;
   top: var(--after-top);
   left: var(--after-left);
   background: radial-gradient(circle at center, var(--background2-start), var(--background2-end), transparent 70%);
-  transform: translate(-50%, -50%);
   filter: blur(150px);
-}
-
-/* 动画效果 */
-.main-background::before,
-.main-background::after {
-  // transition: all 0.5s ease;
-  transition: top 0.5s ease, left 0.5s ease;
-}
-
-.main-background::before,
-.main-background::after {
-  transform: translate3d(0, 0, 0);
-  will-change: transform,top, left;
 }
