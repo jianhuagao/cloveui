@@ -1,11 +1,11 @@
 export function componentPreviewHtml(
   componentHtml: string,
-  componentContainer: string = "relative",
+  innerWrapper: string = 'relative',
   isDarkMode: boolean = false,
   isRtl: boolean = false
 ): string {
-  const htmlClass = isDarkMode ? "dark" : "relative";
-  const htmlDirection = isRtl ? "rtl" : "ltr";
+  const htmlClass = isDarkMode ? 'dark' : 'relative';
+  const htmlDirection = isRtl ? 'rtl' : 'ltr';
 
   return `
     <html class="${htmlClass}" dir="${htmlDirection}">
@@ -33,7 +33,7 @@ export function componentPreviewHtml(
 
         <script>
           tailwind.config = {
-            darkMode: 'class',
+            darkMode: 'selector',
             safelist: ['keen-slider', 'keen-slider__slide'],
             theme: {
               extend: {
@@ -55,7 +55,7 @@ export function componentPreviewHtml(
         </script>
       </head>
 
-      <body class="${componentContainer} font-sans antialiased">
+      <body class="${innerWrapper} font-sans antialiased">
         ${componentHtml}
       </body>
     </html>
@@ -64,46 +64,42 @@ export function componentPreviewHtml(
 
 export function componentPreviewJsx(componentHtml: string): string {
   return componentHtml
-    .replace(/class=/g, "className=")
-    .replace(/for=/g, "htmlFor=")
-    .replace(/viewBox=/g, "viewBox=")
-    .replace(/fill-rule=/g, "fillRule=")
-    .replace(/fill-opacity=/g, "fillOpacity=")
-    .replace(/clip-rule=/g, "clipRule=")
-    .replace(/stroke-linecap=/g, "strokeLinecap=")
-    .replace(/stroke-linejoin=/g, "strokeLinejoin=")
-    .replace(/stroke-width=/g, "strokeWidth=")
-    .replace(/stroke-dasharray=/g, "strokeDasharray=")
-    .replace(/stroke-dashoffset=/g, "strokeDashoffset=")
-    .replace(/stroke-miterlimit=/g, "strokeMiterlimit=")
-    .replace(/stroke-opacity=/g, "strokeOpacity=")
-    .replace(/tabindex=/g, "tabIndex=")
-    .replace(/<!--/g, "{/*")
-    .replace(/-->/g, "*/}");
+    .replace(/class=/g, 'className=')
+    .replace(/for=/g, 'htmlFor=')
+    .replace(/viewBox=/g, 'viewBox=')
+    .replace(/fill-rule=/g, 'fillRule=')
+    .replace(/fill-opacity=/g, 'fillOpacity=')
+    .replace(/clip-rule=/g, 'clipRule=')
+    .replace(/stroke-linecap=/g, 'strokeLinecap=')
+    .replace(/stroke-linejoin=/g, 'strokeLinejoin=')
+    .replace(/stroke-width=/g, 'strokeWidth=')
+    .replace(/stroke-dasharray=/g, 'strokeDasharray=')
+    .replace(/stroke-dashoffset=/g, 'strokeDashoffset=')
+    .replace(/stroke-miterlimit=/g, 'strokeMiterlimit=')
+    .replace(/stroke-opacity=/g, 'strokeOpacity=')
+    .replace(/tabindex=/g, 'tabIndex=')
+    .replace(/<!--/g, '{/*')
+    .replace(/-->/g, '*/}');
 }
 
 export function componentPreviewVue(componentHtml: string): string {
   const newComponentHtml = `<template>\n${componentHtml}</template>`;
   const formattedComponentHtml = newComponentHtml
-    .split("\n")
-    .map((codeLine) => {
-      if (codeLine.includes("<template>") || codeLine.includes("</template>")) {
+    .split('\n')
+    .map(codeLine => {
+      if (codeLine.includes('<template>') || codeLine.includes('</template>')) {
         return codeLine.trim();
       }
 
       return `  ${codeLine}`;
     })
-    .join("\n");
+    .join('\n');
 
   return formattedComponentHtml;
 }
 
-export function blogPreviewHtml(
-  componentHtml: string,
-  componentContainer: string = "relative",
-  isDarkMode: boolean = false
-): string {
-  const htmlClass = isDarkMode ? "dark" : "relative";
+export function blogPreviewHtml(componentHtml: string, innerWrapper: string = 'relative', isDarkMode: boolean = false): string {
+  const htmlClass = isDarkMode ? 'dark' : 'relative';
 
   return `
     <html class="${htmlClass}">
@@ -131,7 +127,7 @@ export function blogPreviewHtml(
 
         <script>
           tailwind.config = {
-            darkMode: 'class',
+            darkMode: 'selector',
             theme: {
               extend: {
                 fontFamily: {
@@ -157,7 +153,7 @@ export function blogPreviewHtml(
         </script>
       </head>
 
-      <body class="${componentContainer} font-sans antialiased">
+      <body class="${innerWrapper} font-sans antialiased">
         ${componentHtml}
       </body>
     </html>

@@ -6,38 +6,22 @@ import { serialize } from 'next-mdx-remote/serialize';
 import MdxRemoteRender from '@/components/mdxRemoteRender';
 import CollectionList from '@/components/collectionList';
 
-export interface ComponentContainer {
-  wrapper: string;
-}
-
-export interface ComponentData {
-  id: string;
-  title: string;
-  slug: string;
-  category: string;
-  wrapper: string;
-  creator: string;
-  interactive: boolean;
-}
-
-interface ComponentsData {
-  componentContainer: ComponentContainer;
-  componentsData: ComponentData[];
-}
-
 interface PageParams {
   compType: string;
   compName: string;
 }
 
-interface CollectionData extends Record<string, unknown> {
-  components: object;
+export interface ComponentData extends Record<string, unknown> {
+  id: string;
+  components?: object;
   slug: string;
   category: string;
   wrapper: string;
   creator: string;
   interactive: boolean;
+  innerWrapper?: string;
   title: string;
+  componentsName: string;
 }
 
 const mdxComponents = {
@@ -51,7 +35,7 @@ async function getCollection(params: PageParams) {
     const componentPath = join(componentsDirectory, params.compType, `${params.compName}.mdx`);
     const componentItem = await fs.readFile(componentPath, 'utf-8');
 
-    const mdxSource = await serialize<CollectionData, CollectionData>(componentItem, {
+    const mdxSource = await serialize<ComponentData, ComponentData>(componentItem, {
       parseFrontmatter: true
     });
 
@@ -71,10 +55,7 @@ export default memo(async function Page({ params }: { params: PageParams }) {
 
   const { collectionData, collectionContent } = await getCollection(params);
 
-  const componentsData: ComponentsData = {
-    componentContainer: {
-      wrapper: (collectionData.wrapper as string) || ''
-    },
+  const componentsData: { componentsData: ComponentData[] } = {
     componentsData: Object.entries(collectionData.components as object).map(([componentId, componentItem]) => {
       return {
         id: componentId,
@@ -83,7 +64,9 @@ export default memo(async function Page({ params }: { params: PageParams }) {
         category: collectionData.category,
         wrapper: componentItem.wrapper || '',
         creator: componentItem.creator || '',
-        interactive: !!componentItem.interactive
+        innerWrapper: componentItem.innerWrapper || '',
+        interactive: !!componentItem.interactive,
+        componentsName: collectionData.title
       };
     })
   };

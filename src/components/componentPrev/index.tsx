@@ -1,20 +1,16 @@
-import { memo, useCallback, useEffect, useRef, useState } from 'react';
+import { memo, useCallback, useContext, useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname, useParams } from 'next/navigation';
 import { componentPreviewHtml, componentPreviewJsx, componentPreviewVue } from '@/utils/transformers';
 
-import { ComponentContainer, ComponentData } from '@/app/docs/comp/[compType]/[compName]/page';
+import { ComponentData } from '@/app/docs/comp/[compType]/[compName]/page';
 import ResizeBlock from '../resizeBlock';
 import ComponentsIframe from '../componentIframe';
 import ComponentCodePrev from '../componentCodePrev';
 import clsx from 'clsx';
 import CreatedBy from '../createdBy';
-
-interface ComponentPrevProps {
-  componentData: ComponentData;
-  componentContainer: ComponentContainer;
-}
+import ThemeContext from '@/context/themeContext';
 
 interface FetchHtmlReturn {
   textResponse: string;
@@ -28,17 +24,19 @@ export type CodeType = 'html' | 'jsx' | 'vue';
 async function fetchHtml({
   componentId,
   componentName,
-  trueComponentContainer
+  innerWrapper,
+  isDark = false
 }: {
   componentId: string;
   componentName: string;
-  trueComponentContainer?: string;
+  innerWrapper?: string;
+  isDark?: boolean;
 }): Promise<FetchHtmlReturn> {
   const componentUrl = `/components/${componentName}/${componentId}.html`;
 
   const fetchResponse = await fetch(componentUrl);
   const textResponse = await fetchResponse.text();
-  const transformedHtml = componentPreviewHtml(textResponse, trueComponentContainer);
+  const transformedHtml = componentPreviewHtml(textResponse, innerWrapper, isDark);
   const transformedJsx = componentPreviewJsx(textResponse);
   const transformedVue = componentPreviewVue(textResponse);
 
@@ -53,13 +51,16 @@ async function fetchHtml({
 const iconClassNames = 'cursor-pointer rounded p-2 hover:bg-[#f8f8f9] dark:invert';
 const iconSelectClassNames = 'bg-black/10 shadow-inner';
 
-export default memo(function ComponentPrev({ componentData, componentContainer }: ComponentPrevProps) {
-  const pathname = usePathname();
-  const { compName } = useParams();
-  const refIframe = useRef(null);
-  const { wrapper: componentContainerWrapper } = componentContainer;
+interface ComponentPrevProps {
+  componentData: ComponentData;
+}
 
-  const wrapper = componentData.wrapper || componentContainerWrapper;
+export default memo(function ComponentPrev({ componentData }: ComponentPrevProps) {
+  const pathname = usePathname();
+  const refIframe = useRef(null);
+
+  const themeContext = useContext(ThemeContext);
+  const ctx = themeContext;
 
   const [previewData, setPreviewData] = useState<FetchHtmlReturn | null>(null);
 
@@ -72,12 +73,19 @@ export default memo(function ComponentPrev({ componentData, componentContainer }
   }, []);
 
   useEffect(() => {
-    if (componentData.id) {
-      fetchHtml({ componentId: componentData.id, componentName: compName as string }).then(res => {
+    if (componentData.id && ctx?.theme) {
+      console.log(componentData.id, ctx?.theme);
+      fetchHtml({
+        componentId: componentData.id,
+        componentName: componentData.componentsName,
+        innerWrapper: componentData.innerWrapper || '',
+        isDark: ctx?.theme === 'dark'
+      }).then(res => {
         setPreviewData(res);
       });
     }
-  }, [componentData.id, compName]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [componentData.id, ctx?.theme]);
 
   useEffect(() => {
     codeType === 'html' && setPreviewCode(previewData?.textResponse || '');
@@ -141,7 +149,7 @@ export default memo(function ComponentPrev({ componentData, componentContainer }
           componentHtml={previewData?.transformedHtml || ''}
           componentTitle={componentData.title}
           refIframe={refIframe}
-          wrapper={wrapper}
+          wrapper={componentData.wrapper}
         />
         <ComponentCodePrev codeType={codeType} componentCode={previewCode} show={showCode} />
       </ResizeBlock>

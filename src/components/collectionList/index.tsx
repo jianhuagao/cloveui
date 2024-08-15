@@ -2,17 +2,13 @@
 import { memo } from 'react';
 
 import ComponentPrev from '../componentPrev';
-import { ComponentContainer, ComponentData } from '@/app/docs/comp/[compType]/[compName]/page';
+import { ComponentData } from '@/app/docs/comp/[compType]/[compName]/page';
 
-interface CollectionListProps {
-  componentsData: ComponentData[];
-  componentContainer: ComponentContainer;
-}
-export default memo(function CollectionList({ componentsData, componentContainer }: CollectionListProps) {
+export default memo(function CollectionList({ componentsData }: { componentsData: ComponentData[] }) {
   return (
     <div>
       {componentsData.map(componentData => (
-        <ComponentPrev key={componentData.id} componentData={componentData} componentContainer={componentContainer} />
+        <ComponentPrev key={componentData.id} componentData={componentData} />
       ))}
     </div>
   );

@@ -2,7 +2,6 @@
 title: Button
 emoji: 📣
 category: baseComponents
-wrapper: h-[600px] mx-auto
 seo:
   title: Button Components
   description: Button components created with Tailwind CSS
@@ -10,14 +9,17 @@ components:
   1:
     title: Button
     wrapper: h-40
+    innerWrapper: flex h-40 items-center justify-center gap-5
   2:
     title: OutlineButton
     wrapper: h-40
+    innerWrapper: flex h-40 items-center justify-center gap-5
   3:
     title: TextButton
     wrapper: h-40
+    innerWrapper: flex h-40 items-center justify-center gap-5
 ---
 
 # Button Components
 
-<CollectionList componentsData={componentsData} componentContainer={componentContainer} />
+<CollectionList componentsData={componentsData} />
