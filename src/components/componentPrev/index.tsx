@@ -51,6 +51,8 @@ async function fetchHtml({
 const iconClassNames = 'cursor-pointer rounded p-2 hover:bg-[#f8f8f9] dark:invert';
 const iconSelectClassNames = 'bg-black/10 shadow-inner';
 
+const lowercaseFirstLetter = (str: string) => str.charAt(0).toLowerCase() + str.slice(1);
+
 interface ComponentPrevProps {
   componentData: ComponentData;
 }
@@ -76,7 +78,7 @@ export default memo(function ComponentPrev({ componentData }: ComponentPrevProps
     if (componentData.id && ctx?.theme) {
       fetchHtml({
         componentId: componentData.id,
-        componentName: componentData.componentsName,
+        componentName: lowercaseFirstLetter(componentData.componentsName),
         innerWrapper: componentData.innerWrapper || '',
         isDark: ctx?.theme === 'dark'
       }).then(res => {
