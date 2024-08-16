@@ -60,6 +60,7 @@ interface ComponentPrevProps {
 export default memo(function ComponentPrev({ componentData }: ComponentPrevProps) {
   const pathname = usePathname();
   const refIframe = useRef(null);
+  const [loading, setLoading] = useState(false);
 
   const themeContext = useContext(ThemeContext);
   const ctx = themeContext;
@@ -76,6 +77,7 @@ export default memo(function ComponentPrev({ componentData }: ComponentPrevProps
 
   useEffect(() => {
     if (componentData.id && ctx?.theme) {
+      setLoading(true);
       fetchHtml({
         componentId: componentData.id,
         componentName: lowercaseFirstLetter(componentData.componentsName),
@@ -83,6 +85,7 @@ export default memo(function ComponentPrev({ componentData }: ComponentPrevProps
         isDark: ctx?.theme === 'dark'
       }).then(res => {
         setPreviewData(res);
+        setLoading(false);
       });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -146,6 +149,7 @@ export default memo(function ComponentPrev({ componentData }: ComponentPrevProps
       {componentData.creator && <CreatedBy creatorGithub={componentData.creator} />}
       <ResizeBlock>
         <ComponentsIframe
+          loading={loading}
           show={!showCode}
           componentHtml={previewData?.transformedHtml || ''}
           componentTitle={componentData.title}
