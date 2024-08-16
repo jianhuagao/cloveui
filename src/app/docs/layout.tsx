@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description: 'A Tailwind CSS component library'
 };
 
-const hoverClass = 'hover:bg-white hover:dark:bg-[#18181b] rounded-lg cursor-pointer select-none';
+const hoverClass = 'hover:bg-white/40 hover:dark:bg-[#18181b]/40 rounded-lg cursor-pointer select-none';
 const miniText = 'text-xs/6 font-medium text-zinc-500 dark:text-zinc-400';
 
 export default function DocLayout({

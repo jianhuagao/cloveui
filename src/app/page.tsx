@@ -1,7 +1,6 @@
 import ChangeBg from '@/components/changeBg';
 import GetStarted from '@/components/getStarted';
 import LayoutContent from '@/components/layoutContent';
-import Link from 'next/link';
 
 export default function Home() {
   return (
