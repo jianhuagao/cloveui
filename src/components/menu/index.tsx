@@ -2,9 +2,10 @@
 import { memo, useContext } from 'react';
 import clsx from 'clsx';
 import React from 'react';
-import MenuItem from '../menuItem';
+import MenuItem, { BlogMenuItem } from '../menuItem';
 import RouterContext from '@/context/routerContext';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const miniText = 'text-xs/6 font-medium text-zinc-500 dark:text-zinc-400';
 
@@ -34,14 +35,14 @@ export default memo(function Menu() {
       </div>
       <div className="flex-shrink-0 p-5 pb-0">
         <div className="flex flex-col gap-1 border-t border-zinc-950/5 pt-4 transition-all dark:border-white/5">
-          <div className="flex cursor-pointer items-center gap-2 rounded-lg px-0 py-2 ring-1 ring-transparent backdrop-blur transition-all hover:bg-white/60 hover:px-3 dark:hover:bg-black/20 dark:hover:ring-white/5">
+          <BlogMenuItem>
             <Image src="/icons/book.svg" alt="book" className="dark:invert" width={16} height={16} priority />
             Blog
-          </div>
+          </BlogMenuItem>
           <ul className="list-disc text-xs opacity-80">
-            {[1, 2, 3, 4].map(s => (
+            {[1, 2].map(s => (
               <li key={s} className="cursor-pointer select-none truncate py-2 transition-all hover:scale-105 active:scale-100">
-                [08-16] The blog is currently being written.
+                <Link href={`/docs/blog/${s}`}>[08-16] The blog is currently being written.</Link>
               </li>
             ))}
           </ul>
