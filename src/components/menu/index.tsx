@@ -39,10 +39,13 @@ export default memo(function Menu() {
             <Image src="/icons/book.svg" alt="book" className="dark:invert" width={16} height={16} priority />
             Blog
           </BlogMenuItem>
-          <ul className="list-disc text-xs opacity-80">
+          <ul className="list-none text-xs opacity-80">
             {[1, 2].map(s => (
-              <li key={s} className="cursor-pointer select-none truncate transition-all hover:scale-105 active:scale-100">
-                <Link href={`/docs/blog/${s}`} className="py-2">
+              <li key={s}>
+                <Link
+                  href={`/docs/blog/${s}`}
+                  className="block cursor-pointer select-none truncate py-2 transition-all hover:scale-105 active:scale-100"
+                >
                   [08-16] The blog is currently being written.
                 </Link>
               </li>
