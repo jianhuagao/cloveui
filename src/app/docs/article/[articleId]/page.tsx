@@ -1,15 +1,15 @@
 import { memo } from 'react';
 
 interface PageParams {
-  blogId: string;
+  articleId: string;
 }
 
 export default memo(async function Page({ params }: { params: PageParams }) {
-  const { blogId } = params;
+  const { articleId } = params;
 
   return (
     <div>
-      <h2>{blogId} .Building</h2>
+      <h2>{articleId} .Building</h2>
     </div>
   );
 });

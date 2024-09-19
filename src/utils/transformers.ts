@@ -98,7 +98,11 @@ export function componentPreviewVue(componentHtml: string): string {
   return formattedComponentHtml;
 }
 
-export function blogPreviewHtml(componentHtml: string, innerWrapper: string = 'relative', isDarkMode: boolean = false): string {
+export function articlePreviewHtml(
+  componentHtml: string,
+  innerWrapper: string = 'relative',
+  isDarkMode: boolean = false
+): string {
   const htmlClass = isDarkMode ? 'dark' : 'relative';
 
   return `

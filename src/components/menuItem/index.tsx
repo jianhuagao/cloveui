@@ -34,18 +34,18 @@ const MenuItem: React.FC<MenuItemProps> = ({ title, slug }) => {
 
 export default MenuItem;
 
-const blogMenuItemPubClass =
+const articleMenuItemPubClass =
   'flex cursor-pointer items-center gap-2 rounded-lg px-0 py-2 ring-1 ring-transparent backdrop-blur transition-all';
-const blogMenuItemHoverClass = 'hover:bg-white/60 hover:px-3 dark:hover:bg-black/20 dark:hover:ring-white/5';
-const blogMenuItemActiveClass = 'bg-white/60 px-3 dark:bg-black/20 dark:ring-white/5';
-export const BlogMenuItem = ({ children }: { children: React.ReactNode }) => {
+const articleMenuItemHoverClass = 'hover:bg-white/60 hover:px-3 dark:hover:bg-black/20 dark:hover:ring-white/5';
+const articleMenuItemActiveClass = 'bg-white/60 px-3 dark:bg-black/20 dark:ring-white/5';
+export const ArticleMenuItem = ({ children }: { children: React.ReactNode }) => {
   const pathname = usePathname();
-  const isActive = pathname.indexOf('/docs/blog/') !== -1;
+  const isActive = pathname.indexOf('/docs/article/') !== -1;
 
   return (
     <Link
-      href="/docs/blog/directory"
-      className={clsx(blogMenuItemPubClass, blogMenuItemHoverClass, { [blogMenuItemActiveClass]: isActive })}
+      href="/docs/article/directory"
+      className={clsx(articleMenuItemPubClass, articleMenuItemHoverClass, { [articleMenuItemActiveClass]: isActive })}
     >
       {children}
     </Link>
