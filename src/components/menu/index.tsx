@@ -41,8 +41,10 @@ export default memo(function Menu() {
           </BlogMenuItem>
           <ul className="list-disc text-xs opacity-80">
             {[1, 2].map(s => (
-              <li key={s} className="cursor-pointer select-none truncate py-2 transition-all hover:scale-105 active:scale-100">
-                <Link href={`/docs/blog/${s}`}>[08-16] The blog is currently being written.</Link>
+              <li key={s} className="cursor-pointer select-none truncate transition-all hover:scale-105 active:scale-100">
+                <Link href={`/docs/blog/${s}`} className="py-2">
+                  [08-16] The blog is currently being written.
+                </Link>
               </li>
             ))}
           </ul>
