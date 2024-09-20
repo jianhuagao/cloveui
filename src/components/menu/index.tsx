@@ -1,11 +1,10 @@
-'use client';
-import { memo, useContext } from 'react';
+import { memo } from 'react';
 import clsx from 'clsx';
 import React from 'react';
 import MenuItem, { ArticleMenuItem } from '../menuItem';
-import RouterContext from '@/context/routerContext';
 import Image from 'next/image';
 import Link from 'next/link';
+import { ArticleDicMdxProps, getArticlesDic, getComponents } from '@/service/dataService';
 
 const miniText = 'text-xs/6 font-medium text-zinc-500 dark:text-zinc-400';
 
@@ -15,12 +14,15 @@ export interface MenuItemProps {
   children?: MenuItemProps[];
 }
 
-export default memo(function Menu() {
-  const routerContext = useContext(RouterContext);
+export default memo(async function Menu() {
+  const componentsByCategory = await getComponents();
+
+  const { articles }: ArticleDicMdxProps = await getArticlesDic();
+
   return (
     <div className="flex grow flex-col overflow-hidden">
       <div className="flex flex-shrink grow flex-col gap-1 overflow-auto p-4">
-        {routerContext?.menuItems?.map(type => {
+        {componentsByCategory?.map(type => {
           const itemsTitle = <div className={clsx('px-3 pt-2 first:pt-0', miniText)}>{type.title}</div>;
           const items = type.children?.map(c => {
             return <MenuItem slug={c.slug} title={c.title} key={c.slug} />;
@@ -40,13 +42,13 @@ export default memo(function Menu() {
             Article
           </ArticleMenuItem>
           <ul className="list-none text-xs opacity-80">
-            {[1, 2].map(s => (
-              <li key={s}>
+            {Object.values(articles)?.map(s => (
+              <li key={s.articleId}>
                 <Link
-                  href={`/docs/article/${s}`}
+                  href={`/docs/article/${s.articleId}`}
                   className="block cursor-pointer select-none truncate py-2 transition-all hover:scale-105 active:scale-100"
                 >
-                  [08-16] The article is currently being written.
+                  [{s.pubDate.replace(/^(\d{4})-(\d{2}-\d{2})$/, '$2')}] {s.artTitle}
                 </Link>
               </li>
             ))}

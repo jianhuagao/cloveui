@@ -6,31 +6,32 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "clean": "pnpm -s dlx rimraf -g **/node_modules **/pnpm-lock.yaml"
   },
   "dependencies": {
     "clsx": "^2.1.1",
-    "next": "14.2.5",
-    "react": "^18",
-    "react-dom": "^18"
+    "next": "14.2.13",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@tailwindcss/forms": "^0.5.7",
-    "@tailwindcss/typography": "^0.5.14",
-    "@types/node": "^20",
+    "@tailwindcss/forms": "^0.5.9",
+    "@tailwindcss/typography": "^0.5.15",
+    "@types/node": "^22.5.5",
     "@types/prismjs": "^1.26.4",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.5",
+    "@types/react": "^18.3.8",
+    "@types/react-dom": "^18.3.0",
+    "eslint": "^9.10.0",
+    "eslint-config-next": "14.2.13",
     "highlight.js": "^11.10.0",
     "next-mdx-remote": "^5.0.0",
-    "postcss": "^8",
+    "postcss": "^8.4.47",
     "prettier": "^3.3.3",
-    "prettier-plugin-tailwindcss": "^0.6.5",
+    "prettier-plugin-tailwindcss": "^0.6.6",
     "prismjs": "^1.29.0",
-    "sass": "^1.77.8",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "sass": "^1.79.2",
+    "tailwindcss": "^3.4.12",
+    "typescript": "^5.6.2"
   }
 }
