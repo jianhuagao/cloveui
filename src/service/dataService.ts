@@ -2,30 +2,35 @@ import { MenuItemProps } from '@/components/menu';
 import { join } from 'path';
 import { promises as fs } from 'fs';
 import { serialize } from 'next-mdx-remote/serialize';
+import { notFound } from 'next/navigation';
 
 export async function getComponents() {
-  let menuItems: MenuItemProps[] = [];
+  try {
+    let menuItems: MenuItemProps[] = [];
 
-  const componentsTypePath = join(process.cwd(), '/src/data/components');
-  const componentsTypeSlugs = await fs.readdir(componentsTypePath);
+    const componentsTypePath = join(process.cwd(), '/src/data/components');
+    const componentsTypeSlugs = await fs.readdir(componentsTypePath);
 
-  for (const componentsTypeSlug of componentsTypeSlugs) {
-    const menuNewItem: MenuItemProps = { title: componentsTypeSlug, slug: componentsTypeSlug };
+    for (const componentsTypeSlug of componentsTypeSlugs) {
+      const menuNewItem: MenuItemProps = { title: componentsTypeSlug, slug: componentsTypeSlug };
 
-    const typeMainPath = join(componentsTypePath, componentsTypeSlug);
+      const typeMainPath = join(componentsTypePath, componentsTypeSlug);
 
-    const typeUiArr = await fs.readdir(typeMainPath);
+      const typeUiArr = await fs.readdir(typeMainPath);
 
-    const childrenPromises = typeUiArr.map(async typeUiSlug => {
-      const typeUiName = typeUiSlug.replace('.mdx', '');
-      return { title: typeUiName, slug: `${componentsTypeSlug}/${typeUiName}` };
-    });
+      const childrenPromises = typeUiArr.map(async typeUiSlug => {
+        const typeUiName = typeUiSlug.replace('.mdx', '');
+        return { title: typeUiName, slug: `${componentsTypeSlug}/${typeUiName}` };
+      });
 
-    const children = await Promise.all(childrenPromises);
-    menuNewItem.children = children;
-    menuItems.push(menuNewItem);
+      const children = await Promise.all(childrenPromises);
+      menuNewItem.children = children;
+      menuItems.push(menuNewItem);
+    }
+    return menuItems;
+  } catch {
+    notFound();
   }
-  return menuItems;
 }
 
 export interface ArticleDicProps {
@@ -45,23 +50,31 @@ export interface ArticleDicMdxProps {
 }
 
 export async function getArticlesDic() {
-  const directoryDicPath = join(process.cwd(), '/src/data/articles/directory.mdx');
+  try {
+    const directoryDicPath = join(process.cwd(), '/src/data/articles/directory.mdx');
 
-  const componentItem = await fs.readFile(directoryDicPath, 'utf-8');
+    const componentItem = await fs.readFile(directoryDicPath, 'utf-8');
 
-  const mdxSource = await serialize<ArticleDicMdxProps, ArticleDicMdxProps>(componentItem, {
-    parseFrontmatter: true
-  });
-  return mdxSource.frontmatter;
+    const mdxSource = await serialize<ArticleDicMdxProps, ArticleDicMdxProps>(componentItem, {
+      parseFrontmatter: true
+    });
+    return mdxSource.frontmatter;
+  } catch {
+    notFound();
+  }
 }
 
 export async function getArticles(id: number) {
-  const directoryDicPath = join(process.cwd(), `/src/data/articles/${id}.mdx`);
+  try {
+    const directoryDicPath = join(process.cwd(), `/src/data/articles/${id}.mdx`);
 
-  const componentItem = await fs.readFile(directoryDicPath, 'utf-8');
+    const componentItem = await fs.readFile(directoryDicPath, 'utf-8');
 
-  const mdxSource = await serialize<ArticleDicMdxProps, ArticleDicMdxProps>(componentItem, {
-    parseFrontmatter: true
-  });
-  return mdxSource.frontmatter;
+    const mdxSource = await serialize<ArticleDicMdxProps, ArticleDicMdxProps>(componentItem, {
+      parseFrontmatter: true
+    });
+    return mdxSource.frontmatter;
+  } catch {
+    notFound();
+  }
 }

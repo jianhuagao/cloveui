@@ -8,7 +8,7 @@ interface PageParams {
 export default memo(async function Page({ params }: { params: PageParams }) {
   const { articleId } = params;
 
-  const articles = getArticles(Number(articleId));
+  const articles = await getArticles(Number(articleId));
   return (
     <div>
       <h2>{articleId} .Building</h2>
