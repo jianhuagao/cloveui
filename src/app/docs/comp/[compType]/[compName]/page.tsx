@@ -5,50 +5,16 @@ import { promises as fs } from 'fs';
 import { serialize } from 'next-mdx-remote/serialize';
 import MdxRemoteRender from '@/components/mdxRemoteRender';
 import CollectionList from '@/components/collectionList';
+import { ComponentData, getCollection } from '@/service/dataService';
 
 interface PageParams {
   compType: string;
   compName: string;
 }
 
-export interface ComponentData extends Record<string, unknown> {
-  id: string;
-  components?: object;
-  slug: string;
-  category: string;
-  wrapper: string;
-  creator: string;
-  interactive: boolean;
-  innerWrapper?: string;
-  title: string;
-  componentsName: string;
-}
-
 const mdxComponents = {
   CollectionList
 };
-
-const componentsDirectory = join(process.cwd(), '/src/data/components');
-
-async function getCollection(params: PageParams) {
-  try {
-    const componentPath = join(componentsDirectory, params.compType, `${params.compName}.mdx`);
-    const componentItem = await fs.readFile(componentPath, 'utf-8');
-
-    const mdxSource = await serialize<ComponentData, ComponentData>(componentItem, {
-      parseFrontmatter: true
-    });
-
-    return {
-      collectionData: {
-        ...mdxSource.frontmatter
-      },
-      collectionContent: mdxSource
-    };
-  } catch {
-    notFound();
-  }
-}
 
 export default memo(async function Page({ params }: { params: PageParams }) {
   // const { compType, compName } = params;

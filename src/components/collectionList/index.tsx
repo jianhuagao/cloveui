@@ -2,7 +2,7 @@
 import { memo } from 'react';
 
 import ComponentPrev from '../componentPrev';
-import { ComponentData } from '@/app/docs/comp/[compType]/[compName]/page';
+import { ComponentData } from '@/service/dataService';
 
 export default memo(function CollectionList({ componentsData }: { componentsData: ComponentData[] }) {
   return (

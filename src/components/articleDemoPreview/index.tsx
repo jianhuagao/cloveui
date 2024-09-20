@@ -1,29 +1,33 @@
+'use client';
+
 import { memo, useCallback, useContext, useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import ResizeBlock from '../resizeBlock';
 import ComponentsIframe from '../componentIframe';
 import ComponentCodePrev from '../componentCodePrev';
 import clsx from 'clsx';
-import CreatedBy from '../createdBy';
 import ThemeContext from '@/context/themeContext';
-import { ComponentData } from '@/service/dataService';
 import { fetchHtml, FetchHtmlReturn } from '@/service/clientDataService';
+import { CodeType } from '../componentPrev';
 
-export type CodeType = 'html' | 'jsx' | 'vue';
+interface ArticleDemoPreviewProps {
+  articleId: string;
+  demoId: string;
+  previewTitle: string;
+  innerWrapper?: string;
+  wrapper?: string;
+}
 
 const iconClassNames = 'cursor-pointer rounded p-2 hover:bg-[#f8f8f9] dark:invert';
 const iconSelectClassNames = 'bg-black/10 shadow-inner';
 
-const lowercaseFirstLetter = (str: string) => str.charAt(0).toLowerCase() + str.slice(1);
-
-interface ComponentPrevProps {
-  componentData: ComponentData;
-}
-
-export default memo(function ComponentPrev({ componentData }: ComponentPrevProps) {
-  const pathname = usePathname();
+export default memo(function ArticleDemoPreview({
+  articleId,
+  demoId,
+  previewTitle,
+  wrapper,
+  innerWrapper
+}: ArticleDemoPreviewProps) {
   const refIframe = useRef(null);
   const [loading, setLoading] = useState(false);
 
@@ -41,15 +45,13 @@ export default memo(function ComponentPrev({ componentData }: ComponentPrevProps
   }, []);
 
   useEffect(() => {
-    if (componentData.id && ctx?.theme) {
+    if (demoId && ctx?.theme) {
       setLoading(true);
-      const componentName = lowercaseFirstLetter(componentData.componentsName);
-      const componentId = componentData.id;
-      const componentUrl = `/components/${componentName}/${componentId}.html`;
+      const componentUrl = `/articleDemo/${articleId}/${demoId}.html`;
 
       fetchHtml({
         url: componentUrl,
-        innerWrapper: componentData.innerWrapper || '',
+        innerWrapper: innerWrapper,
         isDark: ctx?.theme === 'dark'
       }).then(res => {
         setPreviewData(res);
@@ -57,7 +59,7 @@ export default memo(function ComponentPrev({ componentData }: ComponentPrevProps
       });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [componentData.id, ctx?.theme]);
+  }, [articleId, ctx?.theme]);
 
   useEffect(() => {
     codeType === 'html' && setPreviewCode(previewData?.textResponse || '');
@@ -68,13 +70,9 @@ export default memo(function ComponentPrev({ componentData }: ComponentPrevProps
   }, [codeType, previewData]);
 
   return (
-    <div key={componentData.id} id={componentData.id}>
+    <div key={demoId} id={demoId}>
       <div className="flex flex-wrap items-end">
-        <Link className="relative no-underline" href={`${pathname}#${componentData.id}`}>
-          <h3 className="before:absolute before:-left-4 before:text-[#a5b4fc] hover:before:content-['#']">
-            {componentData.title}
-          </h3>
-        </Link>
+        <h4 className="before:absolute before:-left-4 before:text-[#a5b4fc] hover:before:content-['#']">{previewTitle}</h4>
         <div className="not-prose mb-3 ml-auto flex items-center gap-2 pr-2">
           {showCode && (
             <>
@@ -114,15 +112,14 @@ export default memo(function ComponentPrev({ componentData }: ComponentPrevProps
           />
         </div>
       </div>
-      {componentData.creator && <CreatedBy creatorGithub={componentData.creator} />}
       <ResizeBlock>
         <ComponentsIframe
           loading={loading}
           show={!showCode}
           componentHtml={previewData?.transformedHtml || ''}
-          componentTitle={componentData.title}
+          componentTitle={previewTitle}
           refIframe={refIframe}
-          wrapper={componentData.wrapper}
+          wrapper={wrapper}
         />
         <ComponentCodePrev codeType={codeType} componentCode={previewCode} show={showCode} />
       </ResizeBlock>

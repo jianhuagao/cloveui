@@ -1,0 +1,140 @@
+---
+title: Tailwindcss实现动态Loading
+description: 如何在Tailwindcss一行样式实现多样动态Loading.
+date: 2024/9/20
+---
+
+## 效果展示
+
+<ArticleDemoPreview
+  articleId="1"
+  demoId="demo1"
+  previewTitle="点状loading"
+  innerWrapper="flex h-40 items-center justify-center gap-10"
+  wrapper="h-40"
+/>
+
+<ArticleDemoPreview
+  articleId="1"
+  demoId="demo2"
+  previewTitle="圆形loading"
+  innerWrapper="flex h-40 items-center justify-center gap-10"
+  wrapper="h-40"
+/>
+
+## 实现原理
+
+tailwindcss 的 [Animation](https://tailwindcss.com/docs/animation) [官方定义：用于使用 CSS 动画对元素进行动画处理的实用程序]
+
+关键class：
+
+`animate-spin`
+
+```
+animation: spin 1s linear infinite;
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+```
+
+`animate-pulse`
+
+```
+animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}
+```
+
+`animate-bounce`
+
+```
+animation: bounce 1s infinite;
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+```
+
+### 如何自定义动画 ？
+
+默认情况下，Tailwind 为四个不同的示例动画提供实用程序，以及实用程序。您可以通过编辑或在文件中自定义这些值。
+
+```
+module.exports = {
+  theme: {
+    extend: {
++     animation: {
++       'spin-slow': 'spin 3s linear infinite',
++     }
+    }
+  }
+}
+```
+
+要添加新的动画 ，请使用主题配置的部分 `@keyframes` `keyframes`。
+
+```
+module.exports = {
+  theme: {
+    extend: {
++     keyframes: {
++       wiggle: {
++         '0%, 100%': { transform: 'rotate(-3deg)' },
++         '50%': { transform: 'rotate(3deg)' },
++       }
++     }
+    }
+  }
+}
+```
+
+然后，您可以在 theme configuration 的部分中按名称引用这些关键帧：`animation`
+
+```
+module.exports = {
+  theme: {
+    extend: {
++     animation: {
++       wiggle: 'wiggle 1s ease-in-out infinite',
++     }
+    }
+  }
+}
+```
+
+### 任意值自定义动画
+
+如果您需要使用没有意义包含在主题中的一次性值，请使用方括号使用任意值动态生成属性。
+
+```
+<div class="animate-[wiggle_1s_ease-in-out_infinite]">
+  <!-- ... -->
+</div>
+```
+
+---
+
+下面的组件可以看到具体效果:
+
+- [Loading dot](/docs/comp/baseComponents/loading#1)
+- [Loading circle](/docs/comp/baseComponents/loading#2)

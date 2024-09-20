@@ -4,6 +4,9 @@ import { promises as fs } from 'fs';
 import { serialize } from 'next-mdx-remote/serialize';
 import { notFound } from 'next/navigation';
 
+/**
+ * 获取组件目录
+ */
 export async function getComponents() {
   try {
     let menuItems: MenuItemProps[] = [];
@@ -33,6 +36,42 @@ export async function getComponents() {
   }
 }
 
+export interface ComponentData extends Record<string, unknown> {
+  id: string;
+  components?: object;
+  slug: string;
+  category: string;
+  wrapper: string;
+  creator: string;
+  interactive: boolean;
+  innerWrapper?: string;
+  title: string;
+  componentsName: string;
+}
+/**
+ * 通过当前组件页面路径获取组件
+ */
+export async function getCollection(params: { compType: string; compName: string }) {
+  try {
+    const componentsDirectory = join(process.cwd(), '/src/data/components');
+    const componentPath = join(componentsDirectory, params.compType, `${params.compName}.mdx`);
+    const componentItem = await fs.readFile(componentPath, 'utf-8');
+
+    const mdxSource = await serialize<ComponentData, ComponentData>(componentItem, {
+      parseFrontmatter: true
+    });
+
+    return {
+      collectionData: {
+        ...mdxSource.frontmatter
+      },
+      collectionContent: mdxSource
+    };
+  } catch {
+    notFound();
+  }
+}
+
 export interface ArticleDicProps {
   articleId: number;
   artTitle: string;
@@ -42,13 +81,14 @@ export interface ArticleDicProps {
   lastModDate: string;
   category: string;
 }
-
 export interface ArticleDicMdxProps {
   articles: {
     [key: string]: ArticleDicProps;
   };
 }
-
+/**
+ * 获取Articles目录信息
+ */
 export async function getArticlesDic() {
   try {
     const directoryDicPath = join(process.cwd(), '/src/data/articles/directory.mdx');
@@ -64,16 +104,28 @@ export async function getArticlesDic() {
   }
 }
 
+interface ArticleMdxProps extends Record<string, unknown> {
+  title: string;
+  description: string;
+  date: string;
+}
+/**
+ * 通过Articlesid获取Articles内容
+ */
 export async function getArticles(id: number) {
   try {
     const directoryDicPath = join(process.cwd(), `/src/data/articles/${id}.mdx`);
 
     const componentItem = await fs.readFile(directoryDicPath, 'utf-8');
 
-    const mdxSource = await serialize<ArticleDicMdxProps, ArticleDicMdxProps>(componentItem, {
+    const mdxSource = await serialize<ArticleMdxProps, ArticleMdxProps>(componentItem, {
       parseFrontmatter: true
     });
-    return mdxSource.frontmatter;
+
+    return {
+      data: mdxSource.frontmatter,
+      content: mdxSource
+    };
   } catch {
     notFound();
   }

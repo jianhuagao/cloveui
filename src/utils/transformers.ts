@@ -98,7 +98,7 @@ export function componentPreviewVue(componentHtml: string): string {
   return formattedComponentHtml;
 }
 
-export function articlePreviewHtml(
+export function ArticleDemoPreviewHtml(
   componentHtml: string,
   innerWrapper: string = 'relative',
   isDarkMode: boolean = false
