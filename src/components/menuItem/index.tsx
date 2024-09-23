@@ -8,7 +8,7 @@ import React from 'react';
 
 const pubClass = 'px-3 py-2 ring-1 ring-transparent transition-all active:scale-95';
 const hoverClass = 'hover:bg-white hover:dark:bg-[#18181b] rounded-lg hover:dark:ring-white/10 cursor-pointer select-none';
-const activeClass = 'bg-white dark:bg-[#18181b] dark:ring-white/10'; // 高亮样式
+const activeClass = 'bg-white text-violet-500 dark:bg-[#18181b] dark:ring-white/10'; // 高亮样式
 
 interface MenuItemProps {
   title: string;

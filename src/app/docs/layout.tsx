@@ -40,7 +40,7 @@ const LeftContent = memo(function LeftContent({ isFloat = false }: { isFloat?: b
     <>
       <div className="flex flex-shrink-0 items-center justify-between p-4">
         <Link href="/">
-          <div className={clsx('flex items-center p-3 hover:text-[#a5b4fc]', hoverClass)}>CloveUI</div>
+          <div className={clsx('flex items-center p-3 hover:text-violet-500', hoverClass)}>CloveUI</div>
         </Link>
         {!isFloat && <GithubIcon size={20} />}
       </div>
