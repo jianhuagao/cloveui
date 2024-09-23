@@ -47,6 +47,7 @@ export interface ComponentData extends Record<string, unknown> {
   innerWrapper?: string;
   title: string;
   componentsName: string;
+  articles?: string[];
 }
 /**
  * 通过当前组件页面路径获取组件
@@ -89,7 +90,7 @@ export interface ArticleDicMdxProps {
 /**
  * 获取Articles目录信息
  */
-export async function getArticlesDic() {
+export async function getArticlesDic(ids?: string[]) {
   try {
     const directoryDicPath = join(process.cwd(), '/src/data/articles/directory.mdx');
 
@@ -98,11 +99,26 @@ export async function getArticlesDic() {
     const mdxSource = await serialize<ArticleDicMdxProps, ArticleDicMdxProps>(componentItem, {
       parseFrontmatter: true
     });
+    if (ids && mdxSource) {
+      return filterArticlesByIds(ids, mdxSource.frontmatter);
+    }
     return mdxSource.frontmatter;
   } catch {
     notFound();
   }
 }
+
+const filterArticlesByIds = (input: string[], data: ArticleDicMdxProps): ArticleDicMdxProps => {
+  const filteredArticles: Record<string, ArticleDicProps> = {};
+
+  input.forEach(id => {
+    if (data.articles[id]) {
+      filteredArticles[id] = data.articles[id];
+    }
+  });
+
+  return { articles: filteredArticles };
+};
 
 interface ArticleMdxProps extends Record<string, unknown> {
   title: string;
