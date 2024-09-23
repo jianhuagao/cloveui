@@ -24,26 +24,13 @@ date: 2024/9/20
 
 ## 实现原理
 
-tailwindcss 的 [Animation](https://tailwindcss.com/docs/animation) [官方定义：用于使用 CSS 动画对元素进行动画处理的实用程序]
+通过 tailwindcss 的 [Animation](https://tailwindcss.com/docs/animation) [官方定义：用于使用 CSS 动画对元素进行动画处理的实用程序]
 
-关键class：
-
-`animate-spin`
-
-```
-animation: spin 1s linear infinite;
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-```
+首先我们来介绍两个关键className：
 
 `animate-pulse`
+
+他实际约等于下面的css样式
 
 ```
 animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
@@ -58,7 +45,17 @@ animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 ```
 
+<ArticleDemoPreview
+  articleId="1"
+  demoId="demo3"
+  previewTitle="`animate-pulse`可以通过透明度的变化使元素有忽隐忽现的闪烁效果，这种效果也常用于骨架屏显示"
+  innerWrapper="flex h-40 items-center justify-center gap-10"
+  wrapper="h-40"
+/>
+
 `animate-bounce`
+
+他实际约等于下面的css样式
 
 ```
 animation: bounce 1s infinite;
@@ -75,7 +72,60 @@ animation: bounce 1s infinite;
 }
 ```
 
-### 如何自定义动画 ？
+<ArticleDemoPreview
+  articleId="1"
+  demoId="demo4"
+  previewTitle="`animate-bounce`可以通过修改translateY变化使元素往下跳动，这种效果也常用于向下箭头"
+  innerWrapper="flex h-40 items-center justify-center gap-10"
+  wrapper="h-40"
+/>
+
+<ArticleDemoPreview
+  articleId="1"
+  demoId="demo5"
+  previewTitle="这样一来就可以实现下面两种点，且只需要分别加一个className，如需要实现右边的上下错开跳动，则只需要使用 `animation-delay` 添加不同的时间即可"
+  innerWrapper="flex h-40 items-center justify-center gap-10"
+  wrapper="h-40"
+/>
+
+接下来实现旋转的loading需要用到下面的className
+
+`animate-spin`
+
+他实际约等于下面的css样式
+
+```
+animation: spin 1s linear infinite;
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+```
+
+<ArticleDemoPreview
+  articleId="1"
+  demoId="demo6"
+  previewTitle="`animate-spin`可以通过修改rotate变化使元素旋转 （鼠标移入开始旋转）"
+  innerWrapper="flex h-40 items-center justify-center gap-10"
+  wrapper="h-40"
+/>
+
+<ArticleDemoPreview
+  articleId="1"
+  demoId="demo7"
+  previewTitle="这样我们可以通过嵌套多个div来实现下面的效果"
+  innerWrapper="flex h-40 items-center justify-center gap-10"
+  wrapper="h-40"
+/>
+
+### 题外扩展：如何自定义动画 ？
+
+[摘自官网](https://tailwindcss.com/docs/animation#customizing-your-theme)
 
 默认情况下，Tailwind 为四个不同的示例动画提供实用程序，以及实用程序。您可以通过编辑或在文件中自定义这些值。
 
