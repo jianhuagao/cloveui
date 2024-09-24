@@ -1,6 +1,6 @@
 ---
-title: Tailwindcss实现动态Loading
-description: 如何在Tailwindcss一行样式实现多样动态Loading.
+title: TailwindCSS 实现动态 Loading
+description: 如何利用 Tailwind CSS 一行样式实现多样化的动态 Loading 效果。
 date: 2024/9/20
 ---
 
@@ -24,13 +24,13 @@ date: 2024/9/20
 
 ## 实现原理
 
-通过 tailwindcss 的 [Animation](https://tailwindcss.com/docs/animation) [官方定义：用于使用 CSS 动画对元素进行动画处理的实用程序]
+通过 tailwindcss 的 [Animation](https://tailwindcss.com/docs/animation) 实用工具，我们可以轻松实现 CSS 动画效果。
 
 首先我们来介绍两个关键className：
 
 `animate-pulse`
 
-他实际约等于下面的css样式
+它的效果相当于以下 CSS 样式：
 
 ```
 animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
@@ -48,14 +48,14 @@ animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 <ArticleDemoPreview
   articleId="1"
   demoId="demo3"
-  previewTitle="`animate-pulse`可以通过透明度的变化使元素有忽隐忽现的闪烁效果，这种效果也常用于骨架屏显示"
+  previewTitle="`animate-pulse`通过透明度变化实现元素的闪烁效果，常用于骨架屏展示"
   innerWrapper="flex h-40 items-center justify-center gap-10"
   wrapper="h-40"
 />
 
 `animate-bounce`
 
-他实际约等于下面的css样式
+它的效果相当于以下 CSS 样式：
 
 ```
 animation: bounce 1s infinite;
@@ -75,7 +75,7 @@ animation: bounce 1s infinite;
 <ArticleDemoPreview
   articleId="1"
   demoId="demo4"
-  previewTitle="`animate-bounce`可以通过修改translateY变化使元素往下跳动，这种效果也常用于向下箭头"
+  previewTitle="`animate-bounce`通过修改 translateY 实现元素的上下跳动效果，常用于箭头指示"
   innerWrapper="flex h-40 items-center justify-center gap-10"
   wrapper="h-40"
 />
@@ -83,16 +83,16 @@ animation: bounce 1s infinite;
 <ArticleDemoPreview
   articleId="1"
   demoId="demo5"
-  previewTitle="这样一来就可以实现下面两种点，且只需要分别加一个className，如需要实现右边的上下错开跳动，则只需要使用 `animation-delay` 添加不同的时间即可"
+  previewTitle="只需添加一个 className 即可实现这两种点状效果，若需实现上下错开的跳动，只需添加不同的 `animation-delay` 即可"
   innerWrapper="flex h-40 items-center justify-center gap-10"
   wrapper="h-40"
 />
 
-接下来实现旋转的loading需要用到下面的className
+接下来，实现旋转的 Loading 需要使用以下 className：
 
 `animate-spin`
 
-他实际约等于下面的css样式
+其效果相当于以下 CSS 样式：
 
 ```
 animation: spin 1s linear infinite;
@@ -110,7 +110,7 @@ animation: spin 1s linear infinite;
 <ArticleDemoPreview
   articleId="1"
   demoId="demo6"
-  previewTitle="`animate-spin`可以通过修改rotate变化使元素旋转 （鼠标移入开始旋转）"
+  previewTitle="`animate-spin`通过修改 rotate 实现元素的旋转效果（鼠标移入时开始旋转）"
   innerWrapper="flex h-40 items-center justify-center gap-10"
   wrapper="h-40"
 />
@@ -118,16 +118,14 @@ animation: spin 1s linear infinite;
 <ArticleDemoPreview
   articleId="1"
   demoId="demo7"
-  previewTitle="这样我们可以通过嵌套多个div来实现下面的效果"
+  previewTitle="通过嵌套多个 div 可以实现更多的动态效果"
   innerWrapper="flex h-40 items-center justify-center gap-10"
   wrapper="h-40"
 />
 
 ### 题外扩展：如何自定义动画 ？
 
-[摘自官网](https://tailwindcss.com/docs/animation#customizing-your-theme)
-
-默认情况下，Tailwind 为四个不同的示例动画提供实用程序，以及实用程序。您可以通过编辑或在文件中自定义这些值。
+根据[官网说明](https://tailwindcss.com/docs/animation#customizing-your-theme) ，默认情况下，Tailwind 提供四种不同的示例动画和相应的实用工具。您可以通过编辑配置文件来自定义这些值。
 
 ```
 module.exports = {
@@ -184,7 +182,7 @@ module.exports = {
 
 ---
 
-下面的组件可以看到具体效果:
+您可以通过以下组件查看具体效果：
 
-- [Loading dot](/docs/comp/baseComponents/loading#1)
-- [Loading circle](/docs/comp/baseComponents/loading#2)
+- [Loading 点状效果](/docs/comp/baseComponents/loading#1)
+- [Loading 圆形效果](/docs/comp/baseComponents/loading#2)
