@@ -99,13 +99,28 @@ export async function getArticlesDic(ids?: string[]) {
     const mdxSource = await serialize<ArticleDicMdxProps, ArticleDicMdxProps>(componentItem, {
       parseFrontmatter: true
     });
-    if (ids && mdxSource) {
-      return filterArticlesByIds(ids, mdxSource.frontmatter);
+    const filteredArticles = filterPublishedArticles(mdxSource.frontmatter);
+    if (ids && filteredArticles) {
+      return filterArticlesByIds(ids, filteredArticles);
     }
-    return mdxSource.frontmatter;
+    return filteredArticles;
   } catch {
     notFound();
   }
+}
+
+function filterPublishedArticles(data: ArticleDicMdxProps): ArticleDicMdxProps {
+  const filteredArticles = Object.entries(data.articles)
+    .filter(([_, article]) => article.isPublished)
+    .reduce(
+      (acc, [key, article]) => {
+        acc[key] = article;
+        return acc;
+      },
+      {} as Record<string, ArticleDicProps>
+    );
+
+  return { articles: filteredArticles };
 }
 
 const filterArticlesByIds = (input: string[], data: ArticleDicMdxProps): ArticleDicMdxProps => {
