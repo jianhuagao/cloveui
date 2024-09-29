@@ -22,7 +22,7 @@
     "@types/prismjs": "^1.26.4",
     "@types/react": "^18.3.8",
     "@types/react-dom": "^18.3.0",
-    "eslint": "^9.10.0",
+    "eslint": "^8",
     "eslint-config-next": "14.2.13",
     "highlight.js": "^11.10.0",
     "next-mdx-remote": "^5.0.0",
