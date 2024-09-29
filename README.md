@@ -6,4 +6,4 @@ Free open source TailwindCSS component library
 
 [Home page](https://cloveui.vercel.app)
 
-[![cloveui](https://www.cloveui.asia/og.jpg)](https://cloveui.vercel.app)
+[![cloveui](https://www.cloveui.asia/og.png)](https://cloveui.vercel.app)

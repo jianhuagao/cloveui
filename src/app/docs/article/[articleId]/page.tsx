@@ -20,7 +20,7 @@ export default memo(async function Page({ params }: { params: PageParams }) {
     '@context': 'http://schema.org',
     '@type': 'NewsArticle',
     headline: `${data.title}`,
-    image: 'https://www.cloveui.asia/og.jpg',
+    image: 'https://www.cloveui.asia/og.png',
     datePublished: `${data.date}`
   };
 
