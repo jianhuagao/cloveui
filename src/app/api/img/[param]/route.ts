@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-export async function GET(request: Request, { params }: { params: { param: string } }) {
+export async function GET(_request: Request, { params }: { params: { param: string } }) {
   const { param } = params;
 
   if (!param) {
