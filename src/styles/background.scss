@@ -40,7 +40,7 @@
 /* first */
 .main-background::before {
   width: 30%;
-  height: 40%;
+  height: 50%;
   top: var(--before-top);
   left: var(--before-left);
   background: radial-gradient(circle at center, var(--background1-start), var(--background1-end), transparent 70%);
@@ -49,7 +49,7 @@
 
 /* second */
 .main-background::after {
-  width: 40%;
+  width: 50%;
   height: 40%;
   top: var(--after-top);
   left: var(--after-left);

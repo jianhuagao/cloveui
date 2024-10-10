@@ -20,25 +20,18 @@ export default memo(async function GetStarted() {
   const docUrl = redirect ? `/docs/comp/${redirect}` : '/docs';
 
   return (
-    <Link href={docUrl} className="text-xl no-underline opacity-60 transition-all hover:underline">
-      <button className="group inline-flex min-w-0 items-center gap-2 rounded transition-all active:scale-95 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+    <Link href={docUrl} className="text-xl no-underline transition-all hover:underline">
+      <button className="group inline-flex min-w-0 items-center gap-2 rounded-full border border-transparent bg-black px-3 py-1.5 text-sm font-semibold text-white transition-all active:scale-95 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none dark:border-white/30 dark:bg-white/5">
         Get started
         <svg
           xmlns="http://www.w3.org/2000/svg"
+          fill="none"
           viewBox="0 0 24 24"
-          fill="currentColor"
+          stroke-width="1.5"
+          stroke="currentColor"
           className="size-4 w-0 transition-all group-hover:w-4"
         >
-          <path
-            fillRule="evenodd"
-            d="M13.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L11.69 12 4.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"
-            clipRule="evenodd"
-          />
-          <path
-            fillRule="evenodd"
-            d="M19.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 1 1-1.06-1.06L17.69 12l-6.97-6.97a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"
-            clipRule="evenodd"
-          />
+          <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
         </svg>
       </button>
     </Link>

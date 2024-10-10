@@ -6,10 +6,10 @@ import BackgroundContext from '@/context/backgroundContext';
 
 const styles = {
   homepage: {
-    '--before-top': '10%',
-    '--before-left': '33%',
+    '--before-top': '18%',
+    '--before-left': '28%',
     '--after-top': '15%',
-    '--after-left': '60%'
+    '--after-left': '54%'
   },
   otherPage: {
     '--before-top': '90%',
