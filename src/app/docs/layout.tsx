@@ -6,6 +6,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { memo } from 'react';
 import HoverMenu from '@/components/hoverMenu';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'CloveUI-Docs',
@@ -40,7 +41,10 @@ const LeftContent = memo(function LeftContent({ isFloat = false }: { isFloat?: b
     <>
       <div className="flex flex-shrink-0 items-center justify-between p-4">
         <Link href="/">
-          <div className={clsx('flex items-center p-3 hover:text-violet-500', hoverClass)}>CloveUI</div>
+          <div className={clsx('flex items-center gap-2 p-3 hover:text-violet-500', hoverClass)}>
+            <Image src="/logo.svg" width={14} height={14} alt="" />
+            CloveUI
+          </div>
         </Link>
         {!isFloat && <GithubIcon size={20} />}
       </div>
