@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <main className="relative">
       <LayoutContent>
-        <div className="prose mx-auto flex max-w-7xl flex-col p-20 dark:prose-invert">
+        <div className="prose mx-auto flex max-w-7xl flex-col p-5 dark:prose-invert sm:p-20">
           <h1 className="group z-10 text-7xl transition-all hover:text-transparent">
             <ChangeBg className="cursor-pointer select-none bg-gradient-to-r from-violet-500 to-purple-300 bg-clip-text transition-all">
               Clove
