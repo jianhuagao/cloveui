@@ -41,9 +41,11 @@ const LeftContent = memo(function LeftContent({ isFloat = false }: { isFloat?: b
     <>
       <div className="flex flex-shrink-0 items-center justify-between p-4">
         <Link href="/">
-          <div className={clsx('flex items-center gap-2 p-3 hover:text-violet-500', hoverClass)}>
+          <div className={clsx('flex items-center gap-2 p-3 text-lg font-semibold hover:text-purple-400', hoverClass)}>
             <Image src="/logo.svg" width={14} height={14} alt="" />
-            CloveUI
+            <span>
+              Clove<span className="font-light">UI</span>
+            </span>
           </div>
         </Link>
         {!isFloat && <GithubIcon size={20} />}
