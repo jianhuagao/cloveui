@@ -7,6 +7,7 @@ import useDebounce from '@/hooks/useDebounce';
 import Image from 'next/image';
 import clsx from 'clsx';
 import CopyBtn from '@/components/copyBtn';
+import AnimatedShow from '@/components/framerMotions/animatedShow';
 
 const centerClassName = 'flex items-center justify-center';
 
@@ -97,7 +98,7 @@ const Play = () => {
   }, [wrapperHeight]);
 
   return (
-    <div className="flex flex-col gap-5">
+    <AnimatedShow className="flex flex-col gap-5">
       <div className="flex items-center gap-2">
         <Image src="/play/play.svg" className="m-0" alt="play" width={22} height={22} priority />
         <span className="text-lg">
@@ -183,7 +184,7 @@ const Play = () => {
           title="play"
         ></iframe>
       </div>
-    </div>
+    </AnimatedShow>
   );
 };
 

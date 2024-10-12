@@ -11,8 +11,13 @@ interface ComponentCodePrevProps {
 
 export default memo(function ComponentCodePrev({ show, componentCode = '', codeType = 'html' }: ComponentCodePrevProps) {
   const [prismClass, setPrismClass] = useState('language-html');
+  const [isMounted, setIsMounted] = useState(false);
 
-  useEffect(() => Prism.highlightAll(), [componentCode]);
+  useEffect(() => {
+    // 设置组件已挂载状态
+    setIsMounted(true);
+    Prism.highlightAll();
+  }, [componentCode]);
 
   useEffect(() => {
     codeType === 'html' && setPrismClass('language-html');
@@ -24,7 +29,7 @@ export default memo(function ComponentCodePrev({ show, componentCode = '', codeT
     <div {...(!show && { hidden: true })}>
       <div className="relative">
         <pre className="h-[400px] overflow-auto rounded-sm p-4 ring-2 ring-gray-900 lg:h-[600px]">
-          <code className={prismClass}>{componentCode}</code>
+          <code className={isMounted ? prismClass : ''}>{componentCode}</code>
         </pre>
         <div className="absolute right-4 top-4 z-10">
           <CopyBtn content={componentCode} />

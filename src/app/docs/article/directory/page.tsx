@@ -1,13 +1,14 @@
 import { memo } from 'react';
 import Link from 'next/link';
 import { ArticleDicMdxProps, getArticlesDic } from '@/service/dataService';
+import AnimatedShow from '@/components/framerMotions/animatedShow';
 
 export default memo(async function Page() {
   const { articles }: ArticleDicMdxProps = await getArticlesDic();
   return (
     <div className="mx-auto max-w-5xl">
       <h2 className="px-6 pb-6 pt-4">Directory</h2>
-      <div className="flex flex-col gap-6 py-2">
+      <AnimatedShow className="flex flex-col gap-6 py-2">
         {Object.values(articles)?.map(article => {
           const categoryArr = article.category.split(',');
 
@@ -46,7 +47,7 @@ export default memo(async function Page() {
             </div>
           );
         })}
-      </div>
+      </AnimatedShow>
     </div>
   );
 });
