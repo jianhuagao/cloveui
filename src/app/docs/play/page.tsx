@@ -108,7 +108,7 @@ const Play = () => {
       </div>
 
       <div className="not-prose z-30 overflow-hidden rounded-md shadow-xl ring-1 ring-gray-900/5">
-        <div className="flex items-center gap-1 bg-[#f8f8f9] p-1.5 dark:bg-white/20">
+        <div className="flex items-center gap-1 bg-[#f8f8f9] p-1.5 dark:bg-white/10">
           <div className="flex items-center gap-2 px-3">
             {wrapperBgs.map(bg => {
               const isChecked = bg === wrapperBg;
@@ -117,7 +117,7 @@ const Play = () => {
                   key={bg}
                   onClick={() => setWrapperBg(bg)}
                   className={clsx(
-                    'size-5 cursor-pointer rounded-full border border-black/10 ring-black/5 transition-all hover:scale-105 dark:ring-white/30',
+                    'size-5 cursor-pointer rounded-full border border-black/10 ring-black/5 transition-all hover:scale-105 dark:border-white/20 dark:ring-white/30',
                     bg,
                     isChecked && 'ring-4'
                   )}
