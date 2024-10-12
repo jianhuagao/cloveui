@@ -2,6 +2,10 @@
   "name": "cloveui",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "jianhuagao",
+    "url": "https://github.com/jianhuagao"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
