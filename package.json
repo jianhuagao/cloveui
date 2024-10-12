@@ -14,7 +14,8 @@
     "next": "14.2.13",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-simple-code-editor": "^0.14.1"
+    "react-simple-code-editor": "^0.14.1",
+    "throttle-debounce": "^5.0.2"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.9",
@@ -23,6 +24,7 @@
     "@types/prismjs": "^1.26.4",
     "@types/react": "^18.3.8",
     "@types/react-dom": "^18.3.0",
+    "@types/throttle-debounce": "^5.0.2",
     "eslint": "^8",
     "eslint-config-next": "14.2.13",
     "highlight.js": "^11.10.0",

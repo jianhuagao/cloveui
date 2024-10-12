@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import clsx from 'clsx';
 import React from 'react';
-import MenuItem, { ArticleMenuItem } from '../menuItem';
+import MenuItem, { ArticleMenuItem, PlayMenuItem } from '../menuItem';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArticleDicMdxProps, getArticlesDic, getComponents } from '@/service/dataService';
@@ -37,6 +37,10 @@ export default memo(async function Menu() {
       </div>
       <div className="flex-shrink-0 p-5 pb-0">
         <div className="flex flex-col gap-1 border-t border-zinc-950/5 pt-4 transition-all dark:border-white/5">
+          <PlayMenuItem>
+            <Image src="/play/play.svg" alt="play" width={16} height={16} priority />
+            Playground
+          </PlayMenuItem>
           <ArticleMenuItem>
             <Image src="/icons/book.svg" alt="book" className="dark:invert" width={16} height={16} priority />
             Article

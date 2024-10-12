@@ -51,3 +51,17 @@ export const ArticleMenuItem = ({ children }: { children: React.ReactNode }) => 
     </Link>
   );
 };
+
+export const PlayMenuItem = ({ children }: { children: React.ReactNode }) => {
+  const pathname = usePathname();
+  const isActive = pathname.indexOf('/docs/play') !== -1;
+
+  return (
+    <Link
+      href="/docs/play"
+      className={clsx(articleMenuItemPubClass, articleMenuItemHoverClass, { [articleMenuItemActiveClass]: isActive })}
+    >
+      {children}
+    </Link>
+  );
+};
