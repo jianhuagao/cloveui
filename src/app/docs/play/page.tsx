@@ -6,6 +6,7 @@ import Prism from 'prismjs';
 import useDebounce from '@/hooks/useDebounce';
 import Image from 'next/image';
 import clsx from 'clsx';
+import CopyBtn from '@/components/copyBtn';
 
 const centerClassName = 'flex items-center justify-center';
 
@@ -97,7 +98,28 @@ const Play = () => {
 
   return (
     <div className="flex flex-col gap-5">
-      <div className="z-30 h-[600px] overflow-y-auto rounded-sm bg-[#141414] p-2 ring-4 ring-[#545454]">
+      <div className="flex items-center gap-2">
+        <Image src="/play/play.svg" className="m-0" alt="play" width={22} height={22} priority />
+        <span className="text-lg">
+          <span className="font-semibold">Tailwind</span> Playground
+        </span>
+      </div>
+      <div className="flex items-center">
+        提供基础的Tailwind Playground 功能，复杂功能请参考官方
+        <Image src="/icons/link.svg" className="m-0 ml-2 dark:invert" alt="link" width={16} height={16} priority />
+        <a className="ml-2 no-underline hover:underline" href="https://play.tailwindcss.com" target="_blank">
+          play.tailwindcss.com
+        </a>
+      </div>
+
+      <div className="z-30 h-[600px] overflow-y-auto rounded-sm bg-[#141414] ring-4 ring-[#545454]">
+        <div className="sticky top-0 z-10 flex items-center gap-2 bg-white/10 px-2 py-1.5 text-white backdrop-blur-xl">
+          <Image src="/play/edit.svg" className="m-0 ml-2 invert" alt="code" width={20} height={20} priority />
+          HTML
+          <div className="ml-auto">
+            <CopyBtn content={playContent} />
+          </div>
+        </div>
         <Editor
           className="min-h-[600px]"
           value={playContent}
