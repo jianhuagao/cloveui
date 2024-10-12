@@ -117,7 +117,7 @@ const Play = () => {
           <Image src="/play/edit.svg" className="m-0 ml-2 invert" alt="code" width={20} height={20} priority />
           HTML
           <div className="ml-auto">
-            <CopyBtn content={playContent} />
+            <CopyBtn className="!bg-[#686666]" content={playContent} />
           </div>
         </div>
         <Editor
