@@ -23,15 +23,18 @@ const ChildVariants = {
 
 const AnimatedSection = ({ children, className }: { children: React.ReactNode[]; className?: string }) => {
   const [isClient, setIsClient] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
+    const timer = setTimeout(() => setIsVisible(true), 100); // 延迟以避免初次显示
+    return () => clearTimeout(timer); // 清理定时器
   }, []);
 
-  if (!isClient) return <div>{children}</div>;
+  if (!isClient) return null; // 确保在客户端渲染
 
   return (
-    <motion.div initial="hidden" animate="visible" variants={animationVariants} className={className}>
+    <motion.div initial="hidden" animate={isVisible ? 'visible' : 'hidden'} variants={animationVariants} className={className}>
       {children.map((child, index) => (
         <motion.span key={index} variants={ChildVariants}>
           {child}
