@@ -11,7 +11,7 @@ const animationVariants = {
     transition: {
       duration: 1,
       delayChildren: 0.1,
-      staggerChildren: 0.2
+      staggerChildren: 0.3
     }
   }
 };
