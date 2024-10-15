@@ -67,6 +67,28 @@ const Play = () => {
 
   useEffect(() => {
     getDemo();
+
+    const handleBeforeUnload = (event: BeforeUnloadEvent) => {
+      // 自定义询问框的提示信息
+      const confirmationMessage = '你确定要离开当前页面吗？';
+
+      // 现代浏览器依赖事件处理函数的返回值，而不是 returnValue
+      event.preventDefault(); // 防止默认行为（一些浏览器中是必须的）
+      event.returnValue = ''; // 虽然是被弃用的，但还是一些浏览器要求设置为一个空字符串
+      return confirmationMessage; // 某些浏览器会使用该返回值作为确认框的文本
+    };
+
+    // 仅在客户端侧监听
+    if (typeof window !== 'undefined') {
+      window.addEventListener('beforeunload', handleBeforeUnload);
+    }
+
+    // 在组件卸载时移除事件监听
+    return () => {
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('beforeunload', handleBeforeUnload);
+      }
+    };
   }, []);
 
   const switchDark = useCallback(() => {
