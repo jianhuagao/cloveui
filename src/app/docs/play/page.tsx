@@ -128,7 +128,12 @@ const Play = () => {
         </span>
       </div>
       <div className="flex items-center">
-        提供基础的Tailwind Playground 功能，复杂功能请参考官方
+        提供基础的Tailwind Playground 功能，更好体验请使用
+        <Image src="/icons/link.svg" className="m-0 ml-2 dark:invert" alt="link" width={16} height={16} priority />
+        <a className="ml-2 no-underline hover:underline" href="https://play.cloveui.asia" target="_blank">
+          play.cloveui.asia
+        </a>
+        <span className="pl-2">或官方</span>
         <Image src="/icons/link.svg" className="m-0 ml-2 dark:invert" alt="link" width={16} height={16} priority />
         <a className="ml-2 no-underline hover:underline" href="https://play.tailwindcss.com" target="_blank">
           play.tailwindcss.com
