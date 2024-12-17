@@ -30,7 +30,7 @@ export default memo(async function Page() {
               </div>
               <Link
                 href={`/docs/article/${article.articleId}`}
-                className="cursor-pointer truncate text-lg font-semibold no-underline transition-transform hover:underline active:scale-95"
+                className="cursor-pointer truncate text-lg font-semibold no-underline transition-transform hover:underline active:opacity-65"
               >
                 {article.artTitle}
               </Link>
