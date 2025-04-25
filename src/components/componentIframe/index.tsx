@@ -1,4 +1,4 @@
-import { LegacyRef } from 'react';
+import { Ref } from 'react';
 import Spin from '../spin';
 
 interface ComponentIframeProps {
@@ -6,7 +6,7 @@ interface ComponentIframeProps {
   componentHtml: string;
   componentTitle: string;
   wrapper?: string;
-  refIframe: LegacyRef<HTMLIFrameElement>;
+  refIframe: Ref<HTMLIFrameElement>;
   loading: boolean;
 }
 

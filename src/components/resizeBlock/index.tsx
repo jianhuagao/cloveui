@@ -10,7 +10,7 @@ export default memo(function ResizeBlock({ children, className }: ResizeBlockPro
   const [width, setWidth] = useState('100%'); // 初始宽度为 100%
   const resizableRef = useRef<HTMLDivElement>(null);
   const isResizingRef = useRef(false);
-  const overlayDivRef = useRef<HTMLDivElement | null>();
+  const overlayDivRef = useRef<HTMLDivElement | null>(undefined);
 
   const handleMouseDown = () => {
     isResizingRef.current = true;
