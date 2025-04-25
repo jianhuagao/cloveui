@@ -11,7 +11,7 @@ const mdxComponents = {
   ArticleDemoPreview
 };
 
-export default memo(async function Page({ params }: { params: PageParams }) {
+export default memo(async function Page({ params }: { params: Promise<PageParams> }) {
   const { articleId } = await params;
 
   const { data, content } = await getArticles(Number(articleId));

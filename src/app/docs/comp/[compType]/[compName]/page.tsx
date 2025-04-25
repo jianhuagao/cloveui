@@ -13,8 +13,9 @@ const mdxComponents = {
   CollectionList
 };
 
-export default memo(async function Page({ params }: { params: PageParams }) {
-  const { collectionData, collectionContent } = await getCollection(params);
+export default memo(async function Page({ params }: { params: Promise<PageParams> }) {
+  const paramsData = await params;
+  const { collectionData, collectionContent } = await getCollection(paramsData);
 
   const articlesId = collectionData.articles;
 
