@@ -54,8 +54,9 @@ export interface ComponentData extends Record<string, unknown> {
  */
 export async function getCollection(params: { compType: string; compName: string }) {
   try {
+    const { compType, compName } = await params;
     const componentsDirectory = join(process.cwd(), '/src/data/components');
-    const componentPath = join(componentsDirectory, params.compType, `${params.compName}.mdx`);
+    const componentPath = join(componentsDirectory, compType, `${compName}.mdx`);
     const componentItem = await fs.readFile(componentPath, 'utf-8');
 
     const mdxSource = await serialize<ComponentData, ComponentData>(componentItem, {

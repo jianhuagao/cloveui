@@ -12,7 +12,7 @@ const mdxComponents = {
 };
 
 export default memo(async function Page({ params }: { params: PageParams }) {
-  const { articleId } = params;
+  const { articleId } = await params;
 
   const { data, content } = await getArticles(Number(articleId));
 
