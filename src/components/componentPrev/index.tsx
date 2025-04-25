@@ -13,7 +13,7 @@ import { fetchHtml, FetchHtmlReturn } from '@/service/clientDataService';
 
 export type CodeType = 'html' | 'jsx' | 'vue';
 
-const iconClassNames = 'cursor-pointer rounded p-2 hover:bg-[#f8f8f9] dark:invert';
+const iconClassNames = 'cursor-pointer rounded-sm p-2 hover:bg-[#f8f8f9] dark:invert';
 const iconSelectClassNames = 'bg-black/10 shadow-inner';
 
 const lowercaseFirstLetter = (str: string) => str.charAt(0).toLowerCase() + str.slice(1);

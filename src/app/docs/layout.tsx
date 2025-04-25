@@ -23,10 +23,10 @@ export default function DocLayout({
 }>) {
   return (
     <div className="flex min-h-screen bg-[#f4f4f5] transition-[background-color] dark:bg-[#09090b]">
-      <div className="sticky top-0 hidden h-screen w-64 flex-shrink-0 flex-col md:flex">
+      <div className="sticky top-0 hidden h-screen w-64 shrink-0 flex-col md:flex">
         <LeftContent />
       </div>
-      <div className="prose m-2 min-w-0 max-w-none grow rounded-lg bg-white p-10 shadow-sm ring-1 ring-zinc-950/5 transition-[background-color] dark:prose-invert lg:ml-0 dark:bg-zinc-900 dark:lg:ring-white/10">
+      <div className="prose dark:prose-invert m-2 max-w-none min-w-0 grow rounded-lg bg-white p-10 shadow-xs ring-1 ring-zinc-950/5 transition-[background-color] lg:ml-0 dark:bg-zinc-900 dark:lg:ring-white/10">
         <HoverMenu>
           <LeftContent isFloat />
         </HoverMenu>
@@ -39,7 +39,7 @@ export default function DocLayout({
 const LeftContent = memo(function LeftContent({ isFloat = false }: { isFloat?: boolean }) {
   return (
     <>
-      <div className="flex flex-shrink-0 items-center justify-between p-4">
+      <div className="flex shrink-0 items-center justify-between p-4">
         <Link href="/">
           <div className={clsx('group flex items-center gap-2 p-3 text-lg font-semibold hover:text-purple-400', hoverClass)}>
             <Image
@@ -57,7 +57,7 @@ const LeftContent = memo(function LeftContent({ isFloat = false }: { isFloat?: b
         {!isFloat && <GithubIcon size={20} />}
       </div>
       <Menu />
-      <div className="flex-shrink-0 p-2">
+      <div className="shrink-0 p-2">
         <div className={clsx('flex items-center p-2', hoverClass)}>
           <p className={clsx(miniText)}>v0.0.1 beta</p>
           <div className={clsx(!isFloat && 'ml-auto')}>

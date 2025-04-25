@@ -139,7 +139,7 @@ const Play = () => {
           play.tailwindcss.com
         </a>
       </div>
-      <div className="z-30 h-[600px] overflow-y-auto rounded-sm bg-[#141414] ring-4 ring-[#545454]">
+      <div className="z-30 h-[600px] overflow-y-auto rounded-xs bg-[#141414] ring-4 ring-[#545454]">
         <div className="not-prose sticky top-0 z-10 flex items-center gap-2 bg-white/10 px-2 py-1.5 text-white backdrop-blur-xl">
           <Image src="/play/edit.svg" className="m-0 ml-2 invert" alt="code" width={20} height={20} priority />
           HTML

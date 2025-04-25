@@ -35,7 +35,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ title, slug }) => {
 export default MenuItem;
 
 const articleMenuItemPubClass =
-  'flex cursor-pointer items-center gap-2 rounded-lg px-0 py-2 ring-1 ring-transparent backdrop-blur transition-all';
+  'flex cursor-pointer items-center gap-2 rounded-lg px-0 py-2 ring-1 ring-transparent backdrop-blur-sm transition-all';
 const articleMenuItemHoverClass = 'hover:bg-white/60 hover:px-3 dark:hover:bg-black/20 dark:hover:ring-white/5';
 const articleMenuItemActiveClass = 'bg-white/60 px-3 dark:bg-black/20 dark:ring-white/5';
 export const ArticleMenuItem = ({ children }: { children: React.ReactNode }) => {

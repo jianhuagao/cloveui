@@ -28,10 +28,10 @@ export default memo(function ComponentCodePrev({ show, componentCode = '', codeT
   return (
     <div {...(!show && { hidden: true })}>
       <div className="relative">
-        <pre className="h-[400px] overflow-auto rounded-sm p-4 ring-2 ring-gray-900 lg:h-[600px]">
+        <pre className="h-[400px] overflow-auto rounded-xs p-4 ring-2 ring-gray-900 lg:h-[600px]">
           <code className={isMounted ? prismClass : ''}>{componentCode}</code>
         </pre>
-        <div className="absolute right-4 top-4 z-10">
+        <div className="absolute top-4 right-4 z-10">
           <CopyBtn content={componentCode} />
         </div>
       </div>

@@ -21,7 +21,7 @@ export default memo(async function Menu() {
 
   return (
     <div className="flex grow flex-col overflow-hidden">
-      <div className="flex flex-shrink grow flex-col gap-1 overflow-auto p-4">
+      <div className="flex shrink grow flex-col gap-1 overflow-auto p-4">
         {componentsByCategory?.map(type => {
           const itemsTitle = <div className={clsx('px-3 pt-2 first:pt-0', miniText)}>{type.title}</div>;
           const items = type.children?.map(c => {
@@ -35,7 +35,7 @@ export default memo(async function Menu() {
           );
         })}
       </div>
-      <div className="flex-shrink-0 p-5 pb-0">
+      <div className="shrink-0 p-5 pb-0">
         <div className="flex flex-col gap-1 border-t border-zinc-950/5 pt-4 transition-all dark:border-white/5">
           <PlayMenuItem>
             <Image src="/play/play.svg" alt="play" width={16} height={16} priority />
@@ -50,7 +50,7 @@ export default memo(async function Menu() {
               <li key={s.articleId}>
                 <Link
                   href={`/docs/article/${s.articleId}`}
-                  className="block cursor-pointer select-none truncate py-2 transition-all hover:scale-105 active:scale-100"
+                  className="block cursor-pointer truncate py-2 transition-all select-none hover:scale-105 active:scale-100"
                 >
                   [{s.pubDate.replace(/^(\d{4})-(\d{2}-\d{2})$/, '$2')}] {s.artTitle}
                 </Link>

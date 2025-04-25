@@ -7,7 +7,7 @@ export default memo(async function Page() {
   const { articles }: ArticleDicMdxProps = await getArticlesDic();
   return (
     <div className="mx-auto max-w-5xl">
-      <h2 className="px-6 pb-6 pt-4">Directory</h2>
+      <h2 className="px-6 pt-4 pb-6">Directory</h2>
       <AnimatedShow className="flex flex-col gap-6 py-2">
         {Object.values(articles)?.map(article => {
           const categoryArr = article.category.split(',');
@@ -15,7 +15,7 @@ export default memo(async function Page() {
           return (
             <div
               key={article.articleId}
-              className="flex flex-col gap-1.5 rounded-xl border border-black/5 px-6 py-5 hover:ring dark:border-white/5 dark:bg-black/20"
+              className="flex flex-col gap-1.5 rounded-xl border border-black/5 px-6 py-5 hover:ring-3 dark:border-white/5 dark:bg-black/20"
             >
               <div className="flex shrink-0 items-center gap-2 text-sm opacity-85">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-4">
@@ -38,7 +38,7 @@ export default memo(async function Page() {
                 {categoryArr.map(cat => (
                   <div
                     key={cat}
-                    className="rounded border border-gray-100 bg-black/5 px-2 py-0.5 text-xs transition-all dark:border-white/10"
+                    className="rounded-sm border border-gray-100 bg-black/5 px-2 py-0.5 text-xs transition-all dark:border-white/10"
                   >
                     # {cat}
                   </div>
