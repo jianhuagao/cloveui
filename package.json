@@ -8,10 +8,12 @@
   },
   "scripts": {
     "dev": "next dev --turbopack",
+    "postbuild": "npm run css --minify",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "clean": "pnpm -s dlx rimraf -g **/node_modules **/pnpm-lock.yaml"
+    "clean": "pnpm -s dlx rimraf -g **/node_modules **/pnpm-lock.yaml",
+    "css": "npx @tailwindcss/cli -i ./src/styles/components.css -o ./public/components.css"
   },
   "dependencies": {
     "clsx": "^2.1.1",
