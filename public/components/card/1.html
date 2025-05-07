@@ -1,15 +1,64 @@
-<div class="group relative overflow-hidden rounded-3xl shadow-2xl">
-  <img
-    src="/resource/card/card1.jfif"
-    alt=""
-    class="h-72 scale-105 object-cover transition-all duration-700 group-hover:scale-100"
-  />
+<div class="relative max-w-3xs overflow-hidden rounded-3xl shadow-2xl">
+  <img class="h-[274px] w-full object-cover" src="/resource/card/cardmap.jpg" alt="" />
   <div
-    class="absolute inset-0 flex flex-col items-end justify-end bg-black/0 transition-all duration-700 group-hover:bg-black/25"
+    class="absolute bottom-3 left-3 min-w-1/2 cursor-pointer rounded-2xl bg-white/60 p-3 shadow-lg backdrop-blur-2xl transition-all select-none hover:bg-white/80 active:scale-95"
   >
-    <div class="hidden flex-col items-end p-4 text-white/80 group-hover:flex">
-      <p class="text-lg font-bold">Card title</p>
-      <p>Card subtitle</p>
+    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 16 16">
+      <path fill="#dc2626" d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8s8-3.6 8-8s-3.6-8-8-8M7 14V9H2l10-5z" />
+    </svg>
+    <p class="pt-1 pb-0.5 text-sm font-medium opacity-85">人民路附近</p>
+    <p class="text-xs opacity-65">重要地点</p>
+  </div>
+</div>
+
+<div class="flex flex-col gap-4">
+  <div class="relative w-72 overflow-hidden rounded-3xl shadow-2xl">
+    <img class="h-32 w-full object-cover" src="/resource/card/cardmap.jpg" alt="" />
+    <div
+      class="absolute bottom-3 left-3 min-w-1/2 cursor-pointer rounded-2xl bg-white/60 p-3 shadow-lg backdrop-blur-2xl transition-all select-none hover:bg-white/80 active:scale-95"
+    >
+      <div class="flex items-center gap-1.5">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16">
+          <path fill="#dc2626" d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8s8-3.6 8-8s-3.6-8-8-8M7 14V9H2l10-5z" />
+        </svg>
+        <p class="text-sm opacity-90">劳动路附近</p>
+      </div>
+
+      <!-- <p class="text-xs opacity-70">重要地点</p> -->
+    </div>
+  </div>
+
+  <div class="relative w-72 overflow-hidden rounded-3xl shadow-2xl">
+    <img class="h-32 w-full object-cover" src="/resource/card/cardmap.jpg" alt="" />
+    <div
+      class="absolute bottom-3 left-3 flex items-center gap-1 rounded-2xl bg-white/60 px-3 py-2 shadow-lg backdrop-blur-2xl transition-all select-none"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="40"
+        height="40"
+        class="cursor-pointer drop-shadow-xl transition-all active:scale-85"
+        viewBox="0 0 24 24"
+      >
+        <g fill="#ffffff">
+          <path d="M8.75 11.429a2.679 2.679 0 1 1 5.357 0a2.679 2.679 0 0 1-5.357 0" />
+          <path
+            d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75s-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12m9.179-4.75a4.179 4.179 0 1 0 2.38 7.614l1.66 1.665a.75.75 0 1 0 1.062-1.059l-1.663-1.668a4.179 4.179 0 0 0-3.44-6.552"
+          />
+        </g>
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="38"
+        height="38"
+        class="cursor-pointer drop-shadow-xl transition-all active:scale-85"
+        viewBox="0 0 24 24"
+      >
+        <path
+          fill="#ffffff"
+          d="M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10A10 10 0 0 0 12 2M9.75 7.82c.87 0 1.7.41 2.25 1.05c.55-.64 1.38-1.05 2.25-1.05c1.54 0 2.75 1.21 2.75 2.75c0 1.89-1.7 3.43-4.28 5.77L12 17l-.72-.66C8.7 14 7 12.46 7 10.57c0-1.54 1.21-2.75 2.75-2.75"
+        />
+      </svg>
     </div>
   </div>
 </div>
