@@ -1,7 +1,7 @@
 @import 'tailwindcss' source(none);
 @plugin '@tailwindcss/forms';
 
-@source '../../public/components';
+@source '../../public';
 @source '../../src/data';
 
 @custom-variant dark (&:where(.dark, .dark *));
