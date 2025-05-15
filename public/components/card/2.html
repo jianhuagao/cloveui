@@ -1,55 +1,78 @@
-<div class="size-[140px] rounded-3xl bg-linear-to-b from-[#343957] via-[#2a2e49] to-[#222439] p-3 text-white shadow-2xl">
-  <div class="flex h-full w-full flex-col gap-1">
-    <div class="flex items-center justify-between">
-      <div class="text-xs font-semibold text-[#bec3e9]">星期五</div>
-      <img class="size-5 object-cover" src="/resource/card/card9.png" alt="" />
-    </div>
-    <div class="flex-1 bg-gradient-to-r from-[#fed5c3] to-[#eaa0c5] bg-clip-text text-lg leading-6 font-bold text-transparent">
-      对你而言最重要的是什么？
-    </div>
-    <div class="flex items-center gap-1">
-      <button
-        class="flex h-7 flex-1 cursor-pointer items-center justify-center gap-1 rounded-full bg-linear-to-r from-[#847477] to-[#7e6278] px-0.5 text-xs leading-7 transition-all active:scale-90"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24">
-          <path fill="#ffffff" d="m18.988 2.012l3 3L19.701 7.3l-3-3zM8 16h3l7.287-7.287l-3-3L8 13z" />
-          <path
-            fill="#ffffff"
-            d="M19 19H8.158c-.026 0-.053.01-.079.01c-.033 0-.066-.009-.1-.01H5V5h6.847l2-2H5c-1.103 0-2 .896-2 2v14c0 1.104.897 2 2 2h14a2 2 0 0 0 2-2v-8.668l-2 2z"
-          />
-        </svg>
-        新手记
-      </button>
-      <button
-        class="flex size-7 shrink-0 cursor-pointer items-center justify-center rounded-full bg-linear-to-r from-[#847477] to-[#7e6278] text-xs transition-all active:scale-90"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24">
-          <g class="refresh-outline">
-            <g fill="#ffffff" fill-rule="evenodd" class="Vector" clip-rule="evenodd">
-              <path
-                d="M17.501 8.196c-1.873-3.246-6.008-4.358-9.234-2.494a6.7 6.7 0 0 0-2.804 3.137A1 1 0 1 1 3.63 8.04a8.7 8.7 0 0 1 3.637-4.07c4.188-2.42 9.544-.971 11.966 3.225a8.8 8.8 0 0 1 1.112 3.303l-1.984.25a6.8 6.8 0 0 0-.86-2.552"
-              />
-              <path
-                d="M21.268 7.489c.43.2.616.71.416 1.138l-1.227 2.635a1.086 1.086 0 0 1-1.445.523l-2.636-1.236a.857.857 0 1 1 .728-1.551l2.064.969l.96-2.064a.857.857 0 0 1 1.14-.414M6.499 15.804c1.873 3.246 6.008 4.358 9.234 2.494a6.7 6.7 0 0 0 2.804-3.137a1 1 0 1 1 1.833.799a8.7 8.7 0 0 1-3.637 4.07c-4.188 2.42-9.545.971-11.966-3.225a8.8 8.8 0 0 1-1.112-3.303l1.984-.25c.11.873.39 1.74.86 2.552"
-              />
-              <path
-                d="M2.732 16.511a.857.857 0 0 1-.416-1.138l1.227-2.635a1.086 1.086 0 0 1 1.445-.523l2.635 1.236a.857.857 0 1 1-.727 1.551l-2.064-.969l-.96 2.064a.857.857 0 0 1-1.14.414"
-              />
-            </g>
-          </g>
-        </svg>
-      </button>
-    </div>
-  </div>
-</div>
-
 <div
-  class="size-[140px] rounded-3xl bg-[#030712] bg-[url(/resource/card/card10.jpeg)] bg-cover bg-center bg-no-repeat text-white shadow-2xl"
+  class="relative grid min-h-screen grid-cols-[1fr_2.5rem_auto_2.5rem_1fr] grid-rows-[1fr_1px_auto_1px_1fr] [--pattern-fg:var(--color-gray-950)]/5 dark:bg-[#242427] dark:[--pattern-fg:var(--color-white)]/10"
 >
-  <div
-    class="flex h-full w-full cursor-pointer flex-col gap-1 rounded-3xl p-3 backdrop-brightness-70 transition-all duration-500 hover:backdrop-brightness-90"
-  >
-    <div class="mt-auto text-xs text-shadow-md">中秋</div>
-    <div class="text-2xl font-semibold text-shadow-md">323</div>
+  <div class="col-start-3 row-start-3 flex max-w-lg flex-col p-2 dark:bg-white/10">
+    <div class="flex gap-4 p-10">
+      <!-- ************** Card1 ************** -->
+
+      <div class="size-[140px] rounded-3xl bg-linear-to-b from-[#343957] via-[#2a2e49] to-[#222439] p-3 text-white shadow-2xl">
+        <div class="flex h-full w-full flex-col gap-1">
+          <div class="flex items-center justify-between">
+            <div class="text-xs font-semibold text-[#bec3e9]">星期五</div>
+            <img class="size-5 object-cover" src="/resource/card/card9.png" alt="" />
+          </div>
+          <div
+            class="flex-1 bg-gradient-to-r from-[#fed5c3] to-[#eaa0c5] bg-clip-text text-lg leading-6 font-bold text-transparent"
+          >
+            对你而言最重要的是什么？
+          </div>
+          <div class="flex items-center gap-1">
+            <button
+              class="flex h-7 flex-1 cursor-pointer items-center justify-center gap-1 rounded-full bg-linear-to-r from-[#847477] to-[#7e6278] px-0.5 text-xs leading-7 transition-all active:scale-90"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24">
+                <path fill="#ffffff" d="m18.988 2.012l3 3L19.701 7.3l-3-3zM8 16h3l7.287-7.287l-3-3L8 13z" />
+                <path
+                  fill="#ffffff"
+                  d="M19 19H8.158c-.026 0-.053.01-.079.01c-.033 0-.066-.009-.1-.01H5V5h6.847l2-2H5c-1.103 0-2 .896-2 2v14c0 1.104.897 2 2 2h14a2 2 0 0 0 2-2v-8.668l-2 2z"
+                />
+              </svg>
+              新手记
+            </button>
+            <button
+              class="flex size-7 shrink-0 cursor-pointer items-center justify-center rounded-full bg-linear-to-r from-[#847477] to-[#7e6278] text-xs transition-all active:scale-90"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24">
+                <g class="refresh-outline">
+                  <g fill="#ffffff" fill-rule="evenodd" class="Vector" clip-rule="evenodd">
+                    <path
+                      d="M17.501 8.196c-1.873-3.246-6.008-4.358-9.234-2.494a6.7 6.7 0 0 0-2.804 3.137A1 1 0 1 1 3.63 8.04a8.7 8.7 0 0 1 3.637-4.07c4.188-2.42 9.544-.971 11.966 3.225a8.8 8.8 0 0 1 1.112 3.303l-1.984.25a6.8 6.8 0 0 0-.86-2.552"
+                    />
+                    <path
+                      d="M21.268 7.489c.43.2.616.71.416 1.138l-1.227 2.635a1.086 1.086 0 0 1-1.445.523l-2.636-1.236a.857.857 0 1 1 .728-1.551l2.064.969l.96-2.064a.857.857 0 0 1 1.14-.414M6.499 15.804c1.873 3.246 6.008 4.358 9.234 2.494a6.7 6.7 0 0 0 2.804-3.137a1 1 0 1 1 1.833.799a8.7 8.7 0 0 1-3.637 4.07c-4.188 2.42-9.545.971-11.966-3.225a8.8 8.8 0 0 1-1.112-3.303l1.984-.25c.11.873.39 1.74.86 2.552"
+                    />
+                    <path
+                      d="M2.732 16.511a.857.857 0 0 1-.416-1.138l1.227-2.635a1.086 1.086 0 0 1 1.445-.523l2.635 1.236a.857.857 0 1 1-.727 1.551l-2.064-.969l-.96 2.064a.857.857 0 0 1-1.14.414"
+                    />
+                  </g>
+                </g>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ************** Card2 ************** -->
+      <div
+        class="size-[140px] rounded-3xl bg-[#030712] bg-[url(/resource/card/card10.jpeg)] bg-cover bg-center bg-no-repeat text-white shadow-2xl"
+      >
+        <div
+          class="flex h-full w-full cursor-pointer flex-col gap-1 rounded-3xl p-3 backdrop-brightness-70 transition-all duration-500 hover:backdrop-brightness-90"
+        >
+          <div class="mt-auto text-xs text-shadow-md">中秋</div>
+          <div class="text-2xl font-semibold text-shadow-md">323</div>
+        </div>
+      </div>
+    </div>
   </div>
+  <div
+    class="relative -right-px col-start-2 row-span-full row-start-1 border-x border-x-(--pattern-fg) bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed opacity-0 dark:opacity-100"
+  ></div>
+  <div
+    class="relative -left-px col-start-4 row-span-full row-start-1 border-x border-x-(--pattern-fg) bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed opacity-0 dark:opacity-100"
+  ></div>
+  <div
+    class="relative -bottom-px col-span-full col-start-1 row-start-2 h-px bg-(--pattern-fg) opacity-0 dark:opacity-100"
+  ></div>
+  <div class="relative -top-px col-span-full col-start-1 row-start-4 h-px bg-(--pattern-fg) opacity-0 dark:opacity-100"></div>
 </div>
