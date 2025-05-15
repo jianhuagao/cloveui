@@ -8,6 +8,7 @@
   },
   "scripts": {
     "dev": "next dev --turbopack",
+    "prebuild": "node ./scripts/set-build-version.js",
     "postbuild": "npm run css",
     "build": "next build",
     "start": "next start",

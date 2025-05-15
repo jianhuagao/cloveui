@@ -6,6 +6,8 @@ export function componentPreviewHtml(
 ): string {
   const htmlClass = isDarkMode ? 'dark' : 'relative';
   const htmlDirection = isRtl ? 'rtl' : 'ltr';
+  const version = process.env.NEXT_PUBLIC_BUILD_VERSION;
+  const cssHref = `/components.css?v=${version || '0'}`;
 
   return `
     <html class="${htmlClass}" dir="${htmlDirection}">
@@ -29,7 +31,7 @@ export function componentPreviewHtml(
           });
         </script>
 
-        <link href="/components.css" rel="stylesheet">
+        <link href="${cssHref}" rel="stylesheet">
 
       </head>
 
