@@ -1,4 +1,7 @@
-@import "tailwindcss";
+@use "tailwindcss";
+
+@use "background";
+
 /* 加载排版插件，生成 prose 系列类 */
 @plugin "@tailwindcss/typography";
 /* 如果需要，加载其他官方插件 */
@@ -7,7 +10,6 @@
 /* 自定义 dark 变体，基于 .dark 类切换 */
 @custom-variant dark (&:where(.dark, .dark *));
 
-@import "background.scss";
 
 @layer base {
 ::-webkit-scrollbar {
