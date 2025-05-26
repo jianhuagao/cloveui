@@ -8,7 +8,11 @@ import BackgroundComponent from '@/components/backgroundComponent';
 import { ThemeProvider } from '@/context/themeContext';
 import { BackgroundProvider } from '@/context/backgroundContext';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap', // 字体未加载前用系统字体，加载后替换
+  fallback: ['system-ui', 'sans-serif'] // 字体加载失败时的兜底方案
+});
 
 export const metadata: Metadata = {
   title: 'CloveUI',
