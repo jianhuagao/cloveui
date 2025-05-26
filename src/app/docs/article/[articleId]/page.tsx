@@ -1,14 +1,14 @@
+import { memo } from 'react';
 import MdxRemoteRender from '@/components/mdxRemoteRender';
 import { getArticles } from '@/service/dataService';
-import { memo } from 'react';
 import ArticleDemoPreview from '@/components/articleDemoPreview';
 
 interface PageParams {
   articleId: string;
 }
 
-const mdxComponents = {
-  ArticleDemoPreview
+const mdxComponents: Record<string, React.ComponentType<unknown>> = {
+  ArticleDemoPreview: ArticleDemoPreview as React.ComponentType<unknown>
 };
 
 export default memo(async function Page({ params }: { params: Promise<PageParams> }) {
