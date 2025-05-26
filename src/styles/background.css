@@ -1,5 +1,3 @@
-
-
 :root {
   --background1-start: #ff9a9e;
   --background1-end: #fad0c4;
@@ -27,14 +25,15 @@
   pointer-events: none;
 }
 
-// translate3d for safari gpu
 .main-background::before,
 .main-background::after {
   content: "";
   position: absolute;
   transform: translate(-50%, -50%) translate3d(0, 0, 0);
-  will-change: transform,top, left;
-  transition: top 0.5s ease, left 0.5s ease;
+  will-change: transform, top, left;
+  transition:
+    top 0.5s ease,
+    left 0.5s ease;
 }
 
 /* first */

@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
-import '@/styles/globals.scss';
+import '@/styles/globals.css';
+import '@/styles/background.css';
 // import 'prismjs/themes/prism-tomorrow.css';
 import 'prismjs/themes/prism-twilight.css';
 import BackgroundComponent from '@/components/backgroundComponent';
