@@ -9,8 +9,8 @@ interface PageParams {
   compName: string;
 }
 
-const mdxComponents = {
-  CollectionList
+const mdxComponents: Record<string, React.ComponentType<unknown>> = {
+  CollectionList: CollectionList as React.ComponentType<unknown>
 };
 
 export default memo(async function Page({ params }: { params: Promise<PageParams> }) {
