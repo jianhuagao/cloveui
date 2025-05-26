@@ -12,8 +12,8 @@ export interface Options {
   atBegin?: boolean;
 }
 
-export interface Callback {
-  (this: any, ...args: any[]): any;
+export interface Callback<TArgs extends unknown[] = unknown[], TResult = unknown> {
+  (this: unknown, ...args: TArgs): TResult;
 }
 
 /**

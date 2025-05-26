@@ -20,9 +20,9 @@ export default memo(function ComponentCodePrev({ show, componentCode = '', codeT
   }, [componentCode]);
 
   useEffect(() => {
-    codeType === 'html' && setPrismClass('language-html');
-    codeType === 'vue' && setPrismClass('language-html');
-    codeType === 'jsx' && setPrismClass('language-jsx');
+    if (codeType === 'html') setPrismClass('language-html');
+    else if (codeType === 'vue') setPrismClass('language-html');
+    else if (codeType === 'jsx') setPrismClass('language-jsx');
   }, [codeType]);
 
   return (

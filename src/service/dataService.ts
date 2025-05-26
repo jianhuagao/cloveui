@@ -9,7 +9,7 @@ import { notFound } from 'next/navigation';
  */
 export async function getComponents() {
   try {
-    let menuItems: MenuItemProps[] = [];
+    const menuItems: MenuItemProps[] = [];
 
     const componentsTypePath = join(process.cwd(), '/src/data/components');
     const componentsTypeSlugs = await fs.readdir(componentsTypePath);
@@ -112,7 +112,7 @@ export async function getArticlesDic(ids?: string[]) {
 
 function filterPublishedArticles(data: ArticleDicMdxProps): ArticleDicMdxProps {
   const filteredArticles = Object.entries(data.articles)
-    .filter(([_, article]) => article.isPublished)
+    .filter(([, article]) => article.isPublished)
     .reduce(
       (acc, [key, article]) => {
         acc[key] = article;

@@ -26,7 +26,7 @@ export async function GET(_request: Request, props: { params: Promise<{ param: s
         'Content-Type': imageBlob.type
       }
     });
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: '获取图片失败' }, { status: 500 });
   }
 }

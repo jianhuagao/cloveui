@@ -60,11 +60,9 @@ export default memo(function ComponentPrev({ componentData }: ComponentPrevProps
   }, [componentData.id, ctx?.theme]);
 
   useEffect(() => {
-    codeType === 'html' && setPreviewCode(previewData?.textResponse || '');
-    codeType === 'jsx' && setPreviewCode(previewData?.transformedJsx || '');
-    codeType === 'vue' && setPreviewCode(previewData?.transformedVue || '');
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    if (codeType === 'html') setPreviewCode(previewData?.textResponse || '');
+    if (codeType === 'jsx') setPreviewCode(previewData?.transformedJsx || '');
+    if (codeType === 'vue') setPreviewCode(previewData?.transformedVue || '');
   }, [codeType, previewData]);
 
   return (
