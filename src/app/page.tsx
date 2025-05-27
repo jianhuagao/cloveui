@@ -1,6 +1,7 @@
 import ChangeBg from '@/components/changeBg';
 import ComponentPrev from '@/components/componentPrev';
 import AnimatedSection from '@/components/framerMotions/animatedSection';
+import FadeIn from '@/components/framerMotions/fadeIn';
 import GetStarted from '@/components/getStarted';
 import LayoutContent from '@/components/layoutContent';
 import Image from 'next/image';
@@ -32,6 +33,8 @@ export default function Home() {
               </a>
               <GetStarted />
             </div>
+          </AnimatedSection>
+          <FadeIn>
             <ComponentPrev
               componentData={{
                 id: '1',
@@ -46,6 +49,8 @@ export default function Home() {
               }}
               baseUrl={`/homeDemo`}
             />
+          </FadeIn>
+          <FadeIn>
             <ComponentPrev
               componentData={{
                 id: '2',
@@ -60,7 +65,7 @@ export default function Home() {
               }}
               baseUrl={`/homeDemo`}
             />
-          </AnimatedSection>
+          </FadeIn>
         </div>
       </LayoutContent>
       <div className="absolute inset-0 -z-10 bg-[url(/grid.svg)] [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] bg-center"></div>

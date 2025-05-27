@@ -1,0 +1,61 @@
+'use client';
+import { memo, useMemo } from 'react';
+import { HTMLMotionProps, Variants, motion } from 'framer-motion';
+
+interface FadeInProps extends HTMLMotionProps<'div'> {
+  children: React.ReactNode;
+  delay?: number;
+  offscreenX?: number;
+  offscreenY?: number;
+  onscreenX?: number;
+  onscreenY?: number;
+  /**
+   *弹力,默认0.4,0为没有弹力
+   * **/
+  bounce?: number;
+}
+
+export default memo(function FadeIn({
+  children,
+  delay = 0,
+  offscreenX = 0,
+  offscreenY = 100,
+  onscreenX = 0,
+  onscreenY = 0,
+  bounce = 0.4,
+  ...rest
+}: FadeInProps) {
+  const cardVariants: Variants = useMemo(
+    () => ({
+      offscreen: {
+        y: offscreenY,
+        x: offscreenX,
+        opacity: 0
+      },
+      onscreen: {
+        y: onscreenY,
+        x: onscreenX,
+        opacity: 1,
+        transition: {
+          delay,
+          type: 'spring',
+          bounce,
+          duration: 2
+        }
+      }
+    }),
+    [delay, offscreenX, offscreenY, onscreenX, onscreenY, bounce]
+  );
+
+  return (
+    <motion.div
+      variants={cardVariants}
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: true, amount: 0 }}
+      {...rest}
+    >
+      {children}
+    </motion.div>
+  );
+});
