@@ -3,10 +3,9 @@ import GithubIcon from '@/components/githubIcon';
 import Menu from '@/components/menu';
 import clsx from 'clsx';
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { memo } from 'react';
 import HoverMenu from '@/components/hoverMenu';
-import Image from 'next/image';
+import LogoBlock from '@/components/logoBlock';
 
 export const metadata: Metadata = {
   title: 'CloveUI-Docs',
@@ -40,26 +39,13 @@ const LeftContent = memo(function LeftContent({ isFloat = false }: { isFloat?: b
   return (
     <>
       <div className="flex shrink-0 items-center justify-between p-4">
-        <Link href="/">
-          <div className={clsx('group flex items-center gap-2 p-3 text-lg font-semibold hover:text-purple-400', hoverClass)}>
-            <Image
-              src="/logo.svg"
-              className="transition-all duration-700 group-hover:rotate-180"
-              width={14}
-              height={14}
-              alt=""
-            />
-            <span>
-              Clove<span className="font-light">UI</span>
-            </span>
-          </div>
-        </Link>
+        <LogoBlock />
         {!isFloat && <GithubIcon size={20} />}
       </div>
       <Menu />
       <div className="shrink-0 p-2">
         <div className={clsx('flex items-center p-2', hoverClass)}>
-          <p className={clsx(miniText)}>v0.0.1 beta</p>
+          <p className={clsx(miniText)}>v1.0.0 @{process.env.NEXT_PUBLIC_BUILD_VERSION}</p>
           <div className={clsx(!isFloat && 'ml-auto')}>
             <DarkSwitch />
           </div>

@@ -1,3 +1,4 @@
+'use client';
 import { memo, useCallback, useContext, useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -16,13 +17,12 @@ export type CodeType = 'html' | 'jsx' | 'vue';
 const iconClassNames = 'cursor-pointer rounded-sm p-2 hover:bg-[#f8f8f9] dark:invert';
 const iconSelectClassNames = 'bg-black/10 shadow-inner';
 
-const lowercaseFirstLetter = (str: string) => str.charAt(0).toLowerCase() + str.slice(1);
-
 interface ComponentPrevProps {
+  baseUrl: string;
   componentData: ComponentData;
 }
 
-export default memo(function ComponentPrev({ componentData }: ComponentPrevProps) {
+export default memo(function ComponentPrev({ baseUrl, componentData }: ComponentPrevProps) {
   const pathname = usePathname();
   const refIframe = useRef(null);
   const [loading, setLoading] = useState(false);
@@ -43,9 +43,8 @@ export default memo(function ComponentPrev({ componentData }: ComponentPrevProps
   useEffect(() => {
     if (componentData.id && ctx?.theme) {
       setLoading(true);
-      const componentName = lowercaseFirstLetter(componentData.componentsName);
       const componentId = componentData.id;
-      const componentUrl = `/components/${componentName}/${componentId}.html`;
+      const componentUrl = `${baseUrl}/${componentId}.html`;
 
       fetchHtml({
         url: componentUrl,
@@ -57,7 +56,7 @@ export default memo(function ComponentPrev({ componentData }: ComponentPrevProps
       });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [componentData.id, ctx?.theme]);
+  }, [componentData.id, ctx?.theme, baseUrl]);
 
   useEffect(() => {
     if (codeType === 'html') setPreviewCode(previewData?.textResponse || '');

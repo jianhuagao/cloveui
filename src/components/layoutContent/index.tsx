@@ -9,7 +9,7 @@ export default memo(function Layout({ children }: { children?: React.ReactNode }
         <LayoutHeader />
       </div>
       <div className="grow">{children}</div>
-      <div className="sticky bottom-0">
+      <div>
         <LayoutFooter />
       </div>
     </div>

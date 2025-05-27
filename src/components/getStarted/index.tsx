@@ -21,7 +21,7 @@ export default memo(async function GetStarted() {
 
   return (
     <Link href={docUrl} className="text-xl no-underline transition-all hover:underline">
-      <button className="group inline-flex min-w-0 cursor-pointer items-center gap-2 rounded-full border border-transparent bg-black px-3 py-1.5 text-sm font-semibold text-white transition-all active:scale-95 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none dark:border-white/30 dark:bg-white/5">
+      <button className="group inline-flex min-w-0 cursor-pointer items-center gap-2 rounded-sm bg-gradient-to-r from-[#9e58e9] to-blue-500 px-4 py-[9px] text-sm font-semibold text-white transition-all active:scale-95 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none dark:bg-white/5">
         Get started
         <svg
           xmlns="http://www.w3.org/2000/svg"
