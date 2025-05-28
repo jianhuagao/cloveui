@@ -93,9 +93,9 @@ export default async function Home() {
                   title: 'Notification Demo',
                   slug: 'demo',
                   category: 'demo',
-                  wrapper: 'h-52 bg-gradient-to-r from-[#9795f0] to-[#fbc8d4] dark:bg-none',
+                  wrapper: 'h-72 bg-gradient-to-r from-[#9795f0] to-[#fbc8d4] dark:bg-none',
                   creator: '',
-                  innerWrapper: 'flex h-52 items-center justify-center gap-5',
+                  innerWrapper: 'flex h-72 items-center justify-center gap-5 flex-col md:flex-row',
                   interactive: true,
                   componentsName: ''
                 }}
@@ -125,9 +125,9 @@ export default async function Home() {
                   title: 'RadioGroup Demo',
                   slug: 'demo',
                   category: 'demo',
-                  wrapper: 'h-72 bg-gradient-to-r from-[#9795f0] to-[#fbc8d4] dark:bg-none',
+                  wrapper: 'h-96 bg-gradient-to-r from-[#9795f0] to-[#fbc8d4] dark:bg-none',
                   creator: '',
-                  innerWrapper: 'flex px-[20%] h-72 [&>*]:flex-1 items-center justify-center gap-4',
+                  innerWrapper: 'flex px-[20%] h-96 [&>*]:flex-1 items-center justify-center gap-4',
                   interactive: true,
                   componentsName: ''
                 }}
