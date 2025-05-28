@@ -22,11 +22,11 @@ export default function Home() {
               Free open source <span className="cursor-pointer transition-all hover:text-[#38bdf8]">TailwindCSS</span> component
               library
             </h1>
-            <div className="mt-10 mb-20 flex items-center justify-center gap-4">
+            <div className="mt-10 mb-20 flex items-center justify-center gap-5">
               <a
                 href="https://github.com/jianhuagao/cloveui"
                 target="_blank"
-                className="group inline-flex min-w-0 cursor-pointer items-center gap-2 rounded-sm border border-transparent bg-black px-4 py-2 text-sm font-semibold text-white transition-all active:scale-95 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none dark:border-white/30 dark:bg-white/5"
+                className="group inline-flex min-w-0 cursor-pointer items-center gap-2 rounded-lg border border-transparent bg-black px-4 py-2 text-sm font-semibold text-white transition-all active:scale-95 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none dark:border-white/30 dark:bg-white/5"
               >
                 Github
                 <Image className="invert" src="/icons/github.svg" width={16} height={16} alt="" />
@@ -38,7 +38,7 @@ export default function Home() {
             <FadeIn>
               <ComponentPrev
                 componentData={{
-                  id: '1',
+                  id: '2',
                   title: 'Card Demo',
                   slug: 'demo',
                   category: 'demo',
@@ -54,7 +54,23 @@ export default function Home() {
             <FadeIn>
               <ComponentPrev
                 componentData={{
-                  id: '2',
+                  id: '1',
+                  title: 'Notification Demo',
+                  slug: 'demo',
+                  category: 'demo',
+                  wrapper: 'h-52 bg-gradient-to-r from-[#9795f0] to-[#fbc8d4] dark:bg-none',
+                  creator: '',
+                  innerWrapper: 'flex h-52 items-center justify-center gap-5',
+                  interactive: true,
+                  componentsName: ''
+                }}
+                baseUrl={`/homeDemo`}
+              />
+            </FadeIn>
+            <FadeIn>
+              <ComponentPrev
+                componentData={{
+                  id: '3',
                   title: 'RadioGroup Demo',
                   slug: 'demo',
                   category: 'demo',
