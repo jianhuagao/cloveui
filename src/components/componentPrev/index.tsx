@@ -72,7 +72,7 @@ export default memo(function ComponentPrev({ baseUrl, componentData }: Component
             {componentData.title}
           </h3>
         </Link>
-        <div className="not-prose mb-3 ml-auto flex items-center gap-2 pr-2">
+        <div className="not-prose ml-auto flex items-center gap-2 pr-2">
           {showCode && (
             <>
               <Image

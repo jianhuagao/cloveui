@@ -77,10 +77,13 @@ export default memo(function ResizeBlock({ children, className }: ResizeBlockPro
     <div
       ref={resizableRef}
       style={{ width }}
-      className={clsx(className, 'relative rounded-sm bg-[#f4f4f5]/60 dark:bg-white/5')}
+      className={clsx(className, 'relative rounded-xl bg-[#f4f4f5]/60 dark:bg-white/5')}
     >
-      <div className="group absolute top-1/2 -right-4 h-12 -translate-y-1/2 cursor-e-resize p-2" onMouseDown={handleMouseDown}>
-        <div className="h-full w-1 rounded-full bg-black opacity-15 group-hover:scale-110 group-hover:opacity-45 dark:bg-white"></div>
+      <div
+        className="group absolute top-1/2 -right-[18px] h-16 -translate-y-1/2 cursor-e-resize p-2"
+        onMouseDown={handleMouseDown}
+      >
+        <div className="h-full w-[6px] rounded-full bg-black/10 group-hover:scale-110 group-hover:bg-black/45 dark:bg-white/20 dark:group-hover:bg-white/45"></div>
       </div>
       {children}
     </div>

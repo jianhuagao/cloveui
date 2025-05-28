@@ -23,16 +23,16 @@ export default function ComponentsIframe({
       {...(!show && {
         hidden: true
       })}
-      className="relative mt-3 rounded-md"
+      className="relative mt-3 rounded-xl"
     >
       <div className="pointer-events-none absolute inset-[35%] hidden rounded-full bg-white/15 blur-2xl dark:block"></div>
       {loading && (
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <Spin />
         </div>
       )}
       <iframe
-        className={`w-full rounded-md bg-[#f8f8f9] transition-[background-color] dark:bg-[#242427] ${wrapper}`}
+        className={`w-full rounded-xl bg-[#f8f8f9] transition-[background-color] dark:bg-[#242427] ${wrapper}`}
         loading="lazy"
         srcDoc={componentHtml}
         title={`${componentTitle} Component`}
