@@ -137,7 +137,7 @@ export default async function Home() {
           </div>
         </div>
       </LayoutContent>
-      <div className="absolute inset-0 -z-10 bg-[url(/grid.svg)] [mask-image:linear-gradient(180deg,white_1%,rgba(255,255,255,0)_43%)] bg-center dark:bg-[url(/gridDark.svg)]"></div>
+      <div className="absolute top-0 left-0 -z-10 h-screen w-full bg-[url(/grid.svg)] [mask-image:linear-gradient(180deg,white_1%,rgba(255,255,255,0)_50%)] bg-center dark:bg-[url(/gridDark.svg)]"></div>
     </main>
   );
 }
