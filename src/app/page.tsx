@@ -3,20 +3,20 @@ import Link from 'next/link';
 import ChangeBg from '@/components/changeBg';
 import ComponentPrev from '@/components/componentPrev';
 import DarkSwitchBlock from '@/components/darkSwitchBlock';
-import AnimatedSection from '@/components/framerMotions/animatedSection';
 import FadeIn from '@/components/framerMotions/fadeIn';
 import LayoutContent from '@/components/layoutContent';
 import { MenuItemProps } from '@/components/menu';
 import { getComponents } from '@/service/dataService';
 import clsx from 'clsx';
 import { Geist_Mono } from 'next/font/google';
+import AnimatedVis from '@/components/framerMotions/animatedVis';
 
 const geist = Geist_Mono({
   subsets: ['latin']
 });
 
 const smallCardClassName =
-  'relative cursor-pointer rounded-3xl border border-gray-200 bg-white/10 p-6 shadow-lg backdrop-blur-lg transition-transform select-none hover:scale-105 hover:border-purple-400 hover:bg-white/20 hover:shadow-xl dark:border-white/20';
+  'relative cursor-pointer block rounded-3xl border border-gray-200 bg-white/10 p-6 shadow-lg backdrop-blur-lg transition-transform select-none hover:scale-105 hover:border-purple-400 hover:bg-white/20 hover:shadow-xl dark:border-white/20';
 
 const findFirstSlug = (menuItems: MenuItemProps[]) => {
   for (const item of menuItems) {
@@ -37,7 +37,7 @@ export default async function Home() {
     <main className="relative">
       <LayoutContent>
         <div className="mx-auto mt-9 flex max-w-7xl flex-col p-5 sm:p-20">
-          <AnimatedSection className="flex flex-col gap-12">
+          <AnimatedVis className="flex flex-col gap-12">
             <h1 className="group z-10 text-center text-6xl font-bold transition-all hover:text-transparent">
               <ChangeBg className="cursor-pointer bg-gradient-to-r from-[#9e58e9] to-blue-500 bg-clip-text leading-20 transition-all select-none">
                 <span className="group-hover:ml-0">Component </span>
@@ -73,25 +73,25 @@ export default async function Home() {
                 </button>
               </Link>
             </div>
-          </AnimatedSection>
+          </AnimatedVis>
           <div className="flex flex-col gap-8">
-            <FadeIn>
-              <div className="mt-10 grid gap-6 md:grid-cols-3">
-                <DarkSwitchBlock />
+            <AnimatedVis className="mt-10 mb-6 grid gap-6 md:grid-cols-3">
+              <DarkSwitchBlock />
+              <div>
                 <Link href="https://play.cloveui.asia" target="_blank" className={smallCardClassName}>
                   <div className="mb-4 text-3xl">🧪</div>
                   <h3 className="mb-2 text-xl font-semibold dark:text-white">Playground</h3>
                   <p className="text-sm text-black/80 dark:text-white/80">在线试验你的组件组合</p>
                   <div className="absolute right-4 bottom-4 text-sm text-black/40 dark:text-white/40">→</div>
                 </Link>
-                <Link href={docUrl} className={smallCardClassName}>
-                  <div className="mb-4 text-3xl">📦</div>
-                  <h3 className="mb-2 text-xl font-semibold dark:text-white">More Components</h3>
-                  <p className="text-sm text-black/80 dark:text-white/80">探索更多开箱即用组件</p>
-                  <div className="absolute right-4 bottom-4 text-sm text-black/40 dark:text-white/40">→</div>
-                </Link>
               </div>
-            </FadeIn>
+              <Link href={docUrl} className={smallCardClassName}>
+                <div className="mb-4 text-3xl">📦</div>
+                <h3 className="mb-2 text-xl font-semibold dark:text-white">More Components</h3>
+                <p className="text-sm text-black/80 dark:text-white/80">探索更多开箱即用组件</p>
+                <div className="absolute right-4 bottom-4 text-sm text-black/40 dark:text-white/40">→</div>
+              </Link>
+            </AnimatedVis>
             <FadeIn>
               <ComponentPrev
                 componentData={{

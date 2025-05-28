@@ -13,6 +13,8 @@ interface FadeInProps extends HTMLMotionProps<'div'> {
    *弹力,默认0.4,0为没有弹力
    * **/
   bounce?: number;
+  type?: string;
+  once?: boolean;
 }
 
 export default memo(function FadeIn({
@@ -23,6 +25,8 @@ export default memo(function FadeIn({
   onscreenX = 0,
   onscreenY = 0,
   bounce = 0.4,
+  once = false,
+  type = 'spring',
   ...rest
 }: FadeInProps) {
   const cardVariants: Variants = useMemo(
@@ -38,13 +42,13 @@ export default memo(function FadeIn({
         opacity: 1,
         transition: {
           delay,
-          type: 'spring',
+          type,
           bounce,
           duration: 2
         }
       }
     }),
-    [delay, offscreenX, offscreenY, onscreenX, onscreenY, bounce]
+    [delay, offscreenX, offscreenY, onscreenX, onscreenY, bounce, type]
   );
 
   return (
@@ -52,7 +56,10 @@ export default memo(function FadeIn({
       variants={cardVariants}
       initial="offscreen"
       whileInView="onscreen"
-      viewport={{ once: true, amount: 0 }}
+      viewport={{
+        once,
+        amount: 0
+      }}
       {...rest}
     >
       {children}
