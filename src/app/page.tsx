@@ -7,6 +7,23 @@ import LayoutContent from '@/components/layoutContent';
 import Image from 'next/image';
 
 export default function Home() {
+  const cards = [
+    {
+      title: 'Dark Mode',
+      description: '切换明暗模式，体验不同风格',
+      icon: '🌙'
+    },
+    {
+      title: 'Playground',
+      description: '在线试验你的组件组合',
+      icon: '🧪'
+    },
+    {
+      title: 'More Components',
+      description: '探索更多开箱即用组件',
+      icon: '📦'
+    }
+  ];
   return (
     <main className="relative">
       <LayoutContent>
@@ -36,20 +53,19 @@ export default function Home() {
           </AnimatedSection>
           <div className="flex flex-col gap-8">
             <FadeIn>
-              <ComponentPrev
-                componentData={{
-                  id: '2',
-                  title: 'Card Demo',
-                  slug: 'demo',
-                  category: 'demo',
-                  wrapper: 'h-[500px] bg-gradient-to-tr from-[#b384c7] to-[#5e8cb1] dark:bg-none',
-                  creator: '',
-                  innerWrapper: 'h-[500px]',
-                  interactive: true,
-                  componentsName: ''
-                }}
-                baseUrl={`/homeDemo`}
-              />
+              <div className="mt-10 grid gap-6 md:grid-cols-3">
+                {cards.map((card, idx) => (
+                  <div
+                    key={idx}
+                    className="relative cursor-pointer rounded-3xl border border-gray-200 bg-white/10 p-6 shadow-lg backdrop-blur-lg transition-transform select-none hover:scale-105 hover:border-purple-400 hover:bg-white/20 hover:shadow-xl dark:border-white/20"
+                  >
+                    <div className="mb-4 text-3xl">{card.icon}</div>
+                    <h3 className="mb-2 text-xl font-semibold dark:text-white">{card.title}</h3>
+                    <p className="text-sm text-black/80 dark:text-white/80">{card.description}</p>
+                    <div className="absolute right-4 bottom-4 text-sm text-black/40 dark:text-white/40">→</div>
+                  </div>
+                ))}
+              </div>
             </FadeIn>
             <FadeIn>
               <ComponentPrev
@@ -61,6 +77,22 @@ export default function Home() {
                   wrapper: 'h-52 bg-gradient-to-r from-[#9795f0] to-[#fbc8d4] dark:bg-none',
                   creator: '',
                   innerWrapper: 'flex h-52 items-center justify-center gap-5',
+                  interactive: true,
+                  componentsName: ''
+                }}
+                baseUrl={`/homeDemo`}
+              />
+            </FadeIn>
+            <FadeIn>
+              <ComponentPrev
+                componentData={{
+                  id: '2',
+                  title: 'Card Demo',
+                  slug: 'demo',
+                  category: 'demo',
+                  wrapper: 'h-[500px] bg-gradient-to-tr from-[#b384c7] to-[#5e8cb1] dark:bg-none',
+                  creator: '',
+                  innerWrapper: 'h-[500px]',
                   interactive: true,
                   componentsName: ''
                 }}
