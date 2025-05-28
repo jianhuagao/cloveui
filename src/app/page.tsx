@@ -1,12 +1,13 @@
+import Image from 'next/image';
+import Link from 'next/link';
 import ChangeBg from '@/components/changeBg';
 import ComponentPrev from '@/components/componentPrev';
+import DarkSwitchBlock from '@/components/darkSwitchBlock';
 import AnimatedSection from '@/components/framerMotions/animatedSection';
 import FadeIn from '@/components/framerMotions/fadeIn';
 import LayoutContent from '@/components/layoutContent';
 import { MenuItemProps } from '@/components/menu';
 import { getComponents } from '@/service/dataService';
-import Image from 'next/image';
-import Link from 'next/link';
 
 const smallCardClassName =
   'relative cursor-pointer rounded-3xl border border-gray-200 bg-white/10 p-6 shadow-lg backdrop-blur-lg transition-transform select-none hover:scale-105 hover:border-purple-400 hover:bg-white/20 hover:shadow-xl dark:border-white/20';
@@ -70,12 +71,7 @@ export default async function Home() {
           <div className="flex flex-col gap-8">
             <FadeIn>
               <div className="mt-10 grid gap-6 md:grid-cols-3">
-                <div className={smallCardClassName}>
-                  <div className="mb-4 text-3xl">🌙</div>
-                  <h3 className="mb-2 text-xl font-semibold dark:text-white">Dark Mode</h3>
-                  <p className="text-sm text-black/80 dark:text-white/80">切换明暗模式，体验不同风格</p>
-                  <div className="absolute right-4 bottom-4 text-sm text-black/40 dark:text-white/40">→</div>
-                </div>
+                <DarkSwitchBlock />
                 <Link href="https://play.cloveui.asia" target="_blank" className={smallCardClassName}>
                   <div className="mb-4 text-3xl">🧪</div>
                   <h3 className="mb-2 text-xl font-semibold dark:text-white">Playground</h3>
