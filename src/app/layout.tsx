@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Geist } from 'next/font/google';
 
 import '@/styles/globals.css';
 import '@/styles/background.css';
@@ -9,7 +9,7 @@ import BackgroundComponent from '@/components/backgroundComponent';
 import { ThemeProvider } from '@/context/themeContext';
 import { BackgroundProvider } from '@/context/backgroundContext';
 
-const inter = Inter({
+const geist = Geist({
   subsets: ['latin'],
   display: 'swap', // 字体未加载前用系统字体，加载后替换
   fallback: ['system-ui', 'sans-serif'] // 字体加载失败时的兜底方案
@@ -27,7 +27,7 @@ export default async function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={geist.className}>
         <BackgroundProvider>
           <BackgroundComponent />
           <ThemeProvider>{children}</ThemeProvider>

@@ -8,6 +8,12 @@ import FadeIn from '@/components/framerMotions/fadeIn';
 import LayoutContent from '@/components/layoutContent';
 import { MenuItemProps } from '@/components/menu';
 import { getComponents } from '@/service/dataService';
+import clsx from 'clsx';
+import { Geist_Mono } from 'next/font/google';
+
+const geist = Geist_Mono({
+  subsets: ['latin']
+});
 
 const smallCardClassName =
   'relative cursor-pointer rounded-3xl border border-gray-200 bg-white/10 p-6 shadow-lg backdrop-blur-lg transition-transform select-none hover:scale-105 hover:border-purple-400 hover:bg-white/20 hover:shadow-xl dark:border-white/20';
@@ -38,7 +44,7 @@ export default async function Home() {
                 library built with TailwindCSS
               </ChangeBg>
             </h1>
-            <h1 className="text-center text-xl">
+            <h1 className={clsx('text-center text-xl', geist.className)}>
               Free open source <span className="cursor-pointer transition-all hover:text-[#38bdf8]">TailwindCSS</span> component
               library
             </h1>

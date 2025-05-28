@@ -11,6 +11,11 @@ import CreatedBy from '../createdBy';
 import ThemeContext from '@/context/themeContext';
 import { ComponentData } from '@/service/dataService';
 import { fetchHtml, FetchHtmlReturn } from '@/service/clientDataService';
+import { Geist_Mono } from 'next/font/google';
+
+const geist = Geist_Mono({
+  subsets: ['latin']
+});
 
 export type CodeType = 'html' | 'jsx' | 'vue';
 
@@ -67,7 +72,7 @@ export default memo(function ComponentPrev({ baseUrl, componentData }: Component
   return (
     <div key={componentData.id} id={componentData.id}>
       <div className="flex flex-wrap items-end">
-        <Link className="relative no-underline" href={`${pathname}#${componentData.id}`}>
+        <Link className={clsx(geist.className, 'relative no-underline')} href={`${pathname}#${componentData.id}`}>
           <h3 className="before:absolute before:-left-4 before:text-violet-500 hover:before:content-['#']">
             {componentData.title}
           </h3>
