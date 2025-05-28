@@ -4,6 +4,7 @@
 @source '../../public/components';
 @source '../../public/articleDemo';
 @source '../../public/playgroundDemo';
+@source '../../public/homeDemo';
 @source '../../src/data';
 
 @custom-variant dark (&:where(.dark, .dark *));
