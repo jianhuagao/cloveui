@@ -60,7 +60,7 @@ export const PlayMenuItem = ({ children }: { children: React.ReactNode }) => {
     <Link
       // href="/docs/play"
       target="_blank"
-      href="https://play.cloveui.asia/"
+      href="https://play.cloveui.asia"
       className={clsx(articleMenuItemPubClass, articleMenuItemHoverClass, { [articleMenuItemActiveClass]: isActive })}
     >
       {children}
