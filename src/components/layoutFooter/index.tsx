@@ -4,13 +4,13 @@ import Image from 'next/image';
 export default memo(function Footer() {
   return (
     <footer className="z-50 text-sm text-black/70 dark:text-white/70">
-      <div className="mx-auto mb-0 flex flex-col flex-wrap items-center gap-1 px-10 pt-10 pb-20 sm:flex-row sm:px-52 sm:pt-40">
+      <div className="mx-auto mb-0 flex flex-col flex-wrap items-center gap-1 px-10 pt-10 pb-20 sm:flex-row sm:px-32 sm:pt-40 lg:px-52">
         <div>
           <div className="flex items-end gap-3">
             <Image src="/logo.svg" className="ml-1 opacity-70" width={28} height={28} alt="" />
             <span className="text-xl font-semibold">Clove UI</span>
           </div>
-          <div className="mt-5 flex items-center">
+          <div className="mt-5 flex flex-wrap items-center">
             © 2024 Clove UI
             <a className="ml-1 text-purple-400 hover:underline" href="https://github.com/jianhuagao/cloveui?tab=MIT-1-ov-file">
               MIT License
