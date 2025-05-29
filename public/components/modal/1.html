@@ -1,0 +1,47 @@
+<div
+  class="fixed inset-0 z-50 grid place-content-center bg-black/50 p-4 backdrop-blur-lg"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="modalTitle"
+>
+  <div
+    class="w-full max-w-md rounded-3xl border border-transparent bg-white p-6 shadow-lg dark:border-white/30 dark:bg-black dark:text-white"
+  >
+    <div class="flex items-start justify-between">
+      <h2 id="modalTitle" class="text-xl font-bold text-gray-900 sm:text-2xl dark:text-white">Modal Title</h2>
+
+      <button
+        type="button"
+        class="-me-4 -mt-4 cursor-pointer rounded-full p-2 text-gray-400 transition-colors hover:bg-gray-50 hover:text-gray-600 focus:outline-none dark:hover:bg-white/20 dark:hover:text-white"
+        aria-label="Close"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <div class="mt-4 text-pretty text-gray-700 dark:text-white/70">
+      <div class="my-2 min-w-[388px]">
+        In the hush between moments, I find you. Not always in words, not even in touch, but in the quiet breath of mornings, in
+        the warmth left behind on a pillow, in the way your smile finds mine across a room.
+      </div>
+    </div>
+
+    <footer class="mt-6 flex justify-end gap-2">
+      <button
+        type="button"
+        class="cursor-pointer rounded-lg bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-200 dark:bg-white/20 dark:text-white/80 dark:hover:bg-white/30"
+      >
+        Cancel
+      </button>
+
+      <button
+        type="button"
+        class="cursor-pointer rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700 dark:bg-blue-800 dark:hover:bg-blue-700"
+      >
+        Done
+      </button>
+    </footer>
+  </div>
+</div>
