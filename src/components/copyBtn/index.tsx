@@ -16,7 +16,7 @@ export default memo(function CopyBtn({ content, className }: { content: string; 
     <button
       onClick={copyToClipboard}
       className={clsx(
-        'group inline-flex min-w-0 items-center rounded-sm bg-white/20 px-4 py-2 text-sm font-semibold text-white backdrop-blur-md transition-all hover:shadow-lg active:scale-95 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none',
+        'group inline-flex min-w-0 cursor-pointer items-center rounded-sm bg-white/20 px-4 py-2 text-sm font-semibold text-white backdrop-blur-md transition-all hover:shadow-lg active:scale-95 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none',
         className
       )}
     >

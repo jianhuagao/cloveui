@@ -1,0 +1,26 @@
+<div
+  class="h-4 overflow-hidden rounded-full bg-gray-200 p-1 shadow-inner dark:bg-black/80"
+  role="progressbar"
+  aria-valuemin="0"
+  aria-valuemax="100"
+  aria-valuenow="60"
+>
+  <div
+    class="animate-stripes h-full rounded-full bg-indigo-500 bg-[linear-gradient(45deg,rgba(255,255,255,0.2)_25%,transparent_25%,transparent_50%,rgba(255,255,255,0.2)_50%,rgba(255,255,255,0.2)_75%,transparent_75%,transparent)] bg-[length:20px_20px] shadow-2xl transition-all duration-500 ease-in-out"
+    style="width: 60%"
+  ></div>
+</div>
+
+<style>
+  @keyframes stripes {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 40px 0;
+    }
+  }
+  .animate-stripes {
+    animation: stripes 1s linear infinite;
+  }
+</style>

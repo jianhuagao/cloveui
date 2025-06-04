@@ -1,0 +1,27 @@
+<div
+  class="h-4 overflow-hidden rounded-full bg-gray-200 p-1 shadow-inner dark:bg-black/80"
+  role="progressbar"
+  aria-valuemin="0"
+  aria-valuemax="100"
+  aria-valuenow="60"
+>
+  <div
+    class="animate-border h-full rounded-full bg-gradient-to-r from-pink-400 via-sky-400 to-yellow-400 bg-[length:_400%_400%] shadow-2xl transition-all duration-500 ease-in-out [animation-duration:_10s] dark:opacity-70"
+    style="width: 60%"
+  ></div>
+</div>
+
+<style>
+  @keyframes border {
+    0%,
+    100% {
+      background-position: 0 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+  .animate-border {
+    animation: border 10s ease infinite;
+  }
+</style>

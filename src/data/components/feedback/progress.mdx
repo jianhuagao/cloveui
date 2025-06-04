@@ -7,9 +7,21 @@ seo:
   description: Progress components created with Tailwind CSS
 components:
   1:
-    title: Mini-Progress
+    title: Base-Progress
     wrapper: h-72 bg-gradient-to-r from-[#9795f0] to-[#fbc8d4] dark:bg-none
-    innerWrapper: flex h-72 items-center justify-center gap-5 flex-col md:flex-row
+    innerWrapper: flex h-72 items-center justify-center gap-5 [&>*]:basis-[300px] [&>*]:shrink
+  2:
+    title: Animation-Progress style1
+    wrapper: h-72 bg-gradient-to-r from-[#9795f0] to-[#fbc8d4] dark:bg-none
+    innerWrapper: flex h-72 items-center justify-center gap-5 [&>*]:basis-[300px] [&>*]:shrink
+  3:
+    title: Animation-Progress style2
+    wrapper: h-72 bg-gradient-to-r from-[#9795f0] to-[#fbc8d4] dark:bg-none
+    innerWrapper: flex h-72 items-center justify-center gap-5 [&>*]:basis-[300px] [&>*]:shrink
+  4:
+    title: Animation-Progress style3
+    wrapper: h-72 bg-gradient-to-r from-[#9795f0] to-[#fbc8d4] dark:bg-none
+    innerWrapper: flex h-72 items-center justify-center gap-5 [&>*]:basis-[300px] [&>*]:shrink
 ---
 
 # Progress Components
