@@ -3,8 +3,11 @@ import Image from 'next/image';
 
 export default memo(function Footer() {
   return (
-    <footer className="z-50 text-sm text-black/70 dark:text-white/70">
-      <div className="mx-auto mb-0 flex flex-col flex-wrap items-center gap-1 px-10 pt-10 pb-20 sm:flex-row sm:px-32 sm:pt-40 lg:px-52">
+    <footer className="relative z-50 text-sm text-black/70 dark:text-white/70">
+      <div className="absolute bottom-0 left-0 -z-10">
+        <img src="/bot.png" width={240} alt="" />
+      </div>
+      <div className="mx-auto mb-0 flex flex-col flex-wrap items-center gap-1 px-10 pt-10 pb-20 sm:flex-row sm:px-32 sm:pt-40 lg:px-72">
         <div>
           <div className="flex items-end gap-3">
             <Image src="/logo.svg" className="ml-1 opacity-70" width={28} height={28} alt="" />

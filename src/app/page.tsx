@@ -46,7 +46,7 @@ export default async function Home() {
               Free open source <span className="cursor-pointer text-[#38bdf8] transition-all hover:text-3xl">TailwindCSS</span>{' '}
               component library
             </h1>
-            <div className="mt-10 mb-20 flex items-center justify-center gap-5">
+            <div className="mt-16 mb-24 flex items-center justify-center gap-5">
               <Link
                 href="https://github.com/jianhuagao/cloveui"
                 target="_blank"
@@ -73,7 +73,7 @@ export default async function Home() {
             </div>
           </AnimatedVis>
           <div className="flex flex-col gap-8">
-            <AnimatedVis className="mt-10 mb-6 grid gap-6 md:grid-cols-3">
+            <AnimatedVis className="mt-32 mb-6 grid gap-6 md:grid-cols-3">
               <DarkSwitchBlock />
               <EmojiHoverCard
                 emojis={['🧪', '🧬', '🔬', '⚗️', '🧫']}
@@ -139,8 +139,9 @@ export default async function Home() {
           </div>
         </div>
       </LayoutContent>
-      <div className="absolute top-0 left-0 -z-10 h-screen w-full bg-[url(/grid.svg)] [mask-image:linear-gradient(180deg,white_1%,rgba(255,255,255,0)_60%)] bg-center dark:bg-[url(/gridDark.svg)]">
+      <div className="absolute top-0 left-0 -z-10 h-screen w-full bg-[url(/grid.svg)] [mask-image:linear-gradient(180deg,white_1%,rgba(255,255,255,0)_75%)] bg-center dark:bg-[url(/gridDark.svg)]">
         <AnimatedVis className="h-full">
+          <img src="/rbt.png" className="absolute top-[30%] left-[16%] z-10" width={700} alt="" />
           <svg
             className="absolute top-[12%] left-[20%]"
             xmlns="http://www.w3.org/2000/svg"
@@ -194,18 +195,6 @@ export default async function Home() {
               fillRule="evenodd"
               d="M15.597 11.082c.11.29.39.49.7.49s.59-.2.7-.49l.27-.72c.3-.8.45-1.2.66-1.41c.208-.208.602-.357 1.406-.66l.024-.01l.7-.26c.29-.11.49-.39.49-.7s-.2-.59-.49-.7l-.72-.27c-.8-.3-1.2-.45-1.41-.66c-.208-.208-.357-.603-.662-1.408l-.008-.022l-.26-.7a.76.76 0 0 0-.7-.49c-.31 0-.59.2-.7.49l-.27.72c-.3.8-.45 1.2-.66 1.41c-.208.208-.603.358-1.408.662l-.022.008l-.7.26c-.29.11-.49.39-.49.7s.2.59.49.7l.72.27c.8.3 1.2.45 1.41.66c.208.208.357.603.662 1.408l.008.022zm.13-3.19c-.23-.24-.5-.41-.85-.57c.34-.16.61-.33.85-.57c.24-.23.41-.5.57-.85c.16.34.33.61.57.85c.23.24.5.41.85.57c-.34.16-.61.33-.85.57c-.24.23-.41.5-.57.85c-.16-.34-.33-.61-.57-.85m-3.93 11.68c-4.27 0-7.75-3.48-7.75-7.75s3.48-7.75 7.75-7.75c.41 0 .75.34.75.75s-.34.75-.75.75c-3.45 0-6.25 2.8-6.25 6.25s2.8 6.25 6.25 6.25s6.25-2.8 6.25-6.25c0-.41.34-.75.75-.75s.75.34.75.75a7.7 7.7 0 0 1-1.77 4.921l3.55 3.55c.29.29.29.77 0 1.06c-.15.15-.34.22-.53.22s-.38-.07-.53-.22l-3.55-3.55a7.7 7.7 0 0 1-4.92 1.77"
               color="#ec4899"
-            />
-          </svg>
-          <svg
-            className="absolute top-[40%] left-[25%]"
-            xmlns="http://www.w3.org/2000/svg"
-            width="30"
-            height="30"
-            viewBox="0 0 24 24"
-          >
-            <path
-              fill="#ed3e5c"
-              d="m18.08 12.42l-6.18 6.19a4.25 4.25 0 0 1-6-6l8-8a2.57 2.57 0 0 1 3.54 0a2.52 2.52 0 0 1 0 3.54l-6.9 6.89A.75.75 0 1 1 9.42 14l5.13-5.12a1 1 0 0 0-1.42-1.42L8 12.6a2.74 2.74 0 0 0 0 3.89a2.82 2.82 0 0 0 3.89 0l6.89-6.9a4.5 4.5 0 0 0-6.36-6.36l-8 8A6.25 6.25 0 0 0 13.31 20l6.19-6.18a1 1 0 1 0-1.42-1.42Z"
             />
           </svg>
           <svg
