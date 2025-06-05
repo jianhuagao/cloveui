@@ -1,6 +1,7 @@
+import Image from 'next/image';
+
 import AnimatedVis from '../framerMotions/animatedVis';
 import FloatingBackground from '../framerMotions/floatingBackground';
-import Image from 'next/image';
 
 export default function HomepageBg() {
   return (
@@ -12,6 +13,7 @@ export default function HomepageBg() {
               id: 1,
               className: 'absolute left-[20%] top-[12%]',
               factor: 8,
+              scaleFactor: 0.5,
               element: (
                 <svg xmlns="http://www.w3.org/2000/svg" width="55" height="44" viewBox="0 0 640 512">
                   <path
@@ -25,6 +27,7 @@ export default function HomepageBg() {
               id: 2,
               className: 'absolute top-[22%] right-[22%]',
               factor: 15,
+              scaleFactor: 0.2,
               element: (
                 <svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" viewBox="0 0 24 24">
                   <path
@@ -56,6 +59,7 @@ export default function HomepageBg() {
               id: 4,
               className: 'absolute right-[18%] top-[32%]',
               factor: 10,
+              scaleFactor: 0.5,
               element: (
                 <svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" viewBox="0 0 24 24">
                   <path
@@ -71,6 +75,7 @@ export default function HomepageBg() {
               id: 5,
               className: 'absolute top-[45%] left-[29%]',
               factor: 25,
+              scaleFactor: 0.6,
               element: (
                 <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24">
                   <g fill="none" stroke="#a855f7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
