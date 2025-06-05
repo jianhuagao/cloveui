@@ -10,8 +10,7 @@ export default function HomepageBg() {
           items={[
             {
               id: 1,
-              top: '12%',
-              left: '20%',
+              className: 'absolute left-[20%] top-[12%]',
               factor: 8,
               element: (
                 <svg xmlns="http://www.w3.org/2000/svg" width="55" height="44" viewBox="0 0 640 512">
@@ -24,8 +23,7 @@ export default function HomepageBg() {
             },
             {
               id: 2,
-              top: '22%',
-              right: '22%',
+              className: 'absolute top-[22%] right-[22%]',
               factor: 15,
               element: (
                 <svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" viewBox="0 0 24 24">
@@ -43,8 +41,7 @@ export default function HomepageBg() {
             },
             {
               id: 3,
-              top: '32%',
-              left: '15%',
+              className: 'absolute left-[15%] top-[32%]',
               factor: 20,
               element: (
                 <svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" viewBox="0 0 24 24">
@@ -57,8 +54,7 @@ export default function HomepageBg() {
             },
             {
               id: 4,
-              top: '32%',
-              right: '18%',
+              className: 'absolute right-[18%] top-[32%]',
               factor: 10,
               element: (
                 <svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" viewBox="0 0 24 24">
@@ -73,8 +69,7 @@ export default function HomepageBg() {
             },
             {
               id: 5,
-              top: '45%',
-              left: '29%',
+              className: 'absolute top-[45%] left-[29%]',
               factor: 25,
               element: (
                 <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24">
@@ -121,8 +116,7 @@ export default function HomepageBg() {
             },
             {
               id: 6,
-              top: '42%',
-              right: '11%',
+              className: 'absolute top-[42%] right-[11%]',
               factor: 50,
               element: (
                 <div>

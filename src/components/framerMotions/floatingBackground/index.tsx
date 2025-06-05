@@ -7,10 +7,7 @@ import type { ReactNode } from 'react';
 
 type FloatingItem = {
   id: string | number;
-  top?: string;
-  left?: string;
-  right?: string; // 可选，右侧偏移
-  bottom?: string; // 可选，下侧偏移
+  className?: string; // 可选，类名
   factor?: number; // 偏移强度
   element: ReactNode;
 };
@@ -20,19 +17,13 @@ type FloatingBackgroundProps = {
 };
 
 const FloatingItemComponent = ({
-  top,
-  left,
-  right,
-  bottom,
+  className,
   factor = 10,
   element,
   springX,
   springY
 }: {
-  top?: string;
-  left?: string;
-  right?: string;
-  bottom?: string;
+  className?: string;
   factor?: number;
   element: ReactNode;
   springX: ReturnType<typeof useSpring>;
@@ -43,12 +34,8 @@ const FloatingItemComponent = ({
 
   return (
     <motion.div
-      className="absolute"
+      className={className}
       style={{
-        top,
-        left,
-        right,
-        bottom,
         x: offsetX,
         y: offsetY
       }}
@@ -80,13 +67,10 @@ const FloatingBackground: React.FC<FloatingBackgroundProps> = ({ items }) => {
 
   return (
     <>
-      {items.map(({ id, top, left, right, bottom, factor, element }) => (
+      {items.map(({ id, className, factor, element }) => (
         <FloatingItemComponent
           key={id}
-          top={top}
-          left={left}
-          right={right}
-          bottom={bottom}
+          className={className}
           factor={factor}
           element={element}
           springX={springX}
