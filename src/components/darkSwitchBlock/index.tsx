@@ -2,6 +2,7 @@
 import { memo, useContext } from 'react';
 import ThemeContext from '@/context/themeContext';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const smallCardClassName =
   'relative cursor-pointer rounded-3xl border border-gray-200 bg-white/10 p-6 shadow-lg backdrop-blur-lg transition-transform select-none hover:scale-105 hover:border-purple-400 hover:bg-white/20 hover:shadow-xl dark:border-white/20';
@@ -20,6 +21,7 @@ export default memo(function DarkSwitch() {
 
   return (
     <div className={smallCardClassName} onClick={toggleTheme}>
+      <Image src="/rbt2.png" className="absolute -top-[107px] -left-[27px] z-10" width={100} height={100} alt="" />
       {/* 动画图标容器 */}
       <div className="relative mb-4 h-10 w-10 overflow-hidden">
         <motion.div
@@ -34,7 +36,6 @@ export default memo(function DarkSwitch() {
           <div className="flex w-10 items-center justify-center text-3xl">{iconList[currentIconIndex]}</div>
         </motion.div>
       </div>
-
       <h3 className="mb-2 text-xl font-semibold dark:text-white">Dark Mode</h3>
       <p className="text-sm text-black/80 dark:text-white/80">切换明暗模式，体验不同风格</p>
       <div className="absolute right-4 bottom-4 text-sm text-black/40 dark:text-white/40">

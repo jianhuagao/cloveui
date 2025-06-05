@@ -73,7 +73,7 @@ export default async function Home() {
             </div>
           </AnimatedVis>
           <div className="flex flex-col gap-8">
-            <AnimatedVis className="mt-32 mb-6 grid gap-6 md:grid-cols-3">
+            <AnimatedVis className="mt-16 mb-6 grid gap-6 md:grid-cols-3">
               <DarkSwitchBlock />
               <EmojiHoverCard
                 emojis={['🧪', '🧬', '🔬', '⚗️', '🧫']}
@@ -136,12 +136,35 @@ export default async function Home() {
                 baseUrl={`/homeDemo`}
               />
             </FadeIn>
+            <FadeIn once={true}>
+              <ComponentPrev
+                componentData={{
+                  id: '4',
+                  title: 'Progress Demo',
+                  slug: 'demo',
+                  category: 'demo',
+                  wrapper: 'h-96 bg-gradient-to-r from-[#9795f0] to-[#fbc8d4] dark:bg-none',
+                  creator: '',
+                  innerWrapper: 'flex px-[20%] h-96 [&>*]:flex-1 items-center justify-center gap-4',
+                  interactive: true,
+                  componentsName: ''
+                }}
+                baseUrl={`/homeDemo`}
+              />
+            </FadeIn>
+            <FadeIn once={true}>
+              <div className="mt-4 flex items-center justify-center opacity-70">
+                <Link href={docUrl} className="text-lg hover:text-blue-500 hover:underline">
+                  More Components ...
+                </Link>
+              </div>
+            </FadeIn>
           </div>
         </div>
       </LayoutContent>
-      <div className="absolute top-0 left-0 -z-10 h-screen w-full bg-[url(/grid.svg)] [mask-image:linear-gradient(180deg,white_1%,rgba(255,255,255,0)_75%)] bg-center dark:bg-[url(/gridDark.svg)]">
+      <div className="absolute top-0 left-0 -z-10 h-screen w-full bg-[url(/grid.svg)] [mask-image:linear-gradient(180deg,white_1%,rgba(255,255,255,0)_95%)] bg-center dark:bg-[url(/gridDark.svg)]">
         <AnimatedVis className="h-full">
-          <img src="/rbt.png" className="absolute top-[30%] left-[16%] z-10" width={700} alt="" />
+          <Image src="/rbt.png" className="absolute top-[38%] right-[12%] z-10" width={600} height={600} alt="" />
           <svg
             className="absolute top-[12%] left-[20%]"
             xmlns="http://www.w3.org/2000/svg"
@@ -179,29 +202,29 @@ export default async function Home() {
             viewBox="0 0 24 24"
           >
             <path
-              fill="#fde047"
+              fill="#ec4899"
               d="M20 11h3v2h-3zM1 11h3v2H1zM13 1v3h-2V1zM4.92 3.5l2.13 2.14l-1.42 1.41L3.5 4.93zm12.03 2.13l2.12-2.13l1.43 1.43l-2.13 2.12zM12 6a6 6 0 0 1 6 6c0 2.22-1.21 4.16-3 5.2V19a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-1.8c-1.79-1.04-3-2.98-3-5.2a6 6 0 0 1 6-6m2 15v1a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-1zm-3-3h2v-2.13c1.73-.44 3-2.01 3-3.87a4 4 0 0 0-4-4a4 4 0 0 0-4 4c0 1.86 1.27 3.43 3 3.87z"
             />
           </svg>
           <svg
-            className="absolute top-[35%] right-[20%]"
+            className="absolute top-[32%] right-[18%]"
             xmlns="http://www.w3.org/2000/svg"
             width="55"
             height="55"
             viewBox="0 0 24 24"
           >
             <path
-              fill="#ec4899"
+              fill="#fde047"
               fillRule="evenodd"
               d="M15.597 11.082c.11.29.39.49.7.49s.59-.2.7-.49l.27-.72c.3-.8.45-1.2.66-1.41c.208-.208.602-.357 1.406-.66l.024-.01l.7-.26c.29-.11.49-.39.49-.7s-.2-.59-.49-.7l-.72-.27c-.8-.3-1.2-.45-1.41-.66c-.208-.208-.357-.603-.662-1.408l-.008-.022l-.26-.7a.76.76 0 0 0-.7-.49c-.31 0-.59.2-.7.49l-.27.72c-.3.8-.45 1.2-.66 1.41c-.208.208-.603.358-1.408.662l-.022.008l-.7.26c-.29.11-.49.39-.49.7s.2.59.49.7l.72.27c.8.3 1.2.45 1.41.66c.208.208.357.603.662 1.408l.008.022zm.13-3.19c-.23-.24-.5-.41-.85-.57c.34-.16.61-.33.85-.57c.24-.23.41-.5.57-.85c.16.34.33.61.57.85c.23.24.5.41.85.57c-.34.16-.61.33-.85.57c-.24.23-.41.5-.57.85c-.16-.34-.33-.61-.57-.85m-3.93 11.68c-4.27 0-7.75-3.48-7.75-7.75s3.48-7.75 7.75-7.75c.41 0 .75.34.75.75s-.34.75-.75.75c-3.45 0-6.25 2.8-6.25 6.25s2.8 6.25 6.25 6.25s6.25-2.8 6.25-6.25c0-.41.34-.75.75-.75s.75.34.75.75a7.7 7.7 0 0 1-1.77 4.921l3.55 3.55c.29.29.29.77 0 1.06c-.15.15-.34.22-.53.22s-.38-.07-.53-.22l-3.55-3.55a7.7 7.7 0 0 1-4.92 1.77"
-              color="#ec4899"
+              color="#fde047"
             />
           </svg>
           <svg
-            className="absolute top-[45%] right-[29%]"
+            className="absolute top-[45%] left-[29%]"
             xmlns="http://www.w3.org/2000/svg"
-            width="40"
-            height="40"
+            width="56"
+            height="56"
             viewBox="0 0 24 24"
           >
             <g fill="none" stroke="#a855f7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
