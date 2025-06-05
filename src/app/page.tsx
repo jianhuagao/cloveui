@@ -162,9 +162,9 @@ export default async function Home() {
           </div>
         </div>
       </LayoutContent>
-      <div className="absolute top-0 left-0 -z-10 h-screen w-full bg-[url(/grid.svg)] [mask-image:linear-gradient(180deg,white_1%,rgba(255,255,255,0)_95%)] bg-center dark:bg-[url(/gridDark.svg)]">
+      <div className="absolute top-0 left-0 -z-10 h-screen w-full bg-[url(/grid.svg)] [mask-image:linear-gradient(180deg,white_1%,rgba(255,255,255,0)_98%)] bg-center dark:bg-[url(/gridDark.svg)]">
         <AnimatedVis className="h-full">
-          <Image src="/rbt.png" className="absolute top-[38%] right-[12%] z-10" width={600} height={600} alt="" />
+          <Image src="/rbt.png" className="absolute top-[42%] right-[11%] z-10" width={560} height={560} alt="" />
           <svg
             className="absolute top-[12%] left-[20%]"
             xmlns="http://www.w3.org/2000/svg"
