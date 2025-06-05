@@ -94,13 +94,13 @@ export default async function Home() {
             <FadeIn once={true}>
               <ComponentPrev
                 componentData={{
-                  id: '2',
-                  title: 'Card Demo',
+                  id: '1',
+                  title: 'Notification Demo',
                   slug: 'demo',
                   category: 'demo',
-                  wrapper: 'h-[500px] bg-gradient-to-tr from-[#b384c7] to-[#5e8cb1] dark:bg-none',
+                  wrapper: 'h-72 bg-gradient-to-r from-[#9795f0] to-[#fbc8d4] dark:bg-none',
                   creator: '',
-                  innerWrapper: 'h-[500px]',
+                  innerWrapper: 'flex h-72 items-center justify-center gap-5 flex-col md:flex-row',
                   interactive: true,
                   componentsName: ''
                 }}
@@ -110,13 +110,13 @@ export default async function Home() {
             <FadeIn once={true}>
               <ComponentPrev
                 componentData={{
-                  id: '1',
-                  title: 'Notification Demo',
+                  id: '2',
+                  title: 'Card Demo',
                   slug: 'demo',
                   category: 'demo',
-                  wrapper: 'h-72 bg-gradient-to-r from-[#9795f0] to-[#fbc8d4] dark:bg-none',
+                  wrapper: 'h-[500px] bg-gradient-to-tr from-[#b384c7] to-[#5e8cb1] dark:bg-none',
                   creator: '',
-                  innerWrapper: 'flex h-72 items-center justify-center gap-5 flex-col md:flex-row',
+                  innerWrapper: 'h-[500px]',
                   interactive: true,
                   componentsName: ''
                 }}

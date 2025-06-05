@@ -21,7 +21,7 @@ export default memo(function DarkSwitch() {
 
   return (
     <div className={smallCardClassName} onClick={toggleTheme}>
-      <Image src="/rbt2.png" className="absolute -top-[107px] -left-[27px] z-10" width={100} height={100} alt="" />
+      <Image src="/rbt2.png" className="absolute brightness-125 grayscale-50 dark:grayscale-0 -top-[107px] -left-[27px] z-10" width={100} height={100} alt="" />
       {/* 动画图标容器 */}
       <div className="relative mb-4 h-10 w-10 overflow-hidden">
         <motion.div
