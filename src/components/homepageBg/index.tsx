@@ -5,7 +5,7 @@ import FloatingBackground from '../framerMotions/floatingBackground';
 
 export default function HomepageBg() {
   return (
-    <div className="absolute top-0 left-0 -z-10 h-screen w-full bg-[url(/grid.svg)] [mask-image:linear-gradient(180deg,white_1%,rgba(255,255,255,0)_98%)] bg-center dark:bg-[url(/gridDark.svg)]">
+    <div className="pointer-events-none absolute top-0 left-0 -z-10 h-screen w-full bg-[url(/grid.svg)] [mask-image:linear-gradient(180deg,white_1%,rgba(255,255,255,0)_98%)] bg-center dark:bg-[url(/gridDark.svg)]">
       <AnimatedVis className="h-full">
         <FloatingBackground
           items={[

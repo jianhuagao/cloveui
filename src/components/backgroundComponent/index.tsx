@@ -45,7 +45,7 @@ const BackgroundComponent: React.FC = () => {
     }
   }, [backgroundContext?.positionStyles, pathname]);
 
-  return <div ref={backgroundRef} className="main-background"></div>;
+  return <div ref={backgroundRef} className="main-background pointer-events-none"></div>;
 };
 
 export default BackgroundComponent;
