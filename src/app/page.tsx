@@ -39,8 +39,8 @@ export default async function Home() {
       <LayoutContent>
         <div className="mx-auto mt-9 flex max-w-7xl flex-col p-5 sm:p-20">
           <AnimatedVis className="flex flex-col gap-12">
-            <h1 className="group z-10 text-center text-6xl font-bold transition-all hover:text-transparent">
-              <ChangeBg className="cursor-pointer bg-gradient-to-r from-[#9e58e9] to-blue-500 bg-clip-text leading-20 transition-all select-none">
+            <h1 className="group z-10 bg-gradient-to-b bg-clip-text text-center text-6xl font-bold transition-all dark:from-white/80 dark:via-white dark:to-white/60 dark:text-transparent">
+              <ChangeBg className="cursor-pointer leading-20 select-none">
                 <span className="group-hover:ml-0">Component </span>
                 library built with TailwindCSS
               </ChangeBg>
