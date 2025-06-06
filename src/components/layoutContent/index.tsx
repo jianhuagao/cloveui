@@ -5,7 +5,7 @@ import LayoutFooter from '@/components/layoutFooter';
 export default memo(function Layout({ children }: { children?: React.ReactNode }) {
   return (
     <div className="flex min-h-screen flex-col">
-      <div className="sticky top-0">
+      <div className="2xl:sticky 2xl:top-0">
         <LayoutHeader />
       </div>
       <div className="grow">{children}</div>
