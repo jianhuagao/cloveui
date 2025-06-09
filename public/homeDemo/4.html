@@ -1,33 +1,27 @@
-<div
-  class="h-4 overflow-hidden rounded-full bg-gray-200 p-1 shadow-inner dark:bg-black/80"
-  role="progressbar"
-  aria-valuemin="0"
-  aria-valuemax="100"
-  aria-valuenow="60"
->
+<div class="group relative overflow-hidden rounded-3xl shadow-2xl">
+  <img src="/resource/card/card3.webp" alt="" class="h-72 object-cover transition-all duration-700 group-hover:scale-105" />
   <div
-    class="relative h-full overflow-hidden rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 shadow-2xl transition-all duration-500 ease-in-out dark:opacity-70"
-    style="width: 60%"
+    class="absolute inset-0 flex flex-col items-end justify-end bg-black/25 transition-all duration-700 group-hover:bg-black/0"
   >
-    <div class="pointer-events-none absolute inset-0">
-      <div
-        class="animate-glow absolute top-0 left-[-50%] h-full w-[50%]"
-        style="background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.8) 50%, transparent 100%)"
-      ></div>
+    <div class="flex flex-col items-end p-4 text-white/80 group-hover:hidden">
+      <p class="text-lg font-bold">Card title</p>
+      <p>Card subtitle</p>
     </div>
   </div>
 </div>
 
-<style>
-  @keyframes glow {
-    0% {
-      transform: translateX(0%);
-    }
-    100% {
-      transform: translateX(300%);
-    }
-  }
-  .animate-glow {
-    animation: glow 3s ease-in-out infinite;
-  }
-</style>
+<div class="group relative overflow-hidden rounded-3xl shadow-2xl">
+  <img
+    src="/resource/card/card1.jpeg"
+    alt=""
+    class="h-72 scale-105 object-cover transition-all duration-700 group-hover:scale-100"
+  />
+  <div
+    class="absolute inset-0 flex flex-col items-end justify-end bg-black/0 transition-all duration-700 group-hover:bg-black/25"
+  >
+    <div class="hidden flex-col items-end p-4 text-white/80 group-hover:flex">
+      <p class="text-lg font-bold">Card title</p>
+      <p>Card subtitle</p>
+    </div>
+  </div>
+</div>

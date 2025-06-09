@@ -143,12 +143,12 @@ export default async function Home() {
               <ComponentPrev
                 componentData={{
                   id: '4',
-                  title: 'Progress Demo',
+                  title: 'Card Demo',
                   slug: 'demo',
                   category: 'demo',
-                  wrapper: 'h-96 bg-gradient-to-r from-[#9795f0] to-[#fbc8d4] dark:bg-none',
+                  wrapper: 'flex flex-col items-center h-96 bg-gradient-to-r from-[#bed5f5] to-[#1bb8d8] dark:bg-none',
                   creator: '',
-                  innerWrapper: 'flex px-[20%] h-96 [&>*]:flex-1 items-center justify-center gap-4',
+                  innerWrapper: 'flex h-96 items-center justify-center gap-4 px-20 flex-col md:flex-row',
                   interactive: true,
                   componentsName: ''
                 }}
