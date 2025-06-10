@@ -148,7 +148,7 @@ export default async function Home() {
                   category: 'demo',
                   wrapper: 'flex flex-col items-center h-96 bg-gradient-to-r from-[#bed5f5] to-[#1bb8d8] dark:bg-none',
                   creator: '',
-                  innerWrapper: 'flex h-96 items-center justify-center gap-4 px-20 flex-col md:flex-row',
+                  innerWrapper: 'flex h-96 py-5 items-center justify-center gap-4 px-20 flex-col md:flex-row',
                   interactive: true,
                   componentsName: ''
                 }}
