@@ -96,7 +96,7 @@ export default async function Home() {
                 componentData={{
                   id: '1',
                   title: 'Notification Demo',
-                  defaultCfg: '6',
+                  defaultCfg: '12',
                   slug: 'demo',
                   category: 'demo',
                   wrapper: 'h-72',
