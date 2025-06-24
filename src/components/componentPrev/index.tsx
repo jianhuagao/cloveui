@@ -69,7 +69,7 @@ const bgConfig = [
   },
   {
     id: '11',
-    classNames: 'bg-[url(/resource/public/bg.jpg)] bg-cover bg-center bg-no-repeat',
+    classNames: 'bg-[url(/resource/public/bg1.jpg)] bg-cover bg-center bg-no-repeat',
     desc: ''
   },
   {
