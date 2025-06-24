@@ -271,14 +271,13 @@ export default memo(function ComponentPrev({ baseUrl, componentData }: Component
       <ResizeBlock>
         <ComponentsIframe
           loading={loading}
-          show={!showCode}
           componentHtml={previewData?.transformedHtml || ''}
           componentTitle={componentData.title}
           refIframe={refIframe}
           wrapper={componentData.wrapper}
           selectBgClass={selectBgClass}
         />
-        <ComponentCodePrev codeType={codeType} componentCode={previewCode} show={showCode} />
+        {showCode && <ComponentCodePrev codeType={codeType} componentCode={previewCode} />}
       </ResizeBlock>
     </div>
   );

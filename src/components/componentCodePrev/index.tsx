@@ -4,18 +4,17 @@ import 'prismjs/components/prism-jsx.min';
 import CopyBtn from '../copyBtn';
 
 interface ComponentCodePrevProps {
-  show: boolean;
   componentCode?: string;
   codeType?: string;
 }
 
-export default memo(function ComponentCodePrev({ show, componentCode = '', codeType = 'html' }: ComponentCodePrevProps) {
+export default memo(function ComponentCodePrev({ componentCode = '', codeType = 'html' }: ComponentCodePrevProps) {
   const [prismClass, setPrismClass] = useState('language-html');
-  const [isMounted, setIsMounted] = useState(false);
+  // const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
     // 设置组件已挂载状态
-    setIsMounted(true);
+    // setIsMounted(true);
     Prism.highlightAll();
   }, [componentCode]);
 
@@ -26,14 +25,12 @@ export default memo(function ComponentCodePrev({ show, componentCode = '', codeT
   }, [codeType]);
 
   return (
-    <div {...(!show && { hidden: true })}>
-      <div className="relative">
-        <pre className="h-[400px] overflow-auto rounded-xs p-4 ring-2 ring-gray-900 lg:h-[600px]">
-          <code className={isMounted ? prismClass : ''}>{componentCode}</code>
-        </pre>
-        <div className="absolute top-4 right-4 z-10">
-          <CopyBtn content={componentCode} />
-        </div>
+    <div className="relative">
+      <pre className="h-[400px] overflow-auto rounded-xs p-4 ring-2 ring-gray-900 lg:h-[600px]">
+        <code className={prismClass}>{componentCode}</code>
+      </pre>
+      <div className="absolute top-4 right-4 z-10">
+        <CopyBtn content={componentCode} />
       </div>
     </div>
   );
