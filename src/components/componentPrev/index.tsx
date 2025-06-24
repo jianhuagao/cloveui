@@ -241,7 +241,7 @@ export default memo(function ComponentPrev({ baseUrl, componentData }: Component
                       <div
                         key={s.id}
                         className={clsx(
-                          'flex size-6 cursor-pointer items-center justify-center rounded-xl border-2 border-gray-300/80 transition-all duration-300 ease-in-out hover:scale-125 hover:bg-gray-500/20 active:scale-100 dark:border-white/30 dark:hover:bg-white/20',
+                          'flex size-6 cursor-pointer items-center justify-center rounded-xl ring-2 ring-gray-300/80 transition-all duration-300 ease-in-out hover:scale-125 hover:bg-gray-500/20 active:scale-100 dark:ring-white/30 dark:hover:bg-white/20',
                           s.classNames
                         )}
                         onClick={() => {
