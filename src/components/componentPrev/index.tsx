@@ -64,12 +64,17 @@ const bgConfig = [
   },
   {
     id: '10',
-    classNames: 'bg-[url(/resource/public/space.webp)] bg-cover bg-center bg-no-repeat',
+    classNames: 'bg-[url(/resource/public/bg2.jpg)] bg-cover bg-center bg-no-repeat',
     desc: ''
   },
   {
     id: '11',
     classNames: 'bg-[url(/resource/public/bg.jpg)] bg-cover bg-center bg-no-repeat',
+    desc: ''
+  },
+  {
+    id: '12',
+    classNames: 'bg-[url(/resource/public/bg3.jpg)] bg-cover bg-center bg-no-repeat',
     desc: ''
   }
 ];
