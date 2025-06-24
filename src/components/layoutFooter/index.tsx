@@ -4,9 +4,9 @@ import Image from 'next/image';
 export default memo(function Footer() {
   return (
     <footer className="relative z-50 text-sm text-black/70 dark:text-white/70">
-      <div className="absolute bottom-0 left-0 -z-10 opacity-85 dark:opacity-70">
+      {/* <div className="absolute bottom-0 left-0 -z-10 opacity-85 dark:opacity-70">
         <Image src="/bot.png" width={240} height={240} alt="" />
-      </div>
+      </div> */}
       <div className="mx-auto mb-0 flex flex-col flex-wrap items-center gap-1 px-10 pt-10 pb-20 sm:flex-row sm:px-32 sm:pt-40 lg:px-72">
         <div>
           <div className="flex items-end gap-3">

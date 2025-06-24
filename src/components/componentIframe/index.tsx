@@ -8,6 +8,7 @@ interface ComponentIframeProps {
   wrapper?: string;
   refIframe: Ref<HTMLIFrameElement>;
   loading: boolean;
+  selectBgClass?: string;
 }
 
 export default function ComponentsIframe({
@@ -16,7 +17,8 @@ export default function ComponentsIframe({
   componentTitle,
   loading,
   wrapper = 'h-[400px] lg:h-[600px]',
-  refIframe
+  refIframe,
+  selectBgClass
 }: ComponentIframeProps) {
   return (
     <div
@@ -32,7 +34,7 @@ export default function ComponentsIframe({
         </div>
       )}
       <iframe
-        className={`w-full rounded-xl bg-[#f8f8f9] transition-[background-color] dark:bg-[#242427] ${wrapper}`}
+        className={`w-full rounded-xl bg-[#f8f8f9] transition-[background-color] dark:bg-[#242427] ${wrapper} ${selectBgClass}`}
         loading="lazy"
         srcDoc={componentHtml}
         title={`${componentTitle} Component`}

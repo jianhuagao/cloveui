@@ -32,7 +32,8 @@ export default memo(async function Page({ params }: { params: Promise<PageParams
         creator: componentItem.creator || '',
         innerWrapper: componentItem.innerWrapper || '',
         interactive: !!componentItem.interactive,
-        componentsName: collectionData.title
+        componentsName: collectionData.title,
+        defaultCfg: componentItem.defaultCfg
       };
     })
   };

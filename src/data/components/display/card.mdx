@@ -8,40 +8,49 @@ seo:
 components:
   1:
     title: Card style1
-    wrapper: flex flex-col items-center h-96
-    innerWrapper: flex h-96 items-center justify-center gap-4 bg-linear-to-r from-cyan-500 to-blue-500 dark:bg-none flex-col md:flex-row
+    defaultCfg: 2
+    wrapper: h-96
+    innerWrapper:
   2:
     title: Card style2
-    wrapper: h-[500px] bg-gradient-to-tr from-[#b384c7] to-[#5e8cb1] dark:bg-none
-    innerWrapper: h-[500px]
+    defaultCfg: 3
+    wrapper: h-[500px]
+    innerWrapper: 1 !px-0 !block
   3:
     title: Card style3
-    wrapper: flex flex-col items-center h-[600px] bg-gradient-to-r from-[#d5ecfc] to-[#f6e2e0] dark:bg-none
-    innerWrapper: flex h-[600px] items-center justify-center gap-8 px-20 flex-col md:flex-row
+    defaultCfg: 4
+    wrapper: h-[600px]
+    innerWrapper:
   4:
     title: Card style4
-    wrapper: flex flex-col items-center h-[430px] bg-gradient-to-r from-[#396D84] to-[#E1DDD2] dark:bg-none
-    innerWrapper: flex h-[430px] items-center justify-center gap-6 px-20 flex-col md:flex-row
+    defaultCfg: 5
+    wrapper: h-[430px]
+    innerWrapper:
   5:
     title: Card style5
-    wrapper: flex flex-col items-center h-[660px] bg-gradient-to-r from-[#9795f0] to-[#fbc8d4] dark:bg-none
-    innerWrapper: flex h-[600px] pt-14 items-center justify-center gap-8 px-20 flex-col md:flex-row
+    defaultCfg: 6
+    wrapper: h-[660px]
+    innerWrapper:
   6:
     title: Card style6
-    wrapper: flex flex-col items-center h-96 bg-gradient-to-r from-[#bed5f5] to-[#1bb8d8] dark:bg-none
-    innerWrapper: flex h-96 items-center justify-center gap-4 px-20 py-5 flex-col md:flex-row
+    defaultCfg: 7
+    wrapper: h-96
+    innerWrapper:
   7:
     title: Card style7
-    wrapper: flex flex-col items-center h-[430px] bg-gradient-to-r from-[#7d97ab] to-[#e3b3b3] dark:bg-none
-    innerWrapper: flex h-[430px] items-center justify-center gap-4 px-20
+    defaultCfg: 8
+    wrapper: h-[430px]
+    innerWrapper:
   8:
     title: Card style8
-    wrapper: flex flex-col items-center h-[430px] bg-gradient-to-r from-[#d5ecfc] to-[#f6e2e0] dark:bg-none
-    innerWrapper: flex h-[430px] items-center justify-center gap-4 px-20 [&>*]:basis-[400px] [&>*]:shrink
+    defaultCfg: 4
+    wrapper: h-[430px]
+    innerWrapper:
   9:
     title: Card style9
-    wrapper: bg-[url(/resource/public/space.webp)] bg-cover bg-center bg-no-repeat h-[400]
-    innerWrapper: flex h-[400] items-center justify-center gap-4 px-20
+    defaultCfg: 10
+    wrapper: h-[400]
+    innerWrapper:
 ---
 
 # Card Components

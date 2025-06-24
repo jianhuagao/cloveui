@@ -53,13 +53,13 @@ export default async function Home() {
               <Link
                 href="https://github.com/jianhuagao/cloveui"
                 target="_blank"
-                className="group inline-flex min-w-0 cursor-pointer items-center gap-2 rounded-lg border border-transparent bg-black px-4 py-2 text-sm font-semibold text-white transition-all active:scale-95 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none dark:border-white/30 dark:bg-white/5"
+                className="group inline-flex min-w-0 cursor-pointer items-center gap-2 rounded-md border border-transparent bg-black px-4 py-2 text-sm font-semibold text-white transition-all active:scale-95 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none dark:border-white/30 dark:bg-white/5"
               >
                 Github
                 <Image className="invert" src="/icons/github.svg" width={16} height={16} alt="" />
               </Link>
               <Link href={docUrl} className="text-xl no-underline transition-all hover:underline">
-                <button className="group inline-flex min-w-0 cursor-pointer items-center rounded-lg bg-gradient-to-r from-[#9e58e9] to-blue-500 px-4 py-[9px] text-sm font-semibold text-white transition-all active:scale-95 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none dark:bg-white/5">
+                <button className="group inline-flex min-w-0 cursor-pointer items-center rounded-md bg-gradient-to-r from-[#9e58e9] to-blue-500 px-4 py-[9px] text-sm font-semibold text-white transition-all active:scale-95 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none dark:bg-white/5">
                   Get started
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -96,11 +96,11 @@ export default async function Home() {
                 componentData={{
                   id: '1',
                   title: 'Notification Demo',
+                  defaultCfg: '6',
                   slug: 'demo',
                   category: 'demo',
-                  wrapper: 'h-72 bg-gradient-to-r from-[#9795f0] to-[#fbc8d4] dark:bg-none',
+                  wrapper: 'h-72',
                   creator: '',
-                  innerWrapper: 'flex h-72 items-center justify-center gap-5 flex-col md:flex-row',
                   interactive: true,
                   componentsName: ''
                 }}
@@ -113,10 +113,11 @@ export default async function Home() {
                   id: '2',
                   title: 'Card Demo',
                   slug: 'demo',
+                  defaultCfg: '3',
                   category: 'demo',
-                  wrapper: 'h-[500px] bg-gradient-to-tr from-[#b384c7] to-[#5e8cb1] dark:bg-none',
+                  wrapper: 'h-[500px]',
                   creator: '',
-                  innerWrapper: 'h-[500px]',
+                  innerWrapper: '1 !px-0 !block',
                   interactive: true,
                   componentsName: ''
                 }}
@@ -130,9 +131,10 @@ export default async function Home() {
                   title: 'RadioGroup Demo',
                   slug: 'demo',
                   category: 'demo',
-                  wrapper: 'h-96 bg-gradient-to-r from-[#9795f0] to-[#fbc8d4] dark:bg-none',
+                  defaultCfg: '6',
+                  wrapper: 'h-96',
                   creator: '',
-                  innerWrapper: 'flex px-[20%] h-96 [&>*]:flex-1 items-center justify-center gap-4',
+                  innerWrapper: 'px-[20%] *:flex-1',
                   interactive: true,
                   componentsName: ''
                 }}
@@ -146,9 +148,10 @@ export default async function Home() {
                   title: 'Card Demo',
                   slug: 'demo',
                   category: 'demo',
-                  wrapper: 'flex flex-col items-center h-96 bg-gradient-to-r from-[#bed5f5] to-[#1bb8d8] dark:bg-none',
+                  wrapper: 'h-96',
+                  defaultCfg: '7',
                   creator: '',
-                  innerWrapper: 'flex h-96 py-5 items-center justify-center gap-4 px-20 flex-col md:flex-row',
+                  innerWrapper: '',
                   interactive: true,
                   componentsName: ''
                 }}
