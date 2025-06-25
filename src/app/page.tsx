@@ -134,7 +134,7 @@ export default async function Home() {
                   defaultCfg: '6-14',
                   wrapper: 'h-96',
                   creator: '',
-                  innerWrapper: 'px-[20%] *:flex-1',
+                  innerWrapper: 'px-[20%] *:flex-1 !flex-row',
                   interactive: true,
                   componentsName: ''
                 }}
