@@ -141,7 +141,7 @@ export default async function Home() {
                 baseUrl={`/homeDemo`}
               />
             </FadeIn>
-            <FadeIn once={true}>
+            {/* <FadeIn once={true}>
               <ComponentPrev
                 componentData={{
                   id: '4',
@@ -157,9 +157,9 @@ export default async function Home() {
                 }}
                 baseUrl={`/homeDemo`}
               />
-            </FadeIn>
+            </FadeIn> */}
             <FadeIn once={true}>
-              <div className="mt-4 flex items-center justify-center opacity-70">
+              <div className="mt-10 flex items-center justify-center opacity-70">
                 <Link href={docUrl} className="text-lg hover:text-blue-500 hover:underline">
                   More Components ...
                 </Link>
