@@ -33,18 +33,8 @@ const bgConfig = [
     desc: ''
   },
   {
-    id: '5',
-    classNames: 'bg-gradient-to-r from-[#396D84] to-[#E1DDD2]',
-    desc: ''
-  },
-  {
     id: '6',
     classNames: 'bg-gradient-to-r from-[#9795f0] to-[#fbc8d4]',
-    desc: ''
-  },
-  {
-    id: '7',
-    classNames: 'bg-gradient-to-r from-[#bed5f5] to-[#1bb8d8]',
     desc: ''
   },
   {
@@ -58,18 +48,28 @@ const bgConfig = [
     desc: ''
   },
   {
-    id: '10',
-    classNames: 'bg-[url(/resource/public/bg2.jpg)] bg-cover bg-center bg-no-repeat',
-    desc: ''
-  },
-  {
     id: '11',
     classNames: 'bg-[url(/resource/public/bg1.jpg)] bg-cover bg-center bg-no-repeat',
     desc: ''
   },
   {
+    id: '10',
+    classNames: 'bg-[url(/resource/public/bg2.jpg)] bg-cover bg-center bg-no-repeat',
+    desc: ''
+  },
+  {
     id: '12',
     classNames: 'bg-[url(/resource/public/bg3.jpg)] bg-cover bg-center bg-no-repeat',
+    desc: ''
+  },
+  {
+    id: '13',
+    classNames: 'bg-[url(/resource/public/bg4.jpg)] bg-cover bg-center bg-no-repeat',
+    desc: ''
+  },
+  {
+    id: '14',
+    classNames: 'bg-[url(/resource/public/bg5.jpg)] bg-cover bg-center bg-no-repeat',
     desc: ''
   },
   {
@@ -247,6 +247,7 @@ export default memo(function ComponentPrev({ baseUrl, componentData }: Component
                     return (
                       <div
                         key={s.id}
+                        title={s.id}
                         className={clsx(
                           'flex size-6 cursor-pointer items-center justify-center rounded-xl ring-2 ring-gray-300/80 transition-all duration-300 ease-in-out hover:scale-125 hover:bg-gray-500/20 active:scale-100 dark:ring-white/30 dark:hover:bg-white/20',
                           s.classNames
