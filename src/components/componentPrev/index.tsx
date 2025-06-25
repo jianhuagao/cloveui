@@ -16,6 +16,16 @@ import { compInnerWrapperBase, compInnerWrapperFlex } from '@/data/compCss';
 
 export type CodeType = 'html' | 'jsx' | 'vue';
 
+/**
+ * 提取 TailwindCSS 类名中的 bg
+ * @param classStr - Tailwind 类名字符串
+ * @returns 图片路径字符串（如果没有匹配则返回空字符串）
+ */
+function extractBgImageUrl(classStr: string): string {
+  const match = classStr.match(/bg-\[url\((['"]?)(.*?)\1\)\]/);
+  return match ? match[2] : '';
+}
+
 const bgConfig = [
   {
     id: '2',
@@ -244,18 +254,21 @@ export default memo(function ComponentPrev({ baseUrl, componentData }: Component
                   className="absolute top-0 right-0 flex items-center gap-3 rounded-2xl bg-white/60 px-3 py-1.5 shadow-2xl ring-1 ring-gray-400/10 backdrop-blur-2xl dark:bg-black/20 dark:text-white dark:ring-white/10"
                 >
                   {bgConfig.map(s => {
+                    const url = extractBgImageUrl(s.classNames);
                     return (
                       <div
                         key={s.id}
                         title={s.id}
                         className={clsx(
                           'flex size-6 cursor-pointer items-center justify-center rounded-xl ring-2 ring-gray-300/80 transition-all duration-300 ease-in-out hover:scale-125 hover:bg-gray-500/20 active:scale-100 dark:ring-white/30 dark:hover:bg-white/20',
-                          s.classNames
+                          url ? 'relative overflow-hidden' : s.classNames
                         )}
                         onClick={() => {
                           selectClassName(s.classNames);
                         }}
-                      ></div>
+                      >
+                        {url && <Image src={url} alt="i" fill quality={30} style={{ objectFit: 'cover' }} />}
+                      </div>
                     );
                   })}
                   <div
