@@ -18,11 +18,6 @@ export type CodeType = 'html' | 'jsx' | 'vue';
 
 const bgConfig = [
   {
-    id: '1',
-    classNames: '',
-    desc: 'default'
-  },
-  {
     id: '2',
     classNames: 'bg-linear-to-r from-cyan-500 to-blue-500',
     desc: ''
@@ -76,6 +71,11 @@ const bgConfig = [
     id: '12',
     classNames: 'bg-[url(/resource/public/bg3.jpg)] bg-cover bg-center bg-no-repeat',
     desc: ''
+  },
+  {
+    id: '1',
+    classNames: '',
+    desc: 'default'
   }
 ];
 
@@ -110,12 +110,19 @@ export default memo(function ComponentPrev({ baseUrl, componentData }: Component
 
   useEffect(() => {
     if (componentData.defaultCfg) {
-      if (ctx?.theme === 'dark') {
-        setSelectBgClass('');
-      } else {
-        const bg = bgConfig.find(s => s.id === componentData.defaultCfg + '')?.classNames;
-        setSelectBgClass(bg || '');
+      const ids = (componentData.defaultCfg + '').split('-');
+
+      let bg = '';
+
+      if (ctx?.theme === 'dark' && ids?.[1]) {
+        bg = bgConfig.find(s => s.id === ids?.[1] + '')?.classNames || '';
       }
+
+      if (ctx?.theme === 'light' && ids?.[0]) {
+        bg = bgConfig.find(s => s.id === ids?.[0] + '')?.classNames || '';
+      }
+
+      setSelectBgClass(bg || '');
     }
   }, [componentData.defaultCfg, ctx?.theme]);
 

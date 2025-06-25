@@ -96,7 +96,7 @@ export default async function Home() {
                 componentData={{
                   id: '1',
                   title: 'Notification Demo',
-                  defaultCfg: '12',
+                  defaultCfg: '11-12',
                   slug: 'demo',
                   category: 'demo',
                   wrapper: 'h-72',
@@ -113,7 +113,7 @@ export default async function Home() {
                   id: '2',
                   title: 'Card Demo',
                   slug: 'demo',
-                  defaultCfg: '3',
+                  defaultCfg: '3-12',
                   category: 'demo',
                   wrapper: 'h-[500px]',
                   creator: '',
