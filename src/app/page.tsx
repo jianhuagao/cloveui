@@ -131,7 +131,7 @@ export default async function Home() {
                   title: 'RadioGroup Demo',
                   slug: 'demo',
                   category: 'demo',
-                  defaultCfg: '6',
+                  defaultCfg: '6-14',
                   wrapper: 'h-96',
                   creator: '',
                   innerWrapper: 'px-[20%] *:flex-1',
