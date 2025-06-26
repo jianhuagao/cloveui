@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Geist_Mono } from 'next/font/google';
 import clsx from 'clsx';
 
 import ChangeBg from '@/components/changeBg';
@@ -13,10 +12,13 @@ import { getComponents } from '@/service/dataService';
 import AnimatedVis from '@/components/framerMotions/animatedVis';
 import EmojiHoverCard from '@/components/emojiHoverCard';
 import HomepageBg from '@/components/homepageBg';
+import { geistMomo } from './fonts';
 
-const geist = Geist_Mono({
-  subsets: ['latin']
-});
+// import { Geist_Mono } from 'next/font/google';
+
+// const geist = Geist_Mono({
+//   subsets: ['latin']
+// });
 
 const findFirstSlug = (menuItems: MenuItemProps[]) => {
   for (const item of menuItems) {
@@ -45,7 +47,7 @@ export default async function Home() {
                 library built with TailwindCSS
               </ChangeBg>
             </h1>
-            <h1 className={clsx('text-center text-xl', geist.className)}>
+            <h1 className={clsx('text-center text-xl', geistMomo.className)}>
               Free open source <span className="cursor-pointer text-[#38bdf8] transition-all hover:text-3xl">TailwindCSS</span>{' '}
               component library
             </h1>
