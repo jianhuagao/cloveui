@@ -53,7 +53,7 @@ export default async function Home() {
             </h1>
             <div className="mt-16 mb-24 flex items-center justify-center gap-5">
               <Link
-                href="https://github.com/jianhuagao/cloveui"
+                href="https://github.com/jianhuagao/TwinkleUI"
                 target="_blank"
                 className="group inline-flex min-w-0 cursor-pointer items-center gap-2 rounded-md border border-transparent bg-black px-4 py-2 text-sm font-semibold text-white transition-all active:scale-95 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none dark:border-white/30 dark:bg-white/5"
               >

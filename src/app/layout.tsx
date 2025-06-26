@@ -18,7 +18,7 @@ import { geist } from './fonts';
 // });
 
 export const metadata: Metadata = {
-  title: 'CloveUI',
+  title: 'TwinkleUI',
   description: 'A Tailwind CSS component library'
 };
 

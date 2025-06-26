@@ -10,7 +10,7 @@ export default function LogoBlock() {
       <div className={clsx('group flex items-center gap-2 p-3 text-lg font-semibold hover:text-purple-400', hoverClass)}>
         <Image src="/logo.svg" className="transition-all duration-700 group-hover:rotate-180" width={14} height={14} alt="" />
         <span>
-          Clove<span className="font-light">UI</span>
+          Twinkle<span className="font-light">UI</span>
         </span>
       </div>
     </Link>

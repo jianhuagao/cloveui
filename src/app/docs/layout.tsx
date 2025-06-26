@@ -8,7 +8,7 @@ import HoverMenu from '@/components/hoverMenu';
 import LogoBlock from '@/components/logoBlock';
 
 export const metadata: Metadata = {
-  title: 'CloveUI-Docs',
+  title: 'TwinkleUI-Docs',
   description: 'A Tailwind CSS component library'
 };
 

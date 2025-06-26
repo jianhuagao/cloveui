@@ -1,4 +1,4 @@
-# CloveUI
+# TwinkleUI
 
 Free open source TailwindCSS component library
 
@@ -6,6 +6,6 @@ Free open source TailwindCSS component library
 
 [Home page_CN](https://www.cloveui.asia/)
 
-[Home page](https://cloveui.vercel.app)
+[Home page](https://twinkleUI.vercel.app)
 
-[![cloveui](https://www.cloveui.asia/og.png)](https://cloveui.vercel.app)
+[![cloveui](https://www.cloveui.asia/og.png)](https://twinkleUI.vercel.app)
