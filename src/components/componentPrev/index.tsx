@@ -4,10 +4,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import clsx from 'clsx';
 import { AnimatePresence, motion } from 'framer-motion';
+import { usePathname } from 'next/navigation';
 import ThemeContext from '@/context/themeContext';
 import { ComponentData } from '@/service/dataService';
 import { fetchHtml, FetchHtmlReturn } from '@/service/clientDataService';
-import { usePathname } from 'next/navigation';
 import ResizeBlock from '../resizeBlock';
 import ComponentsIframe from '../componentIframe';
 import ComponentCodePrev from '../componentCodePrev';
@@ -123,11 +123,9 @@ export default memo(function ComponentPrev({ baseUrl, componentData }: Component
       const ids = (componentData.defaultCfg + '').split('-');
 
       let bg = '';
-
       if (ctx?.theme === 'dark' && ids?.[1]) {
         bg = bgConfig.find(s => s.id === ids?.[1] + '')?.classNames || '';
       }
-
       if (ctx?.theme === 'light' && ids?.[0]) {
         bg = bgConfig.find(s => s.id === ids?.[0] + '')?.classNames || '';
       }
