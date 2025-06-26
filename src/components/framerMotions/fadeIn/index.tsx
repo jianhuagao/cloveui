@@ -2,6 +2,7 @@
 import { memo, useMemo } from 'react';
 import { HTMLMotionProps, Variants, motion } from 'framer-motion';
 
+type TransitionType = 'spring' | 'tween' | 'inertia';
 interface FadeInProps extends HTMLMotionProps<'div'> {
   children: React.ReactNode;
   delay?: number;
@@ -13,7 +14,7 @@ interface FadeInProps extends HTMLMotionProps<'div'> {
    *弹力,默认0.4,0为没有弹力
    * **/
   bounce?: number;
-  type?: string;
+  type?: TransitionType;
   once?: boolean;
 }
 
