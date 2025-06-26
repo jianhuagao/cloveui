@@ -260,14 +260,17 @@ export default memo(function ComponentPrev({ baseUrl, componentData }: Component
                         key={s.id}
                         title={s.id}
                         className={clsx(
-                          'flex size-6 cursor-pointer items-center justify-center rounded-xl ring-2 ring-gray-300/80 transition-all duration-300 ease-in-out hover:scale-125 hover:bg-gray-500/20 active:scale-100 dark:ring-white/30 dark:hover:bg-white/20',
-                          url ? 'relative overflow-hidden' : s.classNames
+                          'relative flex size-6 cursor-pointer items-center justify-center overflow-hidden rounded-xl ring-2 ring-gray-300/80 transition-all duration-300 ease-in-out hover:scale-125 hover:bg-gray-500/20 active:scale-100 dark:ring-white/30 dark:hover:bg-white/20',
+                          url ? '' : s.classNames
                         )}
                         onClick={() => {
                           selectClassName(s.classNames);
                         }}
                       >
                         {url && <Image src={url} alt="i" fill quality={30} style={{ objectFit: 'cover' }} />}
+                        {s.classNames === '' && (
+                          <div className="pointer-events-none absolute inset-0 bg-[repeating-linear-gradient(45deg,_#ccc_0px,_#ccc_2px,_transparent_2px,_transparent_6px)] opacity-90 dark:opacity-50" />
+                        )}
                       </div>
                     );
                   })}
