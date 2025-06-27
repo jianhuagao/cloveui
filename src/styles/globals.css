@@ -11,7 +11,7 @@
 @layer base {
   ::-webkit-scrollbar {
     width: 8px;
-    height: 10px;
+    height: 8px;
     border-radius: 6px;
     background: transparent;
   }
@@ -23,9 +23,13 @@
     border: 1px solid transparent;
   }
 
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+
   .mini-scrollbar::-webkit-scrollbar {
     width: 4px;
-    height: 10px;
+    height: 4px;
     border-radius: 6px;
     background: transparent;
   }
