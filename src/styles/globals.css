@@ -23,6 +23,20 @@
     border: 1px solid transparent;
   }
 
+  .mini-scrollbar::-webkit-scrollbar {
+    width: 4px;
+    height: 10px;
+    border-radius: 6px;
+    background: transparent;
+  }
+
+  .mini-scrollbar::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background-color: rgba(184, 184, 184, 0.5);
+    background-clip: content-box;
+    border: 1px solid transparent;
+  }
+
   body {
     @apply bg-white text-black transition-[background-color] dark:bg-[#09090b] dark:text-white;
   }

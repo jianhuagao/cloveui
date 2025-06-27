@@ -21,7 +21,12 @@ export default memo(async function Menu() {
 
   return (
     <div className="flex grow flex-col overflow-hidden">
-      <div className="flex shrink grow flex-col gap-1 overflow-auto p-4">
+      <div
+        style={{
+          maskImage: 'linear-gradient(to bottom, black 0%, black 95%, transparent 100%)'
+        }}
+        className="mini-scrollbar flex shrink grow flex-col gap-1 overflow-auto p-4"
+      >
         {componentsByCategory?.map(type => {
           const itemsTitle = <div className={clsx('px-3 pt-2 first:pt-0', miniText)}>{type.title}</div>;
           const items = type.children?.map(c => {
@@ -35,7 +40,7 @@ export default memo(async function Menu() {
           );
         })}
       </div>
-      <div className="shrink-0 p-5 pb-0">
+      <div className="shrink-0 px-5">
         <div className="flex flex-col gap-1 border-t border-zinc-950/5 pt-4 transition-all dark:border-white/5">
           <PlayMenuItem>
             <Image src="/play/play.svg" alt="play" width={16} height={16} priority />
