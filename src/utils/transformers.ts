@@ -31,6 +31,25 @@ export function componentPreviewHtml(
           });
         </script>
 
+        <style>
+            ::-webkit-scrollbar {
+              width: 8px;
+              height: 8px;
+              background: transparent;
+            }
+
+            ::-webkit-scrollbar-thumb {
+              border-radius: 6px;
+              background-color: #b9b9b9c2;
+              background-clip: content-box;
+              border: 1px solid transparent;
+            }
+
+            ::-webkit-scrollbar-corner {
+              background: transparent;
+            }
+        </style>
+
         <link href="${cssHref}" rel="stylesheet">
 
       </head>

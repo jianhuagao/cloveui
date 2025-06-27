@@ -9,10 +9,18 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @layer base {
+  /* 🌐 Firefox 样式 */
+  /* html,
+  body,
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #b9b9b9c2 transparent;
+  } */
+
+  /* 🌐 WebKit 浏览器样式 */
   ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
-    border-radius: 6px;
     background: transparent;
   }
 
@@ -24,13 +32,12 @@
   }
 
   ::-webkit-scrollbar-corner {
-    background: transparent;
+    background: transparent; /* 解决右下角白色方块 */
   }
 
   .mini-scrollbar::-webkit-scrollbar {
-    width: 4px;
-    height: 4px;
-    border-radius: 6px;
+    width: 5px;
+    height: 5px;
     background: transparent;
   }
 
