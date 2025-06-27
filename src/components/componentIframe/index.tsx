@@ -20,7 +20,9 @@ export default function ComponentsIframe({
 }: ComponentIframeProps) {
   return (
     <div className="relative mt-3 rounded-xl">
-      <div className="pointer-events-none absolute inset-[35%] hidden rounded-full bg-white/15 blur-2xl dark:block"></div>
+      {selectBgClass === '' && (
+        <div className="pointer-events-none absolute inset-[35%] hidden rounded-full bg-white/15 blur-2xl dark:block"></div>
+      )}
       {loading && (
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <Spin />
