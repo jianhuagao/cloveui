@@ -300,8 +300,8 @@ export default memo(function ComponentPrev({ baseUrl, componentData }: Component
           wrapper={componentData.wrapper}
           selectBgClass={selectBgClass}
         />
-        {showCode && <ComponentCodePrev codeType={codeType} componentCode={previewCode} />}
       </ResizeBlock>
+      {showCode && <ComponentCodePrev codeType={codeType} componentCode={previewCode} />}
     </div>
   );
 });

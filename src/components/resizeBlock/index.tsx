@@ -74,11 +74,7 @@ export default memo(function ResizeBlock({ children, className }: ResizeBlockPro
   }, []);
 
   return (
-    <div
-      ref={resizableRef}
-      style={{ width }}
-      className={clsx(className, 'relative rounded-xl bg-[#f4f4f5]/60 dark:bg-white/5')}
-    >
+    <div ref={resizableRef} style={{ width }} className={clsx(className, 'relative')}>
       <div
         className="group absolute top-1/2 -right-[20px] h-16 -translate-y-1/2 cursor-e-resize p-1.5"
         onMouseDown={handleMouseDown}
