@@ -83,6 +83,16 @@ const bgConfig = [
     desc: ''
   },
   {
+    id: '15',
+    classNames: 'bg-[url(/resource/public/bg6.jpg)] bg-cover bg-center bg-no-repeat',
+    desc: ''
+  },
+  {
+    id: '16',
+    classNames: 'bg-[url(/resource/public/bg7.jpg)] bg-cover bg-center bg-no-repeat',
+    desc: ''
+  },
+  {
     id: '1',
     classNames: '',
     desc: 'default'
