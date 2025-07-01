@@ -80,7 +80,7 @@ export default memo(function ResizeBlock({ children, className }: ResizeBlockPro
       className={clsx(className, 'relative rounded-xl bg-[#f4f4f5]/60 dark:bg-white/5')}
     >
       <div
-        className="group absolute top-1/2 -right-[18px] h-16 -translate-y-1/2 cursor-e-resize p-2"
+        className="group absolute top-1/2 -right-[20px] h-16 -translate-y-1/2 cursor-e-resize p-1.5"
         onMouseDown={handleMouseDown}
       >
         <div className="h-full w-[6px] rounded-full bg-black/10 group-hover:scale-110 group-hover:bg-black/45 dark:bg-white/20 dark:group-hover:bg-white/45"></div>

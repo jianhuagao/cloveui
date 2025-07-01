@@ -105,6 +105,7 @@ const iconSelectClassNames = 'bg-black/10 shadow-inner dark:bg-black/20';
 interface ComponentPrevProps {
   baseUrl: string;
   componentData: ComponentData;
+  originalClassName?: string;
 }
 
 export default memo(function ComponentPrev({ baseUrl, componentData }: ComponentPrevProps) {
@@ -182,7 +183,7 @@ export default memo(function ComponentPrev({ baseUrl, componentData }: Component
 
   return (
     <div key={componentData.id} id={componentData.id}>
-      <div className="mt-4 flex flex-wrap items-end">
+      <div className="flex flex-wrap items-end">
         <Link className="relative no-underline" href={`${pathname}#${componentData.id}`}>
           <h3 className="mt-0 mb-0 before:absolute before:-left-4 before:text-violet-500 hover:before:content-['#']">
             {componentData.title}

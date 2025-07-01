@@ -46,6 +46,7 @@ export interface ComponentData extends Record<string, unknown> {
   interactive: boolean;
   innerWrapper?: string;
   defaultCfg?: string;
+  span?: string;
   title: string;
   componentsName: string;
   articles?: string[];

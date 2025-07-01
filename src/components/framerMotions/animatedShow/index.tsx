@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { memo, useEffect, useState } from 'react';
+import { isValidElement, memo, useEffect, useState } from 'react';
 
 const animationVariants = {
   hidden: { opacity: 0, transform: 'scale(0.98)' },
@@ -35,11 +35,18 @@ const AnimatedShow = ({ children, className }: { children: React.ReactNode[]; cl
 
   return (
     <motion.div initial="hidden" animate={isVisible ? 'visible' : 'hidden'} variants={animationVariants} className={className}>
-      {children.map((child, index) => (
-        <motion.span key={index} variants={ChildVariants}>
-          {child}
-        </motion.span>
-      ))}
+      {children.map((child, index) => {
+        let originalClassName = '';
+        if (isValidElement(child)) {
+          const typedChild = child as React.ReactElement<{ originalClassName?: string }>;
+          originalClassName = typedChild.props.originalClassName || '';
+        }
+        return (
+          <motion.span key={index} className={originalClassName} variants={ChildVariants}>
+            {child}
+          </motion.span>
+        );
+      })}
     </motion.div>
   );
 };
