@@ -28,18 +28,18 @@ function extractBgImageUrl(classStr: string): string {
 
 const bgConfig = [
   {
-    id: '2',
-    classNames: 'bg-linear-to-r from-cyan-500 to-blue-500',
+    id: '1',
+    classNames: '',
+    desc: 'default'
+  },
+  {
+    id: '4',
+    classNames: 'bg-gradient-to-r from-[#d5ecfc] to-[#f6e2e0]',
     desc: ''
   },
   {
     id: '3',
     classNames: 'bg-gradient-to-tr from-[#b384c7] to-[#5e8cb1]',
-    desc: ''
-  },
-  {
-    id: '4',
-    classNames: 'bg-gradient-to-r from-[#d5ecfc] to-[#f6e2e0]',
     desc: ''
   },
   {
@@ -50,11 +50,6 @@ const bgConfig = [
   {
     id: '8',
     classNames: 'bg-gradient-to-r from-[#7d97ab] to-[#e3b3b3]',
-    desc: ''
-  },
-  {
-    id: '9',
-    classNames: 'bg-gradient-to-r from-purple-400 to-pink-400',
     desc: ''
   },
   {
@@ -91,11 +86,6 @@ const bgConfig = [
     id: '16',
     classNames: 'bg-[url(/resource/public/bg7.jpg)] bg-cover bg-center bg-no-repeat',
     desc: ''
-  },
-  {
-    id: '1',
-    classNames: '',
-    desc: 'default'
   }
 ];
 
