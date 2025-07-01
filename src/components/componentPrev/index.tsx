@@ -120,19 +120,13 @@ export default memo(function ComponentPrev({ baseUrl, componentData }: Component
   }, []);
 
   useEffect(() => {
-    if (componentData.defaultCfg) {
-      const ids = (componentData.defaultCfg + '').split('-');
+    if (!componentData.defaultCfg || !ctx?.theme) return;
 
-      let bg = '';
-      if (ctx?.theme === 'dark' && ids?.[1]) {
-        bg = bgConfig.find(s => s.id === ids?.[1] + '')?.classNames || '';
-      }
-      if (ctx?.theme === 'light' && ids?.[0]) {
-        bg = bgConfig.find(s => s.id === ids?.[0] + '')?.classNames || '';
-      }
+    const [lightId, darkId] = String(componentData.defaultCfg).split('-');
+    const id = ctx.theme === 'dark' ? darkId : lightId;
+    const bg = bgConfig.find(s => s.id === id)?.classNames || '';
 
-      setSelectBgClass(bg || '');
-    }
+    setSelectBgClass(bg);
   }, [componentData.defaultCfg, ctx?.theme]);
 
   useEffect(() => {
