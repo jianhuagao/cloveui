@@ -47,8 +47,9 @@ export default function DocLayout({
 const LeftContent = memo(function LeftContent({ isFloat = false }: { isFloat?: boolean }) {
   return (
     <>
-      <div className="flex shrink-0 items-center justify-between p-4">
+      <div className="flex shrink-0 items-center p-4">
         <LogoBlock />
+        {!isFloat && <div className="ml-auto"></div>}
         <LayoutModeSwitch />
       </div>
       <Menu />
