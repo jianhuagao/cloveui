@@ -13,7 +13,7 @@ export default async function MenuHorizontal() {
   const componentsByCategory = await getComponents();
 
   return (
-    <div className="not-prose top-[48px] z-30 mb-8 flex flex-col flex-wrap items-start rounded-2xl border border-black/5 bg-white/60 px-3 py-2 ring-1 ring-gray-300/20 backdrop-blur-xl backdrop-saturate-200 xl:sticky xl:flex-row xl:items-center dark:bg-black/50 dark:ring-white/15">
+    <div className="not-prose top-[48px] z-30 -mx-6 mb-8 flex flex-col flex-wrap items-start rounded-2xl border border-black/5 bg-white/60 px-3 py-2 ring-1 ring-gray-300/20 backdrop-blur-xl backdrop-saturate-200 xl:sticky xl:flex-row xl:items-center dark:bg-black/50 dark:ring-white/15">
       <LogoBlock />
       <div className="mx-3 hidden h-4 w-1 rounded-full bg-[#e0e0e0] xl:block dark:bg-[#e0e0e0]/60"></div>
       <DropdownMenuProvider>
