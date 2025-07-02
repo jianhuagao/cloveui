@@ -38,14 +38,16 @@ const articleMenuItemPubClass =
   'flex cursor-pointer items-center gap-2 rounded-lg px-0 py-2 ring-1 ring-transparent backdrop-blur-sm transition-all';
 const articleMenuItemHoverClass = 'hover:bg-white/60 hover:px-3 dark:hover:bg-black/20 dark:hover:ring-white/5';
 const articleMenuItemActiveClass = 'bg-white/60 px-3 dark:bg-black/20 dark:ring-white/5';
-export const ArticleMenuItem = ({ children }: { children: React.ReactNode }) => {
+export const ArticleMenuItem = ({ children, activeClass }: { children: React.ReactNode; activeClass?: string }) => {
   const pathname = usePathname();
   const isActive = pathname.indexOf('/docs/article/') !== -1;
 
   return (
     <Link
       href="/docs/article/directory"
-      className={clsx(articleMenuItemPubClass, articleMenuItemHoverClass, { [articleMenuItemActiveClass]: isActive })}
+      className={clsx(activeClass ? 'rounded-lg' : articleMenuItemPubClass, activeClass ? '' : articleMenuItemHoverClass, {
+        [activeClass || articleMenuItemActiveClass]: isActive
+      })}
     >
       {children}
     </Link>

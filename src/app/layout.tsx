@@ -8,6 +8,7 @@ import BackgroundComponent from '@/components/backgroundComponent';
 import { ThemeProvider } from '@/context/themeContext';
 import { BackgroundProvider } from '@/context/backgroundContext';
 import { geist } from './fonts';
+import { LayoutProvider } from '@/context/layoutContext';
 
 // import { Geist } from 'next/font/google';
 
@@ -32,7 +33,9 @@ export default async function RootLayout({
       <body className={geist.className}>
         <BackgroundProvider>
           <BackgroundComponent />
-          <ThemeProvider>{children}</ThemeProvider>
+          <ThemeProvider>
+            <LayoutProvider>{children}</LayoutProvider>
+          </ThemeProvider>
         </BackgroundProvider>
       </body>
     </html>
