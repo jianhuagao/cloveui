@@ -3,6 +3,7 @@ import { join } from 'path';
 import { promises as fs } from 'fs';
 import { serialize } from 'next-mdx-remote/serialize';
 import { notFound } from 'next/navigation';
+import { removeLeadingNumberDot } from '@/utils/utils';
 
 /**
  * 获取组件目录
@@ -15,7 +16,10 @@ export async function getComponents() {
     const componentsTypeSlugs = await fs.readdir(componentsTypePath);
 
     for (const componentsTypeSlug of componentsTypeSlugs) {
-      const menuNewItem: MenuItemProps = { title: componentsTypeSlug, slug: componentsTypeSlug };
+      // console.log(componentsTypeSlug);
+      //去掉点的标题
+      const reComponentsTypeSlug = removeLeadingNumberDot(componentsTypeSlug);
+      const menuNewItem: MenuItemProps = { title: reComponentsTypeSlug, slug: reComponentsTypeSlug };
 
       const typeMainPath = join(componentsTypePath, componentsTypeSlug);
 
@@ -23,7 +27,7 @@ export async function getComponents() {
 
       const childrenPromises = typeUiArr.map(async typeUiSlug => {
         const typeUiName = typeUiSlug.replace('.mdx', '');
-        return { title: typeUiName, slug: `${componentsTypeSlug}/${typeUiName}` };
+        return { title: typeUiName, slug: `${reComponentsTypeSlug}/${typeUiName}` };
       });
 
       const children = await Promise.all(childrenPromises);
@@ -51,14 +55,26 @@ export interface ComponentData extends Record<string, unknown> {
   componentsName: string;
   articles?: string[];
 }
+
 /**
  * 通过当前组件页面路径获取组件
  */
 export async function getCollection(params: { compType: string; compName: string }) {
   try {
-    const { compType, compName } = await params;
+    const { compType, compName } = params;
     const componentsDirectory = join(process.cwd(), '/src/data/components');
-    const componentPath = join(componentsDirectory, compType, `${compName}.mdx`);
+
+    // 获取所有文件夹名称
+    const allFolders = await fs.readdir(componentsDirectory, { withFileTypes: true });
+    const matchedFolder = allFolders
+      .filter(dirent => dirent.isDirectory())
+      .find(dirent => removeLeadingNumberDot(dirent.name) === compType);
+
+    if (!matchedFolder) {
+      return notFound();
+    }
+
+    const componentPath = join(componentsDirectory, matchedFolder.name, `${compName}.mdx`);
     const componentItem = await fs.readFile(componentPath, 'utf-8');
 
     const mdxSource = await serialize<ComponentData, ComponentData>(componentItem, {

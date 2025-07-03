@@ -31,7 +31,7 @@ export default function DocLayout({
           <LeftContent />
         </div>
       </LayoutModeContent>
-      <div className="prose dark:prose-invert m-2 max-w-none min-w-0 grow rounded-lg bg-white p-10 shadow-xs ring-1 ring-zinc-950/5 transition-[background-color] dark:bg-zinc-900 dark:lg:ring-white/10">
+      <div className="prose dark:prose-invert m-2 max-w-none min-w-0 grow rounded-lg bg-white p-10 shadow-xs ring-1 ring-zinc-950/5 transition-[background-color] has-[.layoutModeContent]:!ml-2 lg:ml-0 dark:bg-zinc-900 dark:lg:ring-white/10">
         <HoverMenu>
           <LeftContent isFloat />
         </HoverMenu>
