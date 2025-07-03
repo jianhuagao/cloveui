@@ -55,13 +55,13 @@ export default async function Home() {
               <Link
                 href="https://github.com/jianhuagao/TwinkleUI"
                 target="_blank"
-                className="group inline-flex min-w-0 cursor-pointer items-center gap-2 rounded-md border border-transparent bg-black px-4 py-2 text-sm font-semibold text-white transition-all active:scale-95 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none dark:border-white/30 dark:bg-white/5"
+                className="group relative inline-flex cursor-pointer items-center justify-center gap-1.5 rounded-xl bg-white/60 px-4 py-2 text-sm ring-1 ring-gray-300/50 backdrop-blur-md transition-all duration-300 hover:shadow-lg active:scale-90 dark:bg-[rgba(255,255,255,0.15)] dark:text-white dark:shadow-white/10 dark:ring-white/20 dark:hover:ring-white/50"
               >
                 Github
-                <Image className="invert" src="/icons/github.svg" width={16} height={16} alt="" />
+                <Image className="dark:invert" src="/icons/github.svg" width={16} height={16} alt="" />
               </Link>
               <Link href={docUrl} className="text-xl no-underline transition-all hover:underline">
-                <button className="group inline-flex min-w-0 cursor-pointer items-center rounded-md bg-gradient-to-r from-[#9e58e9] to-blue-500 px-4 py-[9px] text-sm font-semibold text-white transition-all active:scale-95 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none dark:bg-white/5">
+                <button className="group relative inline-flex cursor-pointer items-center justify-center rounded-xl bg-white/60 px-4 py-2 text-sm text-purple-800 ring-1 ring-gray-300/50 backdrop-blur-md transition-all duration-300 hover:shadow-lg active:scale-90 dark:bg-[rgba(255,255,255,0.15)] dark:text-white dark:shadow-white/10 dark:ring-white/20 dark:hover:ring-white/50">
                   Get started
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -73,6 +73,7 @@ export default async function Home() {
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                   </svg>
+                  <span className="pointer-events-none absolute right-2 bottom-2 z-0 size-5 rounded-full bg-purple-400/50 blur-[6px] transition-transform duration-300 ease-in-out group-hover:translate-1/2 dark:bg-purple-400/40"></span>
                 </button>
               </Link>
             </div>
